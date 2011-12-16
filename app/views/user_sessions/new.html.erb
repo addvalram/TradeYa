@@ -1,7 +1,7 @@
 
 <h1> Login</h1>
 
-<% form_for (@user_session, :url => login_path) do |f| %>
+<% form_for (@user_session, :url => users_path) do |f| %>
   <%= f.error_messages %>
   <p>
     <%= f.label :email %><br />

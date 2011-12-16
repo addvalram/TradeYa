@@ -23785,3 +23785,37 @@ ActiveRecord::StatementInvalid (Mysql::Error: Table 'TradeYa_development.items' 
 Rendered rescues/_trace (30.4ms)
 Rendered rescues/_request_and_response (0.3ms)
 Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (130.8ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (250.7ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20111216053519)
+  [4;35;1mSQL (146.2ms)[0m   [0mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_name` varchar(255), `email` varchar(255), `crypted_password` varchar(255), `password_salt` varchar(255), `persistence_token` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (57.9ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20111216053519')[0m
+Migrating to CreateItems (20111216070852)
+  [4;35;1mSQL (155.6ms)[0m   [0mCREATE TABLE `items` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `item_name` varchar(255), `picture` varchar(255), `item_description` text, `sale_status` varchar(255), `item_list` varchar(255), `item_choice` tinyint(1), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (58.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20111216070852')[0m
+Migrating to CreateOffers (20111216071109)
+  [4;35;1mSQL (147.3ms)[0m   [0mCREATE TABLE `offers` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `item_id` int(11), `user_id` int(11), `offer_status` tinyint(1), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (41.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20111216071109')[0m
+Migrating to CreateRecentActivities (20111216071227)
+  [4;35;1mSQL (163.2ms)[0m   [0mCREATE TABLE `recent_activities` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `item_id` int(11), `comment` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (49.6ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20111216071227')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW FIELDS FROM `items`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mdescribe `items`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `items`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW FIELDS FROM `offers`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mdescribe `offers`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `offers`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW FIELDS FROM `recent_activities`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mdescribe `recent_activities`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `recent_activities`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `users`[0m
