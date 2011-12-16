@@ -1,0 +1,18 @@
+<p>
+  <b>User:</b>
+  <%=h @recent_activity.user_id %>
+</p>
+
+<p>
+  <b>Item:</b>
+  <%=h @recent_activity.item_id %>
+</p>
+
+<p>
+  <b>Comment:</b>
+  <%=h @recent_activity.comment %>
+</p>
+
+
+<%= link_to 'Edit', edit_recent_activity_path(@recent_activity) %> |
+<%= link_to 'Back', recent_activities_path %>

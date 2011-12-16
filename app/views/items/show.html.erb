@@ -1,0 +1,33 @@
+<p>
+  <b>User:</b>
+  <%=h @item.user_id %>
+</p>
+
+<p>
+  <b>Item name:</b>
+  <%=h @item.item_name %>
+</p>
+
+<p>
+  <b>Item description:</b>
+  <%=h @item.item_description %>
+</p>
+
+<p>
+  <b>Sale status:</b>
+  <%=h @item.sale_status %>
+</p>
+
+<p>
+  <b>Item list:</b>
+  <%=h @item.item_list %>
+</p>
+
+<p>
+  <b>Item choice:</b>
+  <%=h @item.item_choice %>
+</p>
+
+
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>

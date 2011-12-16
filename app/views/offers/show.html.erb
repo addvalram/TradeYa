@@ -1,0 +1,18 @@
+<p>
+  <b>Item:</b>
+  <%=h @offer.item_id %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%=h @offer.user_id %>
+</p>
+
+<p>
+  <b>Offer status:</b>
+  <%=h @offer.offer_status %>
+</p>
+
+
+<%= link_to 'Edit', edit_offer_path(@offer) %> |
+<%= link_to 'Back', offers_path %>

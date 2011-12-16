@@ -1,0 +1,24 @@
+<h1>Listing recent_activities</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Item</th>
+    <th>Comment</th>
+  </tr>
+
+<% @recent_activities.each do |recent_activity| %>
+  <tr>
+    <td><%=h recent_activity.user_id %></td>
+    <td><%=h recent_activity.item_id %></td>
+    <td><%=h recent_activity.comment %></td>
+    <td><%= link_to 'Show', recent_activity %></td>
+    <td><%= link_to 'Edit', edit_recent_activity_path(recent_activity) %></td>
+    <td><%= link_to 'Destroy', recent_activity, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New recent_activity', new_recent_activity_path %>
