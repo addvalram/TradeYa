@@ -11,17 +11,6 @@
 
 ActiveRecord::Schema.define(:version => 20111216071227) do
 
-  create_table "items", :force => true do |t|
-    t.integer  "user_id"
-    t.string   "item_name"
-    t.text     "item_description"
-    t.string   "sale_status"
-    t.string   "item_list"
-    t.boolean  "item_choice"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "offers", :force => true do |t|
     t.integer  "item_id"
     t.integer  "user_id"

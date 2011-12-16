@@ -1,6 +1,6 @@
 <h1>New offer</h1>
 
-<% form_for(@offer) do |f| %>
+<% form_for(:offer, :url=>item_offers_path ) do |f| %>
   <%= f.error_messages %>
 
   <p>

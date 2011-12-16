@@ -22376,3 +22376,1412 @@ Processing ItemsController#new (for 127.0.0.1 at 2011-12-16 15:06:05) [GET]
 Rendering template within layouts/items
 Rendering items/new
 Completed in 93ms (View: 82, DB: 1) | 200 OK [http://127.0.0.1/items/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-12-16 15:26:57) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '2f1ddc10217b680cf86a7b3538fee13cc0bbac1e32fce364248f8d511be856ba9715a7c80d5914ed68239d002a577f7927961e66534eba4877e115799f653717') LIMIT 1[0m
+Completed in 37ms (View: 20, DB: 1) | 200 OK [http://127.0.0.1/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2011-12-16 15:27:07) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '2f1ddc10217b680cf86a7b3538fee13cc0bbac1e32fce364248f8d511be856ba9715a7c80d5914ed68239d002a577f7927961e66534eba4877e115799f653717') LIMIT 1[0m
+Redirected to http://127.0.0.1:3000/
+Completed in 21ms (DB: 1) | 302 Found [http://127.0.0.1/logout]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-12-16 15:27:07) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 91ms (View: 6, DB: 1) | 200 OK [http://127.0.0.1/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2011-12-16 15:28:34) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/users
+Rendering users/new
+Rendered users/_form (4.3ms)
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://127.0.0.1/users/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2011-12-16 15:29:17) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+Rendering template within layouts/users
+Rendering users/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #9 of app/views/users/index.html.erb:
+6:     <th>Email</th>
+7:   </tr>
+8: 
+9: <% @users.each do |user| %>
+10:   <tr>
+11:     <td><%=h user.user_name %></td>
+12:     <td><%=h user.email %></td>
+
+    app/views/users/index.html.erb:9
+    /usr/lib/ruby/1.8/action_view/renderable.rb:34:in `send'
+    /usr/lib/ruby/1.8/action_view/renderable.rb:34:in `render'
+    /usr/lib/ruby/1.8/action_view/base.rb:306:in `with_template'
+    /usr/lib/ruby/1.8/action_view/renderable.rb:30:in `render'
+    /usr/lib/ruby/1.8/action_view/template.rb:205:in `render_template'
+    /usr/lib/ruby/1.8/action_view/base.rb:265:in `render'
+    /usr/lib/ruby/1.8/action_view/base.rb:348:in `_render_with_layout'
+    /usr/lib/ruby/1.8/action_view/base.rb:262:in `render'
+    /usr/lib/ruby/1.8/action_controller/base.rb:1250:in `render_for_file'
+    /usr/lib/ruby/1.8/action_controller/base.rb:945:in `render_without_benchmark'
+    /usr/lib/ruby/1.8/action_controller/benchmarking.rb:51:in `render'
+    /usr/lib/ruby/1.8/action_controller/benchmarking.rb:51:in `render'
+    /usr/lib/ruby/1.8/action_controller/base.rb:1326:in `default_render'
+    /usr/lib/ruby/1.8/action_controller/base.rb:1338:in `perform_action_without_filters'
+    /usr/lib/ruby/1.8/action_controller/filters.rb:617:in `call_filters'
+    /usr/lib/ruby/1.8/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /usr/lib/ruby/1.8/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/action_controller/rescue.rb:160:in `perform_action_without_flash'
+    /usr/lib/ruby/1.8/action_controller/flash.rb:146:in `perform_action'
+    /usr/lib/ruby/1.8/action_controller/base.rb:532:in `send'
+    /usr/lib/ruby/1.8/action_controller/base.rb:532:in `process_without_filters'
+    /usr/lib/ruby/1.8/action_controller/filters.rb:606:in `process'
+    /usr/lib/ruby/1.8/action_controller/base.rb:391:in `process'
+    /usr/lib/ruby/1.8/action_controller/base.rb:386:in `call'
+    /usr/lib/ruby/1.8/action_controller/routing/route_set.rb:437:in `call'
+    /usr/lib/ruby/1.8/action_controller/dispatcher.rb:87:in `dispatch'
+    /usr/lib/ruby/1.8/action_controller/dispatcher.rb:121:in `_call'
+    /usr/lib/ruby/1.8/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+    /usr/lib/ruby/1.8/active_record/query_cache.rb:29:in `call'
+    /usr/lib/ruby/1.8/active_record/query_cache.rb:29:in `call'
+    /usr/lib/ruby/1.8/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /usr/lib/ruby/1.8/active_record/query_cache.rb:9:in `cache'
+    /usr/lib/ruby/1.8/active_record/query_cache.rb:28:in `call'
+    /usr/lib/ruby/1.8/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /usr/lib/ruby/1.8/action_controller/string_coercion.rb:25:in `call'
+    /usr/lib/ruby/1.8/rack/head.rb:9:in `call'
+    /usr/lib/ruby/1.8/rack/methodoverride.rb:24:in `call'
+    /usr/lib/ruby/1.8/action_controller/params_parser.rb:15:in `call'
+    /usr/lib/ruby/1.8/action_controller/session/cookie_store.rb:93:in `call'
+    /usr/lib/ruby/1.8/action_controller/failsafe.rb:26:in `call'
+    /usr/lib/ruby/1.8/rack/lock.rb:11:in `call'
+    /usr/lib/ruby/1.8/rack/lock.rb:11:in `synchronize'
+    /usr/lib/ruby/1.8/rack/lock.rb:11:in `call'
+    /usr/lib/ruby/1.8/action_controller/dispatcher.rb:114:in `call'
+    /usr/lib/ruby/1.8/action_controller/reloader.rb:34:in `run'
+    /usr/lib/ruby/1.8/action_controller/dispatcher.rb:108:in `call'
+    /usr/lib/ruby/1.8/rack/urlmap.rb:47:in `call'
+    /usr/lib/ruby/1.8/rack/urlmap.rb:41:in `each'
+    /usr/lib/ruby/1.8/rack/urlmap.rb:41:in `call'
+    /usr/lib/ruby/1.8/rack/content_length.rb:13:in `call'
+    /usr/lib/ruby/1.8/rack/chunked.rb:15:in `call'
+    /usr/lib/ruby/1.8/rack/handler/mongrel.rb:67:in `process'
+    /usr/lib/ruby/1.8/mongrel.rb:159:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `each'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `run'
+    /usr/lib/ruby/1.8/rack/handler/mongrel.rb:38:in `run'
+
+Rendered rescues/_trace (25.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2011-12-16 15:33:20) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/users
+Rendering users/new
+Rendered users/_form (2.9ms)
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://127.0.0.1/users/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2011-12-16 15:33:48) [POST]
+  Parameters: {"commit"=>"Submit", "action"=>"create", "authenticity_token"=>"ZX/jaDKPeKA5FDWlaRg+Kf4JdT19JLuL/vyRPv1mRwk=", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "user_name"=>"su", "password"=>"[FILTERED]", "email"=>"su@gmail.com"}}
+  [4;35;1mUser Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`user_name` = BINARY 'su') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'su@gmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'su@gmail.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'ac938f90c6751c5f9a682d31fce91bfe36b13e31ae87fbf01a7e61fa832730f9c07b0a1be038304eed560bc633a597dd9fdea65ab912594c0a7b2d07a0c6769b') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `password_salt`, `user_name`, `persistence_token`, `email`) VALUES('2011-12-16 10:03:48', '00951a18a326604c81b3fe7d394bbcba2e9b5bb1f8fd49f367d122071ef68dade72c7c64013d8cda726442641b337503d67c989ac5a53b840bffed43545f6bfb', '2011-12-16 10:03:48', 'Cn7jJSoGCmQhT2OWum', 'su', 'ac938f90c6751c5f9a682d31fce91bfe36b13e31ae87fbf01a7e61fa832730f9c07b0a1be038304eed560bc633a597dd9fdea65ab912594c0a7b2d07a0c6769b', 'su@gmail.com')[0m
+  [4;36;1mSQL (59.5ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/items
+Completed in 81ms (DB: 61) | 302 Found [http://127.0.0.1/users]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ItemsController#index (for 127.0.0.1 at 2011-12-16 15:33:48) [GET]
+  Parameters: {"action"=>"index", "controller"=>"items"}
+  [4;35;1mItem Load (0.2ms)[0m   [0mSELECT * FROM `items` [0m
+Rendering template within layouts/items
+Rendering items/index
+Completed in 9ms (View: 2, DB: 0) | 200 OK [http://127.0.0.1/items]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing OffersController#index (for 127.0.0.1 at 2011-12-16 15:47:25) [GET]
+  Parameters: {"action"=>"index", "controller"=>"offers"}
+
+ActiveRecord::RecordNotFound (Couldn't find Item without an ID):
+  /usr/lib/ruby/1.8/active_record/base.rb:1567:in `find_from_ids'
+  /usr/lib/ruby/1.8/active_record/base.rb:616:in `find'
+  app/controllers/offers_controller.rb:6:in `index'
+  /usr/lib/ruby/1.8/action_controller/base.rb:1331:in `send'
+  /usr/lib/ruby/1.8/action_controller/base.rb:1331:in `perform_action_without_filters'
+  /usr/lib/ruby/1.8/action_controller/filters.rb:617:in `call_filters'
+  /usr/lib/ruby/1.8/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+  /usr/lib/ruby/1.8/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+  /usr/lib/ruby/1.8/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+  /usr/lib/ruby/1.8/action_controller/rescue.rb:160:in `perform_action_without_flash'
+  /usr/lib/ruby/1.8/action_controller/flash.rb:146:in `perform_action'
+  /usr/lib/ruby/1.8/action_controller/base.rb:532:in `send'
+  /usr/lib/ruby/1.8/action_controller/base.rb:532:in `process_without_filters'
+  /usr/lib/ruby/1.8/action_controller/filters.rb:606:in `process'
+  /usr/lib/ruby/1.8/action_controller/base.rb:391:in `process'
+  /usr/lib/ruby/1.8/action_controller/base.rb:386:in `call'
+  /usr/lib/ruby/1.8/action_controller/routing/route_set.rb:437:in `call'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:87:in `dispatch'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:121:in `_call'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+  /usr/lib/ruby/1.8/active_record/query_cache.rb:29:in `call'
+  /usr/lib/ruby/1.8/active_record/query_cache.rb:29:in `call'
+  /usr/lib/ruby/1.8/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+  /usr/lib/ruby/1.8/active_record/query_cache.rb:9:in `cache'
+  /usr/lib/ruby/1.8/active_record/query_cache.rb:28:in `call'
+  /usr/lib/ruby/1.8/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+  /usr/lib/ruby/1.8/action_controller/string_coercion.rb:25:in `call'
+  /usr/lib/ruby/1.8/rack/head.rb:9:in `call'
+  /usr/lib/ruby/1.8/rack/methodoverride.rb:24:in `call'
+  /usr/lib/ruby/1.8/action_controller/params_parser.rb:15:in `call'
+  /usr/lib/ruby/1.8/action_controller/session/cookie_store.rb:93:in `call'
+  /usr/lib/ruby/1.8/action_controller/failsafe.rb:26:in `call'
+  /usr/lib/ruby/1.8/rack/lock.rb:11:in `call'
+  /usr/lib/ruby/1.8/rack/lock.rb:11:in `synchronize'
+  /usr/lib/ruby/1.8/rack/lock.rb:11:in `call'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:114:in `call'
+  /usr/lib/ruby/1.8/action_controller/reloader.rb:34:in `run'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:108:in `call'
+  /usr/lib/ruby/1.8/rack/urlmap.rb:47:in `call'
+  /usr/lib/ruby/1.8/rack/urlmap.rb:41:in `each'
+  /usr/lib/ruby/1.8/rack/urlmap.rb:41:in `call'
+  /usr/lib/ruby/1.8/rack/content_length.rb:13:in `call'
+  /usr/lib/ruby/1.8/rack/chunked.rb:15:in `call'
+  /usr/lib/ruby/1.8/rack/handler/mongrel.rb:67:in `process'
+  /usr/lib/ruby/1.8/mongrel.rb:159:in `process_client'
+  /usr/lib/ruby/1.8/mongrel.rb:158:in `each'
+  /usr/lib/ruby/1.8/mongrel.rb:158:in `process_client'
+  /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+  /usr/lib/ruby/1.8/mongrel.rb:285:in `initialize'
+  /usr/lib/ruby/1.8/mongrel.rb:285:in `new'
+  /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+  /usr/lib/ruby/1.8/mongrel.rb:268:in `initialize'
+  /usr/lib/ruby/1.8/mongrel.rb:268:in `new'
+  /usr/lib/ruby/1.8/mongrel.rb:268:in `run'
+  /usr/lib/ruby/1.8/rack/handler/mongrel.rb:38:in `run'
+
+Rendered rescues/_trace (30.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ItemsController#new (for 127.0.0.1 at 2011-12-16 16:03:57) [GET]
+  Parameters: {"action"=>"new", "controller"=>"items"}
+  [4;36;1mItem Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `items`[0m
+Rendering template within layouts/items
+Rendering items/new
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://127.0.0.1/items/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ItemsController#index (for 127.0.0.1 at 2011-12-16 16:21:39) [GET]
+  Parameters: {"action"=>"index", "controller"=>"items"}
+  [4;35;1mItem Load (0.1ms)[0m   [0mSELECT * FROM `items` [0m
+Rendering template within layouts/items
+Rendering items/index
+Completed in 6ms (View: 1, DB: 0) | 200 OK [http://127.0.0.1/items]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2011-12-16 16:21:48) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+Rendering template within layouts/users
+Rendering users/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #9 of app/views/users/index.html.erb:
+6:     <th>Email</th>
+7:   </tr>
+8: 
+9: <% @users.each do |user| %>
+10:   <tr>
+11:     <td><%=h user.user_name %></td>
+12:     <td><%=h user.email %></td>
+
+    app/views/users/index.html.erb:9
+    /usr/lib/ruby/1.8/action_view/renderable.rb:34:in `send'
+    /usr/lib/ruby/1.8/action_view/renderable.rb:34:in `render'
+    /usr/lib/ruby/1.8/action_view/base.rb:306:in `with_template'
+    /usr/lib/ruby/1.8/action_view/renderable.rb:30:in `render'
+    /usr/lib/ruby/1.8/action_view/template.rb:205:in `render_template'
+    /usr/lib/ruby/1.8/action_view/base.rb:265:in `render'
+    /usr/lib/ruby/1.8/action_view/base.rb:348:in `_render_with_layout'
+    /usr/lib/ruby/1.8/action_view/base.rb:262:in `render'
+    /usr/lib/ruby/1.8/action_controller/base.rb:1250:in `render_for_file'
+    /usr/lib/ruby/1.8/action_controller/base.rb:945:in `render_without_benchmark'
+    /usr/lib/ruby/1.8/action_controller/benchmarking.rb:51:in `render'
+    /usr/lib/ruby/1.8/action_controller/benchmarking.rb:51:in `render'
+    /usr/lib/ruby/1.8/action_controller/base.rb:1326:in `default_render'
+    /usr/lib/ruby/1.8/action_controller/base.rb:1338:in `perform_action_without_filters'
+    /usr/lib/ruby/1.8/action_controller/filters.rb:617:in `call_filters'
+    /usr/lib/ruby/1.8/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /usr/lib/ruby/1.8/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/action_controller/rescue.rb:160:in `perform_action_without_flash'
+    /usr/lib/ruby/1.8/action_controller/flash.rb:146:in `perform_action'
+    /usr/lib/ruby/1.8/action_controller/base.rb:532:in `send'
+    /usr/lib/ruby/1.8/action_controller/base.rb:532:in `process_without_filters'
+    /usr/lib/ruby/1.8/action_controller/filters.rb:606:in `process'
+    /usr/lib/ruby/1.8/action_controller/base.rb:391:in `process'
+    /usr/lib/ruby/1.8/action_controller/base.rb:386:in `call'
+    /usr/lib/ruby/1.8/action_controller/routing/route_set.rb:437:in `call'
+    /usr/lib/ruby/1.8/action_controller/dispatcher.rb:87:in `dispatch'
+    /usr/lib/ruby/1.8/action_controller/dispatcher.rb:121:in `_call'
+    /usr/lib/ruby/1.8/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+    /usr/lib/ruby/1.8/active_record/query_cache.rb:29:in `call'
+    /usr/lib/ruby/1.8/active_record/query_cache.rb:29:in `call'
+    /usr/lib/ruby/1.8/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /usr/lib/ruby/1.8/active_record/query_cache.rb:9:in `cache'
+    /usr/lib/ruby/1.8/active_record/query_cache.rb:28:in `call'
+    /usr/lib/ruby/1.8/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /usr/lib/ruby/1.8/action_controller/string_coercion.rb:25:in `call'
+    /usr/lib/ruby/1.8/rack/head.rb:9:in `call'
+    /usr/lib/ruby/1.8/rack/methodoverride.rb:24:in `call'
+    /usr/lib/ruby/1.8/action_controller/params_parser.rb:15:in `call'
+    /usr/lib/ruby/1.8/action_controller/session/cookie_store.rb:93:in `call'
+    /usr/lib/ruby/1.8/action_controller/failsafe.rb:26:in `call'
+    /usr/lib/ruby/1.8/rack/lock.rb:11:in `call'
+    /usr/lib/ruby/1.8/rack/lock.rb:11:in `synchronize'
+    /usr/lib/ruby/1.8/rack/lock.rb:11:in `call'
+    /usr/lib/ruby/1.8/action_controller/dispatcher.rb:114:in `call'
+    /usr/lib/ruby/1.8/action_controller/reloader.rb:34:in `run'
+    /usr/lib/ruby/1.8/action_controller/dispatcher.rb:108:in `call'
+    /usr/lib/ruby/1.8/rack/urlmap.rb:47:in `call'
+    /usr/lib/ruby/1.8/rack/urlmap.rb:41:in `each'
+    /usr/lib/ruby/1.8/rack/urlmap.rb:41:in `call'
+    /usr/lib/ruby/1.8/rack/content_length.rb:13:in `call'
+    /usr/lib/ruby/1.8/rack/chunked.rb:15:in `call'
+    /usr/lib/ruby/1.8/rack/handler/mongrel.rb:67:in `process'
+    /usr/lib/ruby/1.8/mongrel.rb:159:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `each'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `run'
+    /usr/lib/ruby/1.8/rack/handler/mongrel.rb:38:in `run'
+
+Rendered rescues/_trace (26.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-12-16 16:22:20) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'ac938f90c6751c5f9a682d31fce91bfe36b13e31ae87fbf01a7e61fa832730f9c07b0a1be038304eed560bc633a597dd9fdea65ab912594c0a7b2d07a0c6769b') LIMIT 1[0m
+Completed in 55ms (View: 40, DB: 1) | 200 OK [http://127.0.0.1/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-12-16 16:25:15) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"password"=>"[FILTERED]", "email"=>"ram@gmail.com"}, "action"=>"new", "authenticity_token"=>"ZX/jaDKPeKA5FDWlaRg+Kf4JdT19JLuL/vyRPv1mRwk=", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'ac938f90c6751c5f9a682d31fce91bfe36b13e31ae87fbf01a7e61fa832730f9c07b0a1be038304eed560bc633a597dd9fdea65ab912594c0a7b2d07a0c6769b') LIMIT 1[0m
+Completed in 22ms (View: 9, DB: 1) | 200 OK [http://127.0.0.1/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-12-16 16:25:18) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"password"=>"[FILTERED]", "email"=>"ram@gmail.com"}, "action"=>"new", "authenticity_token"=>"ZX/jaDKPeKA5FDWlaRg+Kf4JdT19JLuL/vyRPv1mRwk=", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'ac938f90c6751c5f9a682d31fce91bfe36b13e31ae87fbf01a7e61fa832730f9c07b0a1be038304eed560bc633a597dd9fdea65ab912594c0a7b2d07a0c6769b') LIMIT 1[0m
+Completed in 26ms (View: 10, DB: 1) | 200 OK [http://127.0.0.1/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-12-16 16:25:19) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"password"=>"[FILTERED]", "email"=>"ram@gmail.com"}, "action"=>"new", "authenticity_token"=>"ZX/jaDKPeKA5FDWlaRg+Kf4JdT19JLuL/vyRPv1mRwk=", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'ac938f90c6751c5f9a682d31fce91bfe36b13e31ae87fbf01a7e61fa832730f9c07b0a1be038304eed560bc633a597dd9fdea65ab912594c0a7b2d07a0c6769b') LIMIT 1[0m
+Completed in 17ms (View: 7, DB: 1) | 200 OK [http://127.0.0.1/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-12-16 16:25:19) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"password"=>"[FILTERED]", "email"=>"ram@gmail.com"}, "action"=>"new", "authenticity_token"=>"ZX/jaDKPeKA5FDWlaRg+Kf4JdT19JLuL/vyRPv1mRwk=", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'ac938f90c6751c5f9a682d31fce91bfe36b13e31ae87fbf01a7e61fa832730f9c07b0a1be038304eed560bc633a597dd9fdea65ab912594c0a7b2d07a0c6769b') LIMIT 1[0m
+Completed in 24ms (View: 13, DB: 1) | 200 OK [http://127.0.0.1/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-12-16 16:25:19) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"password"=>"[FILTERED]", "email"=>"ram@gmail.com"}, "action"=>"new", "authenticity_token"=>"ZX/jaDKPeKA5FDWlaRg+Kf4JdT19JLuL/vyRPv1mRwk=", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'ac938f90c6751c5f9a682d31fce91bfe36b13e31ae87fbf01a7e61fa832730f9c07b0a1be038304eed560bc633a597dd9fdea65ab912594c0a7b2d07a0c6769b') LIMIT 1[0m
+Completed in 22ms (View: 12, DB: 1) | 200 OK [http://127.0.0.1/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-12-16 16:25:19) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"password"=>"[FILTERED]", "email"=>"ram@gmail.com"}, "action"=>"new", "authenticity_token"=>"ZX/jaDKPeKA5FDWlaRg+Kf4JdT19JLuL/vyRPv1mRwk=", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'ac938f90c6751c5f9a682d31fce91bfe36b13e31ae87fbf01a7e61fa832730f9c07b0a1be038304eed560bc633a597dd9fdea65ab912594c0a7b2d07a0c6769b') LIMIT 1[0m
+Completed in 16ms (View: 7, DB: 1) | 200 OK [http://127.0.0.1/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-12-16 16:25:20) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"password"=>"[FILTERED]", "email"=>"ram@gmail.com"}, "action"=>"new", "authenticity_token"=>"ZX/jaDKPeKA5FDWlaRg+Kf4JdT19JLuL/vyRPv1mRwk=", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'ac938f90c6751c5f9a682d31fce91bfe36b13e31ae87fbf01a7e61fa832730f9c07b0a1be038304eed560bc633a597dd9fdea65ab912594c0a7b2d07a0c6769b') LIMIT 1[0m
+Completed in 72ms (View: 63, DB: 1) | 200 OK [http://127.0.0.1/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2011-12-16 16:25:24) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'ac938f90c6751c5f9a682d31fce91bfe36b13e31ae87fbf01a7e61fa832730f9c07b0a1be038304eed560bc633a597dd9fdea65ab912594c0a7b2d07a0c6769b') LIMIT 1[0m
+Redirected to http://127.0.0.1:3000/
+Completed in 18ms (DB: 1) | 302 Found [http://127.0.0.1/logout]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-12-16 16:25:25) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 16ms (View: 6, DB: 1) | 200 OK [http://127.0.0.1/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-12-16 16:25:27) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"password"=>"[FILTERED]", "email"=>"ram@gmail.com"}, "action"=>"new", "authenticity_token"=>"ZX/jaDKPeKA5FDWlaRg+Kf4JdT19JLuL/vyRPv1mRwk=", "controller"=>"user_sessions"}
+  [4;35;1mUser Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 13ms (View: 4, DB: 1) | 200 OK [http://127.0.0.1/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-12-16 16:25:36) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"password"=>"[FILTERED]", "email"=>"ram@gmail.com"}, "action"=>"new", "authenticity_token"=>"ZX/jaDKPeKA5FDWlaRg+Kf4JdT19JLuL/vyRPv1mRwk=", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 13ms (View: 4, DB: 1) | 200 OK [http://127.0.0.1/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-12-16 16:25:43) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"password"=>"[FILTERED]", "email"=>"ram@gmail.com"}, "action"=>"new", "authenticity_token"=>"ZX/jaDKPeKA5FDWlaRg+Kf4JdT19JLuL/vyRPv1mRwk=", "controller"=>"user_sessions"}
+  [4;35;1mUser Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 13ms (View: 5, DB: 1) | 200 OK [http://127.0.0.1/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-12-16 16:25:43) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"password"=>"[FILTERED]", "email"=>"ram@gmail.com"}, "action"=>"new", "authenticity_token"=>"ZX/jaDKPeKA5FDWlaRg+Kf4JdT19JLuL/vyRPv1mRwk=", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 14ms (View: 4, DB: 1) | 200 OK [http://127.0.0.1/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-12-16 16:25:44) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"password"=>"[FILTERED]", "email"=>"ram@gmail.com"}, "action"=>"new", "authenticity_token"=>"ZX/jaDKPeKA5FDWlaRg+Kf4JdT19JLuL/vyRPv1mRwk=", "controller"=>"user_sessions"}
+  [4;35;1mUser Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 18ms (View: 7, DB: 1) | 200 OK [http://127.0.0.1/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-12-16 16:25:46) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 18ms (View: 6, DB: 1) | 200 OK [http://127.0.0.1/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-12-16 16:25:47) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;35;1mUser Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 18ms (View: 6, DB: 1) | 200 OK [http://127.0.0.1/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-12-16 16:25:47) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 19ms (View: 6, DB: 1) | 200 OK [http://127.0.0.1/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-12-16 16:31:30) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"password"=>"[FILTERED]", "email"=>"ram@gmail.com"}, "action"=>"new", "authenticity_token"=>"ZX/jaDKPeKA5FDWlaRg+Kf4JdT19JLuL/vyRPv1mRwk=", "controller"=>"user_sessions"}
+  [4;35;1mUser Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 18ms (View: 8, DB: 1) | 200 OK [http://127.0.0.1/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-12-16 16:31:31) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"password"=>"[FILTERED]", "email"=>"ram@gmail.com"}, "action"=>"new", "authenticity_token"=>"ZX/jaDKPeKA5FDWlaRg+Kf4JdT19JLuL/vyRPv1mRwk=", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 17ms (View: 6, DB: 1) | 200 OK [http://127.0.0.1/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-12-16 16:31:31) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"password"=>"[FILTERED]", "email"=>"ram@gmail.com"}, "action"=>"new", "authenticity_token"=>"ZX/jaDKPeKA5FDWlaRg+Kf4JdT19JLuL/vyRPv1mRwk=", "controller"=>"user_sessions"}
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 18ms (View: 7, DB: 1) | 200 OK [http://127.0.0.1/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-12-16 16:31:32) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"password"=>"[FILTERED]", "email"=>"ram@gmail.com"}, "action"=>"new", "authenticity_token"=>"ZX/jaDKPeKA5FDWlaRg+Kf4JdT19JLuL/vyRPv1mRwk=", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 14ms (View: 4, DB: 1) | 200 OK [http://127.0.0.1/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-12-16 16:31:32) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"password"=>"[FILTERED]", "email"=>"ram@gmail.com"}, "action"=>"new", "authenticity_token"=>"ZX/jaDKPeKA5FDWlaRg+Kf4JdT19JLuL/vyRPv1mRwk=", "controller"=>"user_sessions"}
+  [4;35;1mUser Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 16ms (View: 7, DB: 1) | 200 OK [http://127.0.0.1/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-12-16 16:31:32) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"password"=>"[FILTERED]", "email"=>"ram@gmail.com"}, "action"=>"new", "authenticity_token"=>"ZX/jaDKPeKA5FDWlaRg+Kf4JdT19JLuL/vyRPv1mRwk=", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 65ms (View: 4, DB: 1) | 200 OK [http://127.0.0.1/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-12-16 16:31:32) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"password"=>"[FILTERED]", "email"=>"ram@gmail.com"}, "action"=>"new", "authenticity_token"=>"ZX/jaDKPeKA5FDWlaRg+Kf4JdT19JLuL/vyRPv1mRwk=", "controller"=>"user_sessions"}
+  [4;35;1mUser Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 19ms (View: 5, DB: 1) | 200 OK [http://127.0.0.1/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-12-16 16:31:32) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"password"=>"[FILTERED]", "email"=>"ram@gmail.com"}, "action"=>"new", "authenticity_token"=>"ZX/jaDKPeKA5FDWlaRg+Kf4JdT19JLuL/vyRPv1mRwk=", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 19ms (View: 8, DB: 1) | 200 OK [http://127.0.0.1/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-12-16 16:31:32) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"password"=>"[FILTERED]", "email"=>"ram@gmail.com"}, "action"=>"new", "authenticity_token"=>"ZX/jaDKPeKA5FDWlaRg+Kf4JdT19JLuL/vyRPv1mRwk=", "controller"=>"user_sessions"}
+  [4;35;1mUser Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 18ms (View: 8, DB: 1) | 200 OK [http://127.0.0.1/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-12-16 16:31:33) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"password"=>"[FILTERED]", "email"=>"ram@gmail.com"}, "action"=>"new", "authenticity_token"=>"ZX/jaDKPeKA5FDWlaRg+Kf4JdT19JLuL/vyRPv1mRwk=", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 13ms (View: 4, DB: 1) | 200 OK [http://127.0.0.1/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-12-16 16:33:29) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"password"=>"[FILTERED]", "email"=>"ram@gmail.com"}, "action"=>"new", "authenticity_token"=>"ZX/jaDKPeKA5FDWlaRg+Kf4JdT19JLuL/vyRPv1mRwk=", "controller"=>"user_sessions"}
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 73ms (View: 60, DB: 1) | 200 OK [http://127.0.0.1/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-12-16 16:33:30) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"password"=>"[FILTERED]", "email"=>"ram@gmail.com"}, "action"=>"new", "authenticity_token"=>"ZX/jaDKPeKA5FDWlaRg+Kf4JdT19JLuL/vyRPv1mRwk=", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 25ms (View: 8, DB: 1) | 200 OK [http://127.0.0.1/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-12-16 16:33:30) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"password"=>"[FILTERED]", "email"=>"ram@gmail.com"}, "action"=>"new", "authenticity_token"=>"ZX/jaDKPeKA5FDWlaRg+Kf4JdT19JLuL/vyRPv1mRwk=", "controller"=>"user_sessions"}
+  [4;35;1mUser Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 17ms (View: 8, DB: 1) | 200 OK [http://127.0.0.1/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-12-16 16:33:30) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"password"=>"[FILTERED]", "email"=>"ram@gmail.com"}, "action"=>"new", "authenticity_token"=>"ZX/jaDKPeKA5FDWlaRg+Kf4JdT19JLuL/vyRPv1mRwk=", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 18ms (View: 7, DB: 1) | 200 OK [http://127.0.0.1/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-12-16 16:33:31) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"password"=>"[FILTERED]", "email"=>"ram@gmail.com"}, "action"=>"new", "authenticity_token"=>"ZX/jaDKPeKA5FDWlaRg+Kf4JdT19JLuL/vyRPv1mRwk=", "controller"=>"user_sessions"}
+  [4;35;1mUser Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 15ms (View: 7, DB: 1) | 200 OK [http://127.0.0.1/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-12-16 16:33:31) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"password"=>"[FILTERED]", "email"=>"ram@gmail.com"}, "action"=>"new", "authenticity_token"=>"ZX/jaDKPeKA5FDWlaRg+Kf4JdT19JLuL/vyRPv1mRwk=", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 20ms (View: 8, DB: 1) | 200 OK [http://127.0.0.1/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-12-16 16:33:31) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"password"=>"[FILTERED]", "email"=>"ram@gmail.com"}, "action"=>"new", "authenticity_token"=>"ZX/jaDKPeKA5FDWlaRg+Kf4JdT19JLuL/vyRPv1mRwk=", "controller"=>"user_sessions"}
+  [4;35;1mUser Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 15ms (View: 4, DB: 1) | 200 OK [http://127.0.0.1/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-12-16 16:33:31) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"password"=>"[FILTERED]", "email"=>"ram@gmail.com"}, "action"=>"new", "authenticity_token"=>"ZX/jaDKPeKA5FDWlaRg+Kf4JdT19JLuL/vyRPv1mRwk=", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 14ms (View: 4, DB: 1) | 200 OK [http://127.0.0.1/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-12-16 16:33:32) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"password"=>"[FILTERED]", "email"=>"ram@gmail.com"}, "action"=>"new", "authenticity_token"=>"ZX/jaDKPeKA5FDWlaRg+Kf4JdT19JLuL/vyRPv1mRwk=", "controller"=>"user_sessions"}
+  [4;35;1mUser Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 20ms (View: 5, DB: 1) | 200 OK [http://127.0.0.1/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-12-16 16:33:32) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"password"=>"[FILTERED]", "email"=>"ram@gmail.com"}, "action"=>"new", "authenticity_token"=>"ZX/jaDKPeKA5FDWlaRg+Kf4JdT19JLuL/vyRPv1mRwk=", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 13ms (View: 4, DB: 1) | 200 OK [http://127.0.0.1/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-12-16 16:33:33) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"password"=>"[FILTERED]", "email"=>"ram@gmail.com"}, "action"=>"new", "authenticity_token"=>"ZX/jaDKPeKA5FDWlaRg+Kf4JdT19JLuL/vyRPv1mRwk=", "controller"=>"user_sessions"}
+  [4;35;1mUser Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 17ms (View: 7, DB: 1) | 200 OK [http://127.0.0.1/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-12-16 16:33:33) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"password"=>"[FILTERED]", "email"=>"ram@gmail.com"}, "action"=>"new", "authenticity_token"=>"ZX/jaDKPeKA5FDWlaRg+Kf4JdT19JLuL/vyRPv1mRwk=", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 63ms (View: 4, DB: 1) | 200 OK [http://127.0.0.1/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-12-16 16:34:21) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"password"=>"[FILTERED]", "email"=>"ram@gmail.com"}, "action"=>"new", "authenticity_token"=>"ZX/jaDKPeKA5FDWlaRg+Kf4JdT19JLuL/vyRPv1mRwk=", "controller"=>"user_sessions"}
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 21ms (View: 8, DB: 1) | 200 OK [http://127.0.0.1/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-12-16 16:34:25) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 20ms (View: 8, DB: 2) | 200 OK [http://127.0.0.1/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-12-16 16:34:38) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"password"=>"[FILTERED]", "email"=>"su@gmail.com"}, "action"=>"new", "authenticity_token"=>"ZX/jaDKPeKA5FDWlaRg+Kf4JdT19JLuL/vyRPv1mRwk=", "controller"=>"user_sessions"}
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 21ms (View: 7, DB: 1) | 200 OK [http://127.0.0.1/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-12-16 16:34:40) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"password"=>"[FILTERED]", "email"=>"ram@gmail.com"}, "action"=>"new", "authenticity_token"=>"ZX/jaDKPeKA5FDWlaRg+Kf4JdT19JLuL/vyRPv1mRwk=", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 20ms (View: 8, DB: 1) | 200 OK [http://127.0.0.1/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2011-12-16 16:34:42) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/users
+Rendering users/new
+Rendered users/_form (4.0ms)
+Completed in 68ms (View: 67, DB: 0) | 200 OK [http://127.0.0.1/users/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2011-12-16 16:35:01) [POST]
+  Parameters: {"commit"=>"Submit", "action"=>"create", "authenticity_token"=>"ZX/jaDKPeKA5FDWlaRg+Kf4JdT19JLuL/vyRPv1mRwk=", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "user_name"=>"admin", "password"=>"[FILTERED]", "email"=>"admin@gmail.com"}}
+  [4;35;1mUser Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`user_name` = BINARY 'admin') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'admin@gmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'admin@gmail.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'd19b5df8af0039bf438178524135726ffe73d6f8a8918b80f5ba4d03f51691be6381a2a028b428e1b003fd0a9eaa79223e00fb64dbec4f5b084318dc43acb27a') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/users
+Rendering users/new
+Rendered users/_form (8.1ms)
+Completed in 109ms (View: 10, DB: 2) | 200 OK [http://127.0.0.1/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2011-12-16 16:35:15) [POST]
+  Parameters: {"commit"=>"Submit", "action"=>"create", "authenticity_token"=>"ZX/jaDKPeKA5FDWlaRg+Kf4JdT19JLuL/vyRPv1mRwk=", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "user_name"=>"su", "password"=>"[FILTERED]", "email"=>"super@gmail.com"}}
+  [4;36;1mUser Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`user_name` = BINARY 'su') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'super@gmail.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'super@gmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'f8361ba012894498b204f43837ba98ccb012bb9eaf28061fda42d935c55234c7c71cd930d53ea2e3cde14d4eb180e498fb6b51a5db55c95c4aa272a167b84ad0') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+Rendering template within layouts/users
+Rendering users/new
+Rendered users/_form (6.0ms)
+Completed in 23ms (View: 7, DB: 2) | 200 OK [http://127.0.0.1/users]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2011-12-16 16:35:23) [POST]
+  Parameters: {"commit"=>"Submit", "action"=>"create", "authenticity_token"=>"ZX/jaDKPeKA5FDWlaRg+Kf4JdT19JLuL/vyRPv1mRwk=", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "user_name"=>"super", "password"=>"[FILTERED]", "email"=>"super@gmail.com"}}
+  [4;35;1mUser Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`user_name` = BINARY 'super') LIMIT 1[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'super@gmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'super@gmail.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '863d6dcc4dc0f8b48892b220834364cf4524aa350c75bd6c82bb8523aaaec75a31ba4df8709676dbcb5fb46fb19176e776fb644a7d47e0bf17d45166131bed55') LIMIT 1[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `password_salt`, `user_name`, `persistence_token`, `email`) VALUES('2011-12-16 11:05:23', '3a471cd15b48150a9eb3edf8c54c2842b13f9e9f66ebb2b0ab3d57f901016668a22f25f4733ca1911b86c39884c090dda1c0b239bb2f74321867a69bbca9c84f', '2011-12-16 11:05:23', 'Mz9N6Lca18oSWrN4lDPN', 'super', '863d6dcc4dc0f8b48892b220834364cf4524aa350c75bd6c82bb8523aaaec75a31ba4df8709676dbcb5fb46fb19176e776fb644a7d47e0bf17d45166131bed55', 'super@gmail.com')[0m
+  [4;36;1mSQL (68.4ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/items
+Completed in 95ms (DB: 70) | 302 Found [http://127.0.0.1/users]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ItemsController#index (for 127.0.0.1 at 2011-12-16 16:35:23) [GET]
+  Parameters: {"action"=>"index", "controller"=>"items"}
+  [4;35;1mItem Load (0.1ms)[0m   [0mSELECT * FROM `items` [0m
+Rendering template within layouts/items
+Rendering items/index
+Completed in 14ms (View: 10, DB: 0) | 200 OK [http://127.0.0.1/items]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ItemsController#new (for 127.0.0.1 at 2011-12-16 16:35:27) [GET]
+  Parameters: {"action"=>"new", "controller"=>"items"}
+  [4;36;1mItem Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `items`[0m
+Rendering template within layouts/items
+Rendering items/new
+Completed in 20ms (View: 14, DB: 1) | 200 OK [http://127.0.0.1/items/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ItemsController#create (for 127.0.0.1 at 2011-12-16 16:38:22) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"ZX/jaDKPeKA5FDWlaRg+Kf4JdT19JLuL/vyRPv1mRwk=", "controller"=>"items", "item"=>{"item_list"=>"all", "sale_status"=>"inactive", "item_choice"=>"1", "item_description"=>"brand new", "item_name"=>"ipod", "user_id"=>"amit"}}
+  [4;35;1mItem Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `items`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mItem Create (0.3ms)[0m   [0mINSERT INTO `items` (`sale_status`, `item_list`, `created_at`, `item_choice`, `updated_at`, `item_name`, `item_description`, `user_id`) VALUES('inactive', 'all', '2011-12-16 11:08:22', 1, '2011-12-16 11:08:22', 'ipod', 'brand new', 0)[0m
+  [4;36;1mSQL (54.9ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/items/1
+Completed in 67ms (DB: 56) | 302 Found [http://127.0.0.1/items]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ItemsController#show (for 127.0.0.1 at 2011-12-16 16:38:22) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"items"}
+  [4;35;1mItem Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `items`[0m
+  [4;36;1mItem Load (0.2ms)[0m   [0;1mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+Rendering template within layouts/items
+Rendering items/show
+Completed in 13ms (View: 7, DB: 1) | 200 OK [http://127.0.0.1/items/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ItemsController#index (for 127.0.0.1 at 2011-12-16 16:38:48) [GET]
+  Parameters: {"action"=>"index", "controller"=>"items"}
+  [4;35;1mItem Load (0.4ms)[0m   [0mSELECT * FROM `items` [0m
+Rendering template within layouts/items
+Rendering items/index
+  [4;36;1mItem Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `items`[0m
+Completed in 19ms (View: 10, DB: 2) | 200 OK [http://127.0.0.1/items]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20111216053519)
+Migrating to CreateItems (20111216070852)
+Migrating to CreateOffers (20111216071109)
+Migrating to CreateRecentActivities (20111216071227)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW FIELDS FROM `offers`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mdescribe `offers`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `offers`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW FIELDS FROM `recent_activities`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mdescribe `recent_activities`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `recent_activities`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20111216053519)
+Migrating to CreateItems (20111216070852)
+Migrating to CreateOffers (20111216071109)
+Migrating to CreateRecentActivities (20111216071227)
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW FIELDS FROM `offers`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mdescribe `offers`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `offers`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW FIELDS FROM `recent_activities`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mdescribe `recent_activities`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `recent_activities`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20111216053519)
+Migrating to CreateItems (20111216070852)
+Migrating to CreateOffers (20111216071109)
+Migrating to CreateRecentActivities (20111216071227)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW FIELDS FROM `offers`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mdescribe `offers`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `offers`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW FIELDS FROM `recent_activities`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mdescribe `recent_activities`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `recent_activities`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20111216053519)
+Migrating to CreateItems (20111216070852)
+Migrating to CreateOffers (20111216071109)
+Migrating to CreateRecentActivities (20111216071227)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW FIELDS FROM `offers`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mdescribe `offers`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `offers`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW FIELDS FROM `recent_activities`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mdescribe `recent_activities`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `recent_activities`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20111216053519)
+Migrating to CreateItems (20111216070852)
+Migrating to CreateOffers (20111216071109)
+Migrating to CreateRecentActivities (20111216071227)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW FIELDS FROM `offers`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mdescribe `offers`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `offers`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW FIELDS FROM `recent_activities`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mdescribe `recent_activities`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `recent_activities`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20111216053519)
+Migrating to CreateItems (20111216070852)
+Migrating to CreateOffers (20111216071109)
+Migrating to CreateRecentActivities (20111216071227)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW FIELDS FROM `offers`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mdescribe `offers`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `offers`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW FIELDS FROM `recent_activities`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mdescribe `recent_activities`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `recent_activities`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ItemsController#index (for 127.0.0.1 at 2011-12-16 16:48:21) [GET]
+  Parameters: {"action"=>"index", "controller"=>"items"}
+  [4;35;1mItem Load (0.0ms)[0m   [0mMysql::Error: Table 'TradeYa_development.items' doesn't exist: SELECT * FROM `items` [0m
+
+ActiveRecord::StatementInvalid (Mysql::Error: Table 'TradeYa_development.items' doesn't exist: SELECT * FROM `items` ):
+  /usr/lib/ruby/1.8/active_record/connection_adapters/abstract_adapter.rb:219:in `log'
+  /usr/lib/ruby/1.8/active_record/connection_adapters/mysql_adapter.rb:323:in `execute'
+  /usr/lib/ruby/1.8/active_record/connection_adapters/mysql_adapter.rb:608:in `select'
+  /usr/lib/ruby/1.8/active_record/connection_adapters/abstract/database_statements.rb:7:in `select_all_without_query_cache'
+  /usr/lib/ruby/1.8/active_record/connection_adapters/abstract/query_cache.rb:60:in `select_all'
+  /usr/lib/ruby/1.8/active_record/connection_adapters/abstract/query_cache.rb:81:in `cache_sql'
+  /usr/lib/ruby/1.8/active_record/connection_adapters/abstract/query_cache.rb:60:in `select_all'
+  /usr/lib/ruby/1.8/active_record/base.rb:661:in `find_by_sql'
+  /usr/lib/ruby/1.8/active_record/base.rb:1548:in `find_every'
+  /usr/lib/ruby/1.8/active_record/base.rb:615:in `find'
+  /usr/lib/ruby/1.8/active_record/base.rb:635:in `all'
+  app/controllers/items_controller.rb:5:in `index'
+  /usr/lib/ruby/1.8/action_controller/base.rb:1331:in `send'
+  /usr/lib/ruby/1.8/action_controller/base.rb:1331:in `perform_action_without_filters'
+  /usr/lib/ruby/1.8/action_controller/filters.rb:617:in `call_filters'
+  /usr/lib/ruby/1.8/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+  /usr/lib/ruby/1.8/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+  /usr/lib/ruby/1.8/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+  /usr/lib/ruby/1.8/action_controller/rescue.rb:160:in `perform_action_without_flash'
+  /usr/lib/ruby/1.8/action_controller/flash.rb:146:in `perform_action'
+  /usr/lib/ruby/1.8/action_controller/base.rb:532:in `send'
+  /usr/lib/ruby/1.8/action_controller/base.rb:532:in `process_without_filters'
+  /usr/lib/ruby/1.8/action_controller/filters.rb:606:in `process'
+  /usr/lib/ruby/1.8/action_controller/base.rb:391:in `process'
+  /usr/lib/ruby/1.8/action_controller/base.rb:386:in `call'
+  /usr/lib/ruby/1.8/action_controller/routing/route_set.rb:437:in `call'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:87:in `dispatch'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:121:in `_call'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+  /usr/lib/ruby/1.8/active_record/query_cache.rb:29:in `call'
+  /usr/lib/ruby/1.8/active_record/query_cache.rb:29:in `call'
+  /usr/lib/ruby/1.8/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+  /usr/lib/ruby/1.8/active_record/query_cache.rb:9:in `cache'
+  /usr/lib/ruby/1.8/active_record/query_cache.rb:28:in `call'
+  /usr/lib/ruby/1.8/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+  /usr/lib/ruby/1.8/action_controller/string_coercion.rb:25:in `call'
+  /usr/lib/ruby/1.8/rack/head.rb:9:in `call'
+  /usr/lib/ruby/1.8/rack/methodoverride.rb:24:in `call'
+  /usr/lib/ruby/1.8/action_controller/params_parser.rb:15:in `call'
+  /usr/lib/ruby/1.8/action_controller/session/cookie_store.rb:93:in `call'
+  /usr/lib/ruby/1.8/action_controller/failsafe.rb:26:in `call'
+  /usr/lib/ruby/1.8/rack/lock.rb:11:in `call'
+  /usr/lib/ruby/1.8/rack/lock.rb:11:in `synchronize'
+  /usr/lib/ruby/1.8/rack/lock.rb:11:in `call'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:114:in `call'
+  /usr/lib/ruby/1.8/action_controller/reloader.rb:34:in `run'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:108:in `call'
+  /usr/lib/ruby/1.8/rack/urlmap.rb:47:in `call'
+  /usr/lib/ruby/1.8/rack/urlmap.rb:41:in `each'
+  /usr/lib/ruby/1.8/rack/urlmap.rb:41:in `call'
+  /usr/lib/ruby/1.8/rack/content_length.rb:13:in `call'
+  /usr/lib/ruby/1.8/rack/chunked.rb:15:in `call'
+  /usr/lib/ruby/1.8/rack/handler/mongrel.rb:67:in `process'
+  /usr/lib/ruby/1.8/mongrel.rb:159:in `process_client'
+  /usr/lib/ruby/1.8/mongrel.rb:158:in `each'
+  /usr/lib/ruby/1.8/mongrel.rb:158:in `process_client'
+  /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+  /usr/lib/ruby/1.8/mongrel.rb:285:in `initialize'
+  /usr/lib/ruby/1.8/mongrel.rb:285:in `new'
+  /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+  /usr/lib/ruby/1.8/mongrel.rb:268:in `initialize'
+  /usr/lib/ruby/1.8/mongrel.rb:268:in `new'
+  /usr/lib/ruby/1.8/mongrel.rb:268:in `run'
+  /usr/lib/ruby/1.8/rack/handler/mongrel.rb:38:in `run'
+
+Rendered rescues/_trace (20.3ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ItemsController#index (for 127.0.0.1 at 2011-12-16 16:48:21) [GET]
+  Parameters: {"action"=>"index", "controller"=>"items"}
+  [4;36;1mItem Load (0.0ms)[0m   [0;1mMysql::Error: Table 'TradeYa_development.items' doesn't exist: SELECT * FROM `items` [0m
+
+ActiveRecord::StatementInvalid (Mysql::Error: Table 'TradeYa_development.items' doesn't exist: SELECT * FROM `items` ):
+  /usr/lib/ruby/1.8/active_record/connection_adapters/abstract_adapter.rb:219:in `log'
+  /usr/lib/ruby/1.8/active_record/connection_adapters/mysql_adapter.rb:323:in `execute'
+  /usr/lib/ruby/1.8/active_record/connection_adapters/mysql_adapter.rb:608:in `select'
+  /usr/lib/ruby/1.8/active_record/connection_adapters/abstract/database_statements.rb:7:in `select_all_without_query_cache'
+  /usr/lib/ruby/1.8/active_record/connection_adapters/abstract/query_cache.rb:60:in `select_all'
+  /usr/lib/ruby/1.8/active_record/connection_adapters/abstract/query_cache.rb:81:in `cache_sql'
+  /usr/lib/ruby/1.8/active_record/connection_adapters/abstract/query_cache.rb:60:in `select_all'
+  /usr/lib/ruby/1.8/active_record/base.rb:661:in `find_by_sql'
+  /usr/lib/ruby/1.8/active_record/base.rb:1548:in `find_every'
+  /usr/lib/ruby/1.8/active_record/base.rb:615:in `find'
+  /usr/lib/ruby/1.8/active_record/base.rb:635:in `all'
+  app/controllers/items_controller.rb:5:in `index'
+  /usr/lib/ruby/1.8/action_controller/base.rb:1331:in `send'
+  /usr/lib/ruby/1.8/action_controller/base.rb:1331:in `perform_action_without_filters'
+  /usr/lib/ruby/1.8/action_controller/filters.rb:617:in `call_filters'
+  /usr/lib/ruby/1.8/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+  /usr/lib/ruby/1.8/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+  /usr/lib/ruby/1.8/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+  /usr/lib/ruby/1.8/action_controller/rescue.rb:160:in `perform_action_without_flash'
+  /usr/lib/ruby/1.8/action_controller/flash.rb:146:in `perform_action'
+  /usr/lib/ruby/1.8/action_controller/base.rb:532:in `send'
+  /usr/lib/ruby/1.8/action_controller/base.rb:532:in `process_without_filters'
+  /usr/lib/ruby/1.8/action_controller/filters.rb:606:in `process'
+  /usr/lib/ruby/1.8/action_controller/base.rb:391:in `process'
+  /usr/lib/ruby/1.8/action_controller/base.rb:386:in `call'
+  /usr/lib/ruby/1.8/action_controller/routing/route_set.rb:437:in `call'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:87:in `dispatch'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:121:in `_call'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+  /usr/lib/ruby/1.8/active_record/query_cache.rb:29:in `call'
+  /usr/lib/ruby/1.8/active_record/query_cache.rb:29:in `call'
+  /usr/lib/ruby/1.8/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+  /usr/lib/ruby/1.8/active_record/query_cache.rb:9:in `cache'
+  /usr/lib/ruby/1.8/active_record/query_cache.rb:28:in `call'
+  /usr/lib/ruby/1.8/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+  /usr/lib/ruby/1.8/action_controller/string_coercion.rb:25:in `call'
+  /usr/lib/ruby/1.8/rack/head.rb:9:in `call'
+  /usr/lib/ruby/1.8/rack/methodoverride.rb:24:in `call'
+  /usr/lib/ruby/1.8/action_controller/params_parser.rb:15:in `call'
+  /usr/lib/ruby/1.8/action_controller/session/cookie_store.rb:93:in `call'
+  /usr/lib/ruby/1.8/action_controller/failsafe.rb:26:in `call'
+  /usr/lib/ruby/1.8/rack/lock.rb:11:in `call'
+  /usr/lib/ruby/1.8/rack/lock.rb:11:in `synchronize'
+  /usr/lib/ruby/1.8/rack/lock.rb:11:in `call'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:114:in `call'
+  /usr/lib/ruby/1.8/action_controller/reloader.rb:34:in `run'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:108:in `call'
+  /usr/lib/ruby/1.8/rack/urlmap.rb:47:in `call'
+  /usr/lib/ruby/1.8/rack/urlmap.rb:41:in `each'
+  /usr/lib/ruby/1.8/rack/urlmap.rb:41:in `call'
+  /usr/lib/ruby/1.8/rack/content_length.rb:13:in `call'
+  /usr/lib/ruby/1.8/rack/chunked.rb:15:in `call'
+  /usr/lib/ruby/1.8/rack/handler/mongrel.rb:67:in `process'
+  /usr/lib/ruby/1.8/mongrel.rb:159:in `process_client'
+  /usr/lib/ruby/1.8/mongrel.rb:158:in `each'
+  /usr/lib/ruby/1.8/mongrel.rb:158:in `process_client'
+  /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+  /usr/lib/ruby/1.8/mongrel.rb:285:in `initialize'
+  /usr/lib/ruby/1.8/mongrel.rb:285:in `new'
+  /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+  /usr/lib/ruby/1.8/mongrel.rb:268:in `initialize'
+  /usr/lib/ruby/1.8/mongrel.rb:268:in `new'
+  /usr/lib/ruby/1.8/mongrel.rb:268:in `run'
+  /usr/lib/ruby/1.8/rack/handler/mongrel.rb:38:in `run'
+
+Rendered rescues/_trace (27.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ItemsController#index (for 127.0.0.1 at 2011-12-16 16:48:22) [GET]
+  Parameters: {"action"=>"index", "controller"=>"items"}
+  [4;35;1mItem Load (0.0ms)[0m   [0mMysql::Error: Table 'TradeYa_development.items' doesn't exist: SELECT * FROM `items` [0m
+
+ActiveRecord::StatementInvalid (Mysql::Error: Table 'TradeYa_development.items' doesn't exist: SELECT * FROM `items` ):
+  /usr/lib/ruby/1.8/active_record/connection_adapters/abstract_adapter.rb:219:in `log'
+  /usr/lib/ruby/1.8/active_record/connection_adapters/mysql_adapter.rb:323:in `execute'
+  /usr/lib/ruby/1.8/active_record/connection_adapters/mysql_adapter.rb:608:in `select'
+  /usr/lib/ruby/1.8/active_record/connection_adapters/abstract/database_statements.rb:7:in `select_all_without_query_cache'
+  /usr/lib/ruby/1.8/active_record/connection_adapters/abstract/query_cache.rb:60:in `select_all'
+  /usr/lib/ruby/1.8/active_record/connection_adapters/abstract/query_cache.rb:81:in `cache_sql'
+  /usr/lib/ruby/1.8/active_record/connection_adapters/abstract/query_cache.rb:60:in `select_all'
+  /usr/lib/ruby/1.8/active_record/base.rb:661:in `find_by_sql'
+  /usr/lib/ruby/1.8/active_record/base.rb:1548:in `find_every'
+  /usr/lib/ruby/1.8/active_record/base.rb:615:in `find'
+  /usr/lib/ruby/1.8/active_record/base.rb:635:in `all'
+  app/controllers/items_controller.rb:5:in `index'
+  /usr/lib/ruby/1.8/action_controller/base.rb:1331:in `send'
+  /usr/lib/ruby/1.8/action_controller/base.rb:1331:in `perform_action_without_filters'
+  /usr/lib/ruby/1.8/action_controller/filters.rb:617:in `call_filters'
+  /usr/lib/ruby/1.8/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+  /usr/lib/ruby/1.8/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+  /usr/lib/ruby/1.8/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+  /usr/lib/ruby/1.8/action_controller/rescue.rb:160:in `perform_action_without_flash'
+  /usr/lib/ruby/1.8/action_controller/flash.rb:146:in `perform_action'
+  /usr/lib/ruby/1.8/action_controller/base.rb:532:in `send'
+  /usr/lib/ruby/1.8/action_controller/base.rb:532:in `process_without_filters'
+  /usr/lib/ruby/1.8/action_controller/filters.rb:606:in `process'
+  /usr/lib/ruby/1.8/action_controller/base.rb:391:in `process'
+  /usr/lib/ruby/1.8/action_controller/base.rb:386:in `call'
+  /usr/lib/ruby/1.8/action_controller/routing/route_set.rb:437:in `call'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:87:in `dispatch'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:121:in `_call'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+  /usr/lib/ruby/1.8/active_record/query_cache.rb:29:in `call'
+  /usr/lib/ruby/1.8/active_record/query_cache.rb:29:in `call'
+  /usr/lib/ruby/1.8/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+  /usr/lib/ruby/1.8/active_record/query_cache.rb:9:in `cache'
+  /usr/lib/ruby/1.8/active_record/query_cache.rb:28:in `call'
+  /usr/lib/ruby/1.8/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+  /usr/lib/ruby/1.8/action_controller/string_coercion.rb:25:in `call'
+  /usr/lib/ruby/1.8/rack/head.rb:9:in `call'
+  /usr/lib/ruby/1.8/rack/methodoverride.rb:24:in `call'
+  /usr/lib/ruby/1.8/action_controller/params_parser.rb:15:in `call'
+  /usr/lib/ruby/1.8/action_controller/session/cookie_store.rb:93:in `call'
+  /usr/lib/ruby/1.8/action_controller/failsafe.rb:26:in `call'
+  /usr/lib/ruby/1.8/rack/lock.rb:11:in `call'
+  /usr/lib/ruby/1.8/rack/lock.rb:11:in `synchronize'
+  /usr/lib/ruby/1.8/rack/lock.rb:11:in `call'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:114:in `call'
+  /usr/lib/ruby/1.8/action_controller/reloader.rb:34:in `run'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:108:in `call'
+  /usr/lib/ruby/1.8/rack/urlmap.rb:47:in `call'
+  /usr/lib/ruby/1.8/rack/urlmap.rb:41:in `each'
+  /usr/lib/ruby/1.8/rack/urlmap.rb:41:in `call'
+  /usr/lib/ruby/1.8/rack/content_length.rb:13:in `call'
+  /usr/lib/ruby/1.8/rack/chunked.rb:15:in `call'
+  /usr/lib/ruby/1.8/rack/handler/mongrel.rb:67:in `process'
+  /usr/lib/ruby/1.8/mongrel.rb:159:in `process_client'
+  /usr/lib/ruby/1.8/mongrel.rb:158:in `each'
+  /usr/lib/ruby/1.8/mongrel.rb:158:in `process_client'
+  /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+  /usr/lib/ruby/1.8/mongrel.rb:285:in `initialize'
+  /usr/lib/ruby/1.8/mongrel.rb:285:in `new'
+  /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+  /usr/lib/ruby/1.8/mongrel.rb:268:in `initialize'
+  /usr/lib/ruby/1.8/mongrel.rb:268:in `new'
+  /usr/lib/ruby/1.8/mongrel.rb:268:in `run'
+  /usr/lib/ruby/1.8/rack/handler/mongrel.rb:38:in `run'
+
+Rendered rescues/_trace (30.8ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ItemsController#index (for 127.0.0.1 at 2011-12-16 16:48:56) [GET]
+  Parameters: {"action"=>"index", "controller"=>"items"}
+  [4;36;1mItem Load (0.0ms)[0m   [0;1mMysql::Error: Table 'TradeYa_development.items' doesn't exist: SELECT * FROM `items` [0m
+
+ActiveRecord::StatementInvalid (Mysql::Error: Table 'TradeYa_development.items' doesn't exist: SELECT * FROM `items` ):
+  /usr/lib/ruby/1.8/active_record/connection_adapters/abstract_adapter.rb:219:in `log'
+  /usr/lib/ruby/1.8/active_record/connection_adapters/mysql_adapter.rb:323:in `execute'
+  /usr/lib/ruby/1.8/active_record/connection_adapters/mysql_adapter.rb:608:in `select'
+  /usr/lib/ruby/1.8/active_record/connection_adapters/abstract/database_statements.rb:7:in `select_all_without_query_cache'
+  /usr/lib/ruby/1.8/active_record/connection_adapters/abstract/query_cache.rb:60:in `select_all'
+  /usr/lib/ruby/1.8/active_record/connection_adapters/abstract/query_cache.rb:81:in `cache_sql'
+  /usr/lib/ruby/1.8/active_record/connection_adapters/abstract/query_cache.rb:60:in `select_all'
+  /usr/lib/ruby/1.8/active_record/base.rb:661:in `find_by_sql'
+  /usr/lib/ruby/1.8/active_record/base.rb:1548:in `find_every'
+  /usr/lib/ruby/1.8/active_record/base.rb:615:in `find'
+  /usr/lib/ruby/1.8/active_record/base.rb:635:in `all'
+  app/controllers/items_controller.rb:5:in `index'
+  /usr/lib/ruby/1.8/action_controller/base.rb:1331:in `send'
+  /usr/lib/ruby/1.8/action_controller/base.rb:1331:in `perform_action_without_filters'
+  /usr/lib/ruby/1.8/action_controller/filters.rb:617:in `call_filters'
+  /usr/lib/ruby/1.8/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+  /usr/lib/ruby/1.8/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+  /usr/lib/ruby/1.8/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+  /usr/lib/ruby/1.8/action_controller/rescue.rb:160:in `perform_action_without_flash'
+  /usr/lib/ruby/1.8/action_controller/flash.rb:146:in `perform_action'
+  /usr/lib/ruby/1.8/action_controller/base.rb:532:in `send'
+  /usr/lib/ruby/1.8/action_controller/base.rb:532:in `process_without_filters'
+  /usr/lib/ruby/1.8/action_controller/filters.rb:606:in `process'
+  /usr/lib/ruby/1.8/action_controller/base.rb:391:in `process'
+  /usr/lib/ruby/1.8/action_controller/base.rb:386:in `call'
+  /usr/lib/ruby/1.8/action_controller/routing/route_set.rb:437:in `call'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:87:in `dispatch'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:121:in `_call'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+  /usr/lib/ruby/1.8/active_record/query_cache.rb:29:in `call'
+  /usr/lib/ruby/1.8/active_record/query_cache.rb:29:in `call'
+  /usr/lib/ruby/1.8/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+  /usr/lib/ruby/1.8/active_record/query_cache.rb:9:in `cache'
+  /usr/lib/ruby/1.8/active_record/query_cache.rb:28:in `call'
+  /usr/lib/ruby/1.8/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+  /usr/lib/ruby/1.8/action_controller/string_coercion.rb:25:in `call'
+  /usr/lib/ruby/1.8/rack/head.rb:9:in `call'
+  /usr/lib/ruby/1.8/rack/methodoverride.rb:24:in `call'
+  /usr/lib/ruby/1.8/action_controller/params_parser.rb:15:in `call'
+  /usr/lib/ruby/1.8/action_controller/session/cookie_store.rb:93:in `call'
+  /usr/lib/ruby/1.8/action_controller/failsafe.rb:26:in `call'
+  /usr/lib/ruby/1.8/rack/lock.rb:11:in `call'
+  /usr/lib/ruby/1.8/rack/lock.rb:11:in `synchronize'
+  /usr/lib/ruby/1.8/rack/lock.rb:11:in `call'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:114:in `call'
+  /usr/lib/ruby/1.8/action_controller/reloader.rb:34:in `run'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:108:in `call'
+  /usr/lib/ruby/1.8/rack/urlmap.rb:47:in `call'
+  /usr/lib/ruby/1.8/rack/urlmap.rb:41:in `each'
+  /usr/lib/ruby/1.8/rack/urlmap.rb:41:in `call'
+  /usr/lib/ruby/1.8/rack/content_length.rb:13:in `call'
+  /usr/lib/ruby/1.8/rack/chunked.rb:15:in `call'
+  /usr/lib/ruby/1.8/rack/handler/mongrel.rb:67:in `process'
+  /usr/lib/ruby/1.8/mongrel.rb:159:in `process_client'
+  /usr/lib/ruby/1.8/mongrel.rb:158:in `each'
+  /usr/lib/ruby/1.8/mongrel.rb:158:in `process_client'
+  /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+  /usr/lib/ruby/1.8/mongrel.rb:285:in `initialize'
+  /usr/lib/ruby/1.8/mongrel.rb:285:in `new'
+  /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+  /usr/lib/ruby/1.8/mongrel.rb:268:in `initialize'
+  /usr/lib/ruby/1.8/mongrel.rb:268:in `new'
+  /usr/lib/ruby/1.8/mongrel.rb:268:in `run'
+  /usr/lib/ruby/1.8/rack/handler/mongrel.rb:38:in `run'
+
+Rendered rescues/_trace (30.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ItemsController#index (for 127.0.0.1 at 2011-12-16 16:48:56) [GET]
+  Parameters: {"action"=>"index", "controller"=>"items"}
+  [4;35;1mItem Load (0.0ms)[0m   [0mMysql::Error: Table 'TradeYa_development.items' doesn't exist: SELECT * FROM `items` [0m
+
+ActiveRecord::StatementInvalid (Mysql::Error: Table 'TradeYa_development.items' doesn't exist: SELECT * FROM `items` ):
+  /usr/lib/ruby/1.8/active_record/connection_adapters/abstract_adapter.rb:219:in `log'
+  /usr/lib/ruby/1.8/active_record/connection_adapters/mysql_adapter.rb:323:in `execute'
+  /usr/lib/ruby/1.8/active_record/connection_adapters/mysql_adapter.rb:608:in `select'
+  /usr/lib/ruby/1.8/active_record/connection_adapters/abstract/database_statements.rb:7:in `select_all_without_query_cache'
+  /usr/lib/ruby/1.8/active_record/connection_adapters/abstract/query_cache.rb:60:in `select_all'
+  /usr/lib/ruby/1.8/active_record/connection_adapters/abstract/query_cache.rb:81:in `cache_sql'
+  /usr/lib/ruby/1.8/active_record/connection_adapters/abstract/query_cache.rb:60:in `select_all'
+  /usr/lib/ruby/1.8/active_record/base.rb:661:in `find_by_sql'
+  /usr/lib/ruby/1.8/active_record/base.rb:1548:in `find_every'
+  /usr/lib/ruby/1.8/active_record/base.rb:615:in `find'
+  /usr/lib/ruby/1.8/active_record/base.rb:635:in `all'
+  app/controllers/items_controller.rb:5:in `index'
+  /usr/lib/ruby/1.8/action_controller/base.rb:1331:in `send'
+  /usr/lib/ruby/1.8/action_controller/base.rb:1331:in `perform_action_without_filters'
+  /usr/lib/ruby/1.8/action_controller/filters.rb:617:in `call_filters'
+  /usr/lib/ruby/1.8/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+  /usr/lib/ruby/1.8/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+  /usr/lib/ruby/1.8/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+  /usr/lib/ruby/1.8/action_controller/rescue.rb:160:in `perform_action_without_flash'
+  /usr/lib/ruby/1.8/action_controller/flash.rb:146:in `perform_action'
+  /usr/lib/ruby/1.8/action_controller/base.rb:532:in `send'
+  /usr/lib/ruby/1.8/action_controller/base.rb:532:in `process_without_filters'
+  /usr/lib/ruby/1.8/action_controller/filters.rb:606:in `process'
+  /usr/lib/ruby/1.8/action_controller/base.rb:391:in `process'
+  /usr/lib/ruby/1.8/action_controller/base.rb:386:in `call'
+  /usr/lib/ruby/1.8/action_controller/routing/route_set.rb:437:in `call'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:87:in `dispatch'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:121:in `_call'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+  /usr/lib/ruby/1.8/active_record/query_cache.rb:29:in `call'
+  /usr/lib/ruby/1.8/active_record/query_cache.rb:29:in `call'
+  /usr/lib/ruby/1.8/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+  /usr/lib/ruby/1.8/active_record/query_cache.rb:9:in `cache'
+  /usr/lib/ruby/1.8/active_record/query_cache.rb:28:in `call'
+  /usr/lib/ruby/1.8/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+  /usr/lib/ruby/1.8/action_controller/string_coercion.rb:25:in `call'
+  /usr/lib/ruby/1.8/rack/head.rb:9:in `call'
+  /usr/lib/ruby/1.8/rack/methodoverride.rb:24:in `call'
+  /usr/lib/ruby/1.8/action_controller/params_parser.rb:15:in `call'
+  /usr/lib/ruby/1.8/action_controller/session/cookie_store.rb:93:in `call'
+  /usr/lib/ruby/1.8/action_controller/failsafe.rb:26:in `call'
+  /usr/lib/ruby/1.8/rack/lock.rb:11:in `call'
+  /usr/lib/ruby/1.8/rack/lock.rb:11:in `synchronize'
+  /usr/lib/ruby/1.8/rack/lock.rb:11:in `call'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:114:in `call'
+  /usr/lib/ruby/1.8/action_controller/reloader.rb:34:in `run'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:108:in `call'
+  /usr/lib/ruby/1.8/rack/urlmap.rb:47:in `call'
+  /usr/lib/ruby/1.8/rack/urlmap.rb:41:in `each'
+  /usr/lib/ruby/1.8/rack/urlmap.rb:41:in `call'
+  /usr/lib/ruby/1.8/rack/content_length.rb:13:in `call'
+  /usr/lib/ruby/1.8/rack/chunked.rb:15:in `call'
+  /usr/lib/ruby/1.8/rack/handler/mongrel.rb:67:in `process'
+  /usr/lib/ruby/1.8/mongrel.rb:159:in `process_client'
+  /usr/lib/ruby/1.8/mongrel.rb:158:in `each'
+  /usr/lib/ruby/1.8/mongrel.rb:158:in `process_client'
+  /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+  /usr/lib/ruby/1.8/mongrel.rb:285:in `initialize'
+  /usr/lib/ruby/1.8/mongrel.rb:285:in `new'
+  /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+  /usr/lib/ruby/1.8/mongrel.rb:268:in `initialize'
+  /usr/lib/ruby/1.8/mongrel.rb:268:in `new'
+  /usr/lib/ruby/1.8/mongrel.rb:268:in `run'
+  /usr/lib/ruby/1.8/rack/handler/mongrel.rb:38:in `run'
+
+Rendered rescues/_trace (30.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)

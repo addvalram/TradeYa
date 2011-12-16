@@ -11,9 +11,13 @@ class UserSessionsController < ApplicationController
   @user_session = UserSession.new(params[:user_session])
   
   if @user_session.save
-    flash[:notice] = "Successfully logged in."
-    redirect_to users_url
+    if current_user.id !=nil
+      redirect_to user_items_url
+   
+    flash[:notice] = "Successfully logged in."    
+    end
   else
+    flash[:notice] = "Invalid email or password."
     render :action => 'new'
   end
 end

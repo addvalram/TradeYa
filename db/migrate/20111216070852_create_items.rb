@@ -3,10 +3,12 @@ class CreateItems < ActiveRecord::Migration
     create_table :items do |t|
       t.integer :user_id
       t.string :item_name
+      t.string :picture
       t.text :item_description
       t.string :sale_status
       t.string :item_list
       t.boolean :item_choice
+      
 
       t.timestamps
     end

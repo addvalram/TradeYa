@@ -2,8 +2,9 @@ class OffersController < ApplicationController
   # GET /offers
   # GET /offers.xml
   def index
-    @offers = Offer.all
-
+    
+       item = Item.find(params[:item_id])
+      @offers = item.offers.find(:all)
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @offers }
