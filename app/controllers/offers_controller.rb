@@ -1,11 +1,14 @@
 class OffersController < ApplicationController
   # GET /offers
   # GET /offers.xml
-  def index
-    
-       item = Item.find(params[:item_id])
-       
+  def index      
+      
+      item = Item.find(params[:item_id])
+      user=User.find(current_user.id)
+#      user = User.find(params[:current_user_id])
       @offers = item.offers.find(:all)
+      @offers2 = user.offers.find(:all)
+ #     @offers= Offer.find_all_by_user_id(params[:user_id])
       
     respond_to do |format|
       format.html # index.html.erb
@@ -43,8 +46,18 @@ class OffersController < ApplicationController
   # POST /offers
   # POST /offers.xml
   def create
-    @offer = Offer.new(params[:offer])
-    @offer.item=Item.find(params[:item_id])
+    debugger
+    @offer = Offer.new(params[:offer])  
+    @offer.item=Item.find(params[:item][:item_id])
+         
+    #@offer.item=Item.find(params[:item][:My_item_id])    
+   # @offer.user=User.find(params[:user_id])
+    @offer.My_item_id= params[:item][:My_item_id]
+    @offer.my_user_id= current_user.id
+
+
+    debugger
+    #user=    Item.find(params[:item_id])
     respond_to do |format|
       if @offer.save
         flash[:notice] = 'Offer was successfully created.'

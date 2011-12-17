@@ -37,7 +37,11 @@
   
 <% end %>
 </table>
-Item list<br /><%= select (:item, :user_id, Item.all.collect  {|item| [item.item_name,item.id,]}) %>
-<br />
-
+<div>
+	My Item List
+	<%= select (:item, :user_id, Item.find(:all, :conditions => ["user_id = ?",current_user.id]).collect  {|item| [item.item_name,item.id,]}) %>
+	
+	Item list 
+	<%= select (:item, :user_id, Item.all.collect  {|item| [item.item_name,item.id,]}) %>
+</div>
 <%= link_to 'New item', new_item_path %>

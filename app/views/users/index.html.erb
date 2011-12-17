@@ -15,13 +15,35 @@
   <tr>
     <td><%=h user.user_name %></td>
     <td><%=h user.email %></td>
+    
     <td><%= link_to 'items',user_items_path(user)%></td>
     <td><%= link_to 'Show', user %></td>
     <td><%= link_to 'Edit', edit_user_path(user) %></td>
     <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
+    
   </tr>
 <% end %>
 </table>
+<div>
+	
+	<% form_for (:offer ,:url => user_offers_path(current_user.id)) do |f| %>
+	
+  <%= f.error_messages %>
+	
+	My Item List 
+	<%= select (:item, :My_item_id, Item.find(:all, :conditions => ["user_id = ?",current_user.id]).collect  {|item| [item.item_name,item.id,]}) %>
+	
+	Item list 
+	<%= select (:item, :item_id, Item.all.collect  {|item| [item.item_name ,item.id,]}) %>
+	<%#=link_to "make offer ",  new_user_offer_path(current_user.id)%>
+	
+	 <%= f.submit "Submit offer" %>
+	
+	<%end%>
+	
+	
+
+</div>
 
 <br />
 <%=link_to "logout", logout_path%>
