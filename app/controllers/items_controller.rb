@@ -2,8 +2,10 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.xml
   def index
-    @items = Item.all
-
+    debugger
+    user =User.find(params[:user_id])
+    @items = user.items.find(:all)    
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @items }
@@ -25,7 +27,7 @@ class ItemsController < ApplicationController
   # GET /items/new.xml
   def new
     @item = Item.new
-
+    
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @item }
@@ -41,7 +43,7 @@ class ItemsController < ApplicationController
   # POST /items.xml
   def create
     @item = Item.new(params[:item])
-
+    @item.user=User.find (params[:user_id])
     respond_to do |format|
       if @item.save
         flash[:notice] = 'Item was successfully created.'
@@ -58,11 +60,10 @@ class ItemsController < ApplicationController
   # PUT /items/1.xml
   def update
     @item = Item.find(params[:id])
-
     respond_to do |format|
       if @item.update_attributes(params[:item])
         flash[:notice] = 'Item was successfully updated.'
-        format.html { redirect_to(@item) }
+        format.html { redirect_to user_item_url(@item.user,@item) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

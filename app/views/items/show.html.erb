@@ -1,5 +1,8 @@
 <p>
+	<%= image_tag @item.photo.url(:small) %>
+	
   <b>User:</b>
+  
   <%=h @item.user_id %>
 </p>
 
@@ -28,6 +31,5 @@
   <%=h @item.item_choice %>
 </p>
 
-
 <%= link_to 'Edit', edit_item_path(@item) %> |
-<%= link_to 'Back', items_path %>
+<%= link_to 'Back', user_items_path(current_user.id) %>

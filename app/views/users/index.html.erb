@@ -1,4 +1,8 @@
-<%= render :partial => "hedder" %>
+<div>  
+  <%= render :partial => "hedder" %>
+</div>
+
+
 <h1>Listing users</h1>
 
 <table>
@@ -11,6 +15,7 @@
   <tr>
     <td><%=h user.user_name %></td>
     <td><%=h user.email %></td>
+    <td><%= link_to 'items',user_items_path(user)%></td>
     <td><%= link_to 'Show', user %></td>
     <td><%= link_to 'Edit', edit_user_path(user) %></td>
     <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>

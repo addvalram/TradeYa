@@ -1,31 +1,43 @@
-<>
+
+<%= render :partial => "users/hedder" %>
+
 <h1>Listing items</h1>
 
 <table>
-  <tr>
+  <tr>	
+<th>Photo</th>
     <th>User</th>
     <th>Item name</th>
+	
+	<th>Make an offer</th>
     <th>Item description</th>
     <th>Sale status</th>
-    <th>Item list</th>
+    
     <th>Item choice</th>
   </tr>
 
 <% @items.each do |item| %>
   <tr>
-    <td><%=h item.user_id %></td>
+  	
+   <td> <%= image_tag item.photo.url(:small) %></td>
+    <td><%=h item.user_id %></td>    
     <td><%=h item.item_name %></td>
+    <td><%=h item.item_list %></td>
+<td></td>
+   <td><%=h item.item_name %></td>
     <td><%=h item.item_description %></td>
     <td><%=h item.sale_status %></td>
-    <td><%=h item.item_list %></td>
+    
     <td><%=h item.item_choice %></td>
+  	<td><%= link_to 'offers', item_offers_path(item) %></td>
     <td><%= link_to 'Show', item %></td>
     <td><%= link_to 'Edit', edit_item_path(item) %></td>
     <td><%= link_to 'Destroy', item, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
+  
 <% end %>
 </table>
-
+Item list<br /><%= select (:item, :user_id, Item.all.collect  {|item| [item.item_name,item.id,]}) %>
 <br />
 
 <%= link_to 'New item', new_item_path %>

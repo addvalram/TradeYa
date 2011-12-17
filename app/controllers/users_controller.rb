@@ -1,9 +1,16 @@
 class UsersController < ApplicationController
+  def index
+    @users= User.find(:all)
+    respond_to do |f|
+      f.html
+      
+    end
+  end
   def create
   @user = User.new(params[:user])
   if @user.save
     flash[:notice] = "Registration successful."
-    redirect_to items_path
+    redirect_to users_path
   else
     render :action => 'new'
   end

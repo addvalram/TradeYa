@@ -1,6 +1,4 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :recent_activities
-
   map.resources :items do |item|
   item.resources :offers
   end
@@ -9,7 +7,6 @@ ActionController::Routing::Routes.draw do |map|
   user.resources :recent_activities
   user.resources :items
   user.resources :offers
-    
   end
   
   map.resource :user_session

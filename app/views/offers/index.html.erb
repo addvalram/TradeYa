@@ -2,8 +2,8 @@
 
 <table>
   <tr>
-    <th>Item</th>
-    <th>User</th>
+    <th>Item ID</th>
+    <th>User ID (Current User)</th>
     <th>Offer status</th>
   </tr>
 
@@ -12,13 +12,15 @@
     <td><%=h offer.item_id %></td>
     <td><%=h offer.user_id %></td>
     <td><%=h offer.offer_status %></td>
-    <td><%= link_to 'Show', offer %></td>
-    <td><%= link_to 'Edit', edit_offer_path(offer) %></td>
-    <td><%= link_to 'Destroy', offer, :confirm => 'Are you sure?', :method => :delete %></td>
+    
+    <td><%= link_to 'Show', item_offer_path(offer.item,offer) %></td>
+    <td><%= link_to 'Edit', edit_item_offer_path(offer.item,offer) %></td>
+    <td><%= link_to 'Destroy', item_offer_path(offer.item,offer), :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New offer', new_offer_path %>
+<%= link_to 'New offer', new_item_offer_path %>
+<%= link_to 'back', items_path %>

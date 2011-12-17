@@ -1,3 +1,4 @@
 class Offer < ActiveRecord::Base
-  belong_to :item
+  belongs_to :item
+  belongs_to :user
 end

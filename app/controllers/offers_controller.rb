@@ -4,7 +4,9 @@ class OffersController < ApplicationController
   def index
     
        item = Item.find(params[:item_id])
+       
       @offers = item.offers.find(:all)
+      
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @offers }
@@ -15,7 +17,7 @@ class OffersController < ApplicationController
   # GET /offers/1.xml
   def show
     @offer = Offer.find(params[:id])
-
+    
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @offer }
@@ -42,11 +44,11 @@ class OffersController < ApplicationController
   # POST /offers.xml
   def create
     @offer = Offer.new(params[:offer])
-
+    @offer.item=Item.find(params[:item_id])
     respond_to do |format|
       if @offer.save
         flash[:notice] = 'Offer was successfully created.'
-        format.html { redirect_to(@offer) }
+        format.html { redirect_to item_offer_url(@offer.item,@offer) }
         format.xml  { render :xml => @offer, :status => :created, :location => @offer }
       else
         format.html { render :action => "new" }

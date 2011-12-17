@@ -1,13 +1,14 @@
+<%= render :partial => "users/hedder" %>
 <h1>New item</h1>
 
-<% form_for(@item) do |f| %>
+<% form_for(:item, :url =>user_items_path(current_user.id),:html => { :multipart => true }) do |f| %>
   <%= f.error_messages %>
 
   <p>
     <%= f.label :user_id %><br />
-    <%= f.text_field :user_id %>
+    <%= f.text_field :user_id %> 
   </p>
-  <p>
+  <p><%= f.file_field :photo%><br />
     <%= f.label :item_name %><br />
     <%= f.text_field :item_name %>
   </p>
@@ -25,11 +26,11 @@
   </p>
   <p>
     <%= f.label :item_choice %><br />
-    <%= f.check_box :item_choice %>
+    <%= f.check_box :item_choice %>    
   </p>
   <p>
     <%= f.submit 'Create' %>
   </p>
 <% end %>
 
-<%= link_to 'Back', items_path %>
+<%= link_to 'Back', user_items_path(current_user) %>

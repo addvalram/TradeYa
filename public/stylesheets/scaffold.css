@@ -54,3 +54,13 @@ a:hover { color: #fff; background-color:#000; }
   list-style: square;
 }
 
+#blueBarHolder.loggedOut {
+height: auto;
+}
+
+#blueBar {
+background-color: #3B5998;
+min-width: 981px;
+width: 100%;
+z-index: 300;
+}

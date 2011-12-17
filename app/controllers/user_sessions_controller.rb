@@ -4,6 +4,9 @@ class UserSessionsController < ApplicationController
 
   def new
     @user_session = UserSession.new
+    respond_to do |format|
+      format.html
+    end
   end
   
  def create
@@ -12,7 +15,7 @@ class UserSessionsController < ApplicationController
   
   if @user_session.save
     if current_user.id !=nil
-      redirect_to user_items_url
+      redirect_to users_url
    
     flash[:notice] = "Successfully logged in."    
     end
