@@ -1,10 +1,15 @@
 
-<% form_for (:user, :url => users_path) do |f| %>
+<% form_for (:user, :url => users_path,:html => { :multipart => true }) do |f| %>
   <%= f.error_messages %>
   <p>
     <%= f.label :user_name %><br />
     <%= f.text_field :user_name %>
   </p>
+  
+  <p>
+  	<%= f.label :photo %>
+  	<%= f.file_field :photo%>
+  	</p>
   <p>
     <%= f.label :email %><br />
     <%= f.text_field :email %>
@@ -17,5 +22,10 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation %>
   </p>
+  
+  
   <p><%= f.submit "Submit" %></p>
 <% end %>
+
+
+

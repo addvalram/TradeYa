@@ -1,0 +1,55 @@
+.sidebarMode #pageHead, .sidebarMode #globalContainer {
+left: -90px;
+position: relative;
+}
+.sidebarMode #pageHead, .sidebarMode #globalContainer {
+left: -90px;
+position: relative;
+}
+
+.fbx #globalContainer {
+width: 981px;
+}
+#globalContainer {
+margin: 0 auto;
+position: relative;
+zoom: 1;
+}
+.fbx #globalContainer #content {
+min-height: inherit;
+}
+.profile #content, .home #content, .search #content {
+min-height: 600px;
+}
+#content {
+width: auto;
+padding: 0;
+margin: 0;
+}
+.clearfix {
+zoom: 1;
+}
+.clearfix::after {
+clear: both;
+content: ".";
+display: block;
+font-size: 0;
+height: 0;
+line-height: 0;
+visibility: hidden;
+}
+#pageFooter {
+color: #737373;
+font-size: 11px;
+margin: 0 auto;
+width: 980px;
+}
+.fbx #pageFooter {
+margin: auto;
+width: auto;
+}
+.hasLeftCol #pageFooter {
+background-color: white;
+clear: both;
+margin-left: 180px;
+}

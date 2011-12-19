@@ -5,43 +5,27 @@
 
 <table>
   <tr>	
-<th>Photo</th>
-    <th>User</th>
+	<th>Photo</th>   
     <th>Item name</th>
-	
-	<th>Make an offer</th>
-    <th>Item description</th>
-    <th>Sale status</th>
-    
-    <th>Item choice</th>
+    <th>Item description</th>    
   </tr>
 
 <% @items.each do |item| %>
   <tr>
   	
    <td> <%= image_tag item.photo.url(:small) %></td>
-    <td><%=h item.user_id %></td>    
+   
+   
+     
     <td><%=h item.item_name %></td>
-    <td><%=h item.item_list %></td>
-<td></td>
-   <td><%=h item.item_name %></td>
-    <td><%=h item.item_description %></td>
-    <td><%=h item.sale_status %></td>
     
-    <td><%=h item.item_choice %></td>
-  	<td><%= link_to 'offers', item_offers_path(item) %></td>
+    <td><%=h item.item_description %></td>
     <td><%= link_to 'Show', item %></td>
     <td><%= link_to 'Edit', edit_item_path(item) %></td>
-    <td><%= link_to 'Destroy', item, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Destroy', user_item_path(current_user.id,item), :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
   
 <% end %>
 </table>
-<div>
-	My Item List
-	<%= select (:item, :user_id, Item.find(:all, :conditions => ["user_id = ?",current_user.id]).collect  {|item| [item.item_name,item.id,]}) %>
-	
-	Item list 
-	<%= select (:item, :user_id, Item.all.collect  {|item| [item.item_name,item.id,]}) %>
-</div>
+
 <%= link_to 'New item', new_item_path %>

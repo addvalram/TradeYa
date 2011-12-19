@@ -1,5 +1,5 @@
 <p>
-	<%= image_tag @item.photo.url(:small) %>
+	<%= image_tag @item.photo.url() %>
 	
   <b>User:</b>
   
@@ -19,11 +19,6 @@
 <p>
   <b>Sale status:</b>
   <%=h @item.sale_status %>
-</p>
-
-<p>
-  <b>Item list:</b>
-  <%=h @item.item_list %>
 </p>
 
 <p>

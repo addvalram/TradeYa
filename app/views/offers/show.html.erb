@@ -1,13 +1,46 @@
-<p>
-  <b>Item:</b>
-  <%=h @offer.item_id %>
-</p>
 
 <p>
-  <b>User:</b>
+  <b>My User id :</b>
   <%=h @offer.user_id %>
+
+
+
+  <b>My User name :</b>
+  <%=h User.find(@offer.user_id).user_name %>
+  
 </p>
 
+
+<p>
+  <b>My Item id</b>
+  <%=h @offer.my_item_id %>
+
+  <b> My item name :</b>
+ 
+ <%=h Item.find(@offer.my_item_id).item_name %>
+  
+</p>
+.................................................
+
+<p>
+  <b>Public user_id:</b>
+  <%=h @offer.public_user_id %>
+
+
+
+  <b>Public user_name:</b>
+  <%=h User.find(@offer.public_user_id).user_name %>
+</p>
+
+
+<p>
+  <b>Public item id:</b>
+  <%=h @offer.item_id %>
+
+  <b>Public item_name:</b>
+  <%=h Item.find(@offer.item_id).item_name %>
+</p>
+..................................................
 <p>
   <b>Offer status:</b>
   <%=h @offer.offer_status %>

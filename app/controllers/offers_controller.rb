@@ -1,8 +1,8 @@
 class OffersController < ApplicationController
   # GET /offers
   # GET /offers.xml
-  def index      
-      
+   
+  def index       
       item = Item.find(params[:item_id])
       user=User.find(current_user.id)
 #      user = User.find(params[:current_user_id])
@@ -30,6 +30,7 @@ class OffersController < ApplicationController
   # GET /offers/new
   # GET /offers/new.xml
   def new
+    
     @offer = Offer.new
 
     respond_to do |format|
@@ -45,29 +46,32 @@ class OffersController < ApplicationController
 
   # POST /offers
   # POST /offers.xml
-  def create
-    debugger
-    @offer = Offer.new(params[:offer])  
-    @offer.item=Item.find(params[:item][:item_id])
-         
-    #@offer.item=Item.find(params[:item][:My_item_id])    
-   # @offer.user=User.find(params[:user_id])
-    @offer.My_item_id= params[:item][:My_item_id]
-    @offer.my_user_id= current_user.id
-
-
-    debugger
-    #user=    Item.find(params[:item_id])
-    respond_to do |format|
-      if @offer.save
-        flash[:notice] = 'Offer was successfully created.'
-        format.html { redirect_to item_offer_url(@offer.item,@offer) }
-        format.xml  { render :xml => @offer, :status => :created, :location => @offer }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @offer.errors, :status => :unprocessable_entity }
-      end
-    end
+  def create  
+    debugger  
+    #offers=Offer.find_by_sql(["select * from offers where user_id= ? and offer_status= ?",current_user.id,0])
+    #if offers.offer_status[0] ==nil    
+        @offer = Offer.new(params[:offer])  
+        @offer.item=Item.find(params[:item][:item_id])
+        temp_public_user_id=Item.find_by_sql(["select user_id from items where id= ? ",params[:item][:item_id]])             
+        @offer.public_user_id=temp_public_user_id[0].user_id                           
+       #@offer.user=User.find(params[:user_id])
+        @offer.my_item_id= params[:item][:my_item_id]
+        @offer.user_id= current_user.id        
+       #user= Item.find(params[:item_id])        
+            @offer.offer_status=1
+            respond_to do |format|
+            if @offer.save
+              flash[:notice] = 'Offer was successfully created.'
+               format.html { redirect_to item_offer_url(@offer.item,@offer) }
+                format.xml  { render :xml => @offer, :status => :created, :location => @offer }
+              else
+              format.html { render :action => "new" }
+              format.xml  { render :xml => @offer.errors, :status => :unprocessable_entity }
+            end
+          
+        end
+     end
+     
   end
 
   # PUT /offers/1
@@ -84,7 +88,6 @@ class OffersController < ApplicationController
         format.html { render :action => "edit" }
         format.xml  { render :xml => @offer.errors, :status => :unprocessable_entity }
       end
-    end
   end
 
   # DELETE /offers/1
@@ -98,4 +101,8 @@ class OffersController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def check_status
+  end
+
 end

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111217125816) do
+ActiveRecord::Schema.define(:version => 20111219051211) do
 
   create_table "items", :force => true do |t|
     t.integer  "user_id"
@@ -33,8 +33,8 @@ ActiveRecord::Schema.define(:version => 20111217125816) do
     t.boolean  "offer_status"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "My_item_id"
-    t.integer  "my_user_id"
+    t.integer  "my_item_id"
+    t.integer  "public_user_id"
   end
 
   create_table "recent_activities", :force => true do |t|

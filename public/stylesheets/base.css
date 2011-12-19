@@ -1,0 +1,658 @@
+/** Start YUI Resets **/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{margin:0;padding:0}
+table{border-collapse:collapse;border-spacing:0}
+fieldset,img{border:0}
+address,caption,cite,code,dfn,em,th,var{font-style:normal;font-weight:normal}
+ol,ul{list-style:none}
+caption,th{text-align:left}
+h1,h2,h3,h4,h5,h6{font-size:100%}
+q:before,q:after{content:'';}
+abbr,acronym{border:0}
+/** End YUI Resets **/
+
+
+
+/*
+HTTP Host: static.ak.fbcdn.net
+Generated: August 6th 2010 2:48:38 PM PDT
+Machine: 10.138.64.184
+Locale: nu_ll
+Path: css/7obs4itj8944g04o.pkg.css
+*/
+
+.fbEmu .body .fbEmuLink{color:#333}
+.fbEmu .body .fbEmuLink:hover{text-decoration:none}
+.fbEmu .body a.signature{color:#3b5998;display:inline}
+.fbEmu .body a.signature:hover{text-decoration:underline}
+.fbEmu .hover:hover .title .fbEmuLink{text-decoration:underline}
+.fbEmu a.async_saving{background:url(/rsrc.php/zBS5C/hash/7hwy7at6.gif) no-repeat left
+	center}
+	.fbEmu a.async_saving .fbEmuLinkText{visibility:hidden}
+	.fbEmu a.async_saving:hover{text-decoration:none}
+	.fbEmu .forceRTL{direction:rtl;text-align:right}
+	.fbEmu .forceLTR{direction:ltr;text-align:left}
+	.fbEmuEgo{line-height:13px}
+	.fbEmuEgo .image .img{max-height:72px;max-width:100px;-ms-interpolation-mode:bicubic;_clear:expression(
+		style.height = this.offsetHeight > 80 ? "80px":"auto",
+		style.width = this.offsetWidth > 100 ? "100px":"auto",
+		style.clear = "none", 0
+		);padding-top:3px}
+		.fbEmuEgo .title{font-weight:bold}
+		.fbEmuEgo .image .fbEmuLink{width:100px}
+		.fbEmuEgo .action{color:#777}
+		.fbEmuEgo .action .fbEmuContext .fbEmuLink{color:#777}
+		.fbEmuEgo .action div.UIImageBlock_Content{padding-top:1px}
+		.fbEmuFloat .image .fbEmuLink{display:block;float:left;margin:0 8px 2px 0;text-align:center}
+		.fbEmuFloat .title{margin-bottom:1px}
+		.fbEmuFloat .action{margin-top:5px}
+		.fbEmuHide{display:block;float:right;height:13px;margin:2px 2px 0 0;width:11px;padding-bottom:2px;padding-left:5px}
+		.fbEmuHide .thex{display:block;height:13px;width:11px;background:url(/rsrc.php/z9CFM/hash/3fqj0pxr.png) no-repeat}
+		.fbEmuHide .thex:hover{background:url(/rsrc.php/z9ZMZ/hash/bvbgfd1z.png) no-repeat;background-color:#3b5998;text-decoration:none}
+		.fbEmuHide_new{float:right;margin:2px 2px 0 4px}
+		.fbEmuHidePoll .undo{float:right;padding-left:2px;padding-bottom:2px;margin-bottom:3px;margin-left:5px}
+		.fbEmuBlock .fbEmuHidePoll .otherdiv{margin-left:20px}
+		.fbEmuFloat .fbEmuHide{margin-top:0}
+		.fbEmuLegacy .fbEmuHidePoll .otherdiv .other{width:141px}
+		.fbEmuEgo .fbEmuHidePoll .otherdiv .other{width:206px}
+		button.async_saving .default_message,
+		a.async_saving .default_message,
+		form.async_saving .default_message,
+		.saving_message{display:none}
+		.default_message,
+		button.async_saving .saving_message,
+		a.async_saving .saving_message,
+		form.async_saving .saving_message{display:inline}
+		.async_throbber .async_saving{background:url(/rsrc.php/zBS5C/hash/7hwy7at6.gif) no-repeat right;padding-right:20px}
+		button.as_link{font-family:"lucida grande",tahoma,verdana,arial,sans-serif;font-size:100%;overflow:visible;width:auto;text-align:left;background:none;margin:0;padding:0;border:none;cursor:pointer;color:#3b5998;-moz-user-select:text}
+		button.as_link::-moz-focus-inner{border:0;padding:0}
+		button.as_link:hover span,
+		button.as_link:focus span{text-decoration:underline}
+		button.as_link .button_img{margin:0 6px 0 0;vertical-align:text-bottom;width:16px;height:16px}
+		.UIActionLinks_title{font-size:9px;font-weight:normal;white-space:nowrap;color:#999}
+		.has_body .UIActionLinks_title{display:none}
+		.log_mode .has_body .UIActionLinks_title{display:inline}
+		.UIActionLinks_bottom,
+		.UIActionLinks_left,
+		.UIActionLinks_right{color:#999}
+		.UIActionLinks_left{float:left}
+		.UIActionLinks_right{float:right}
+		.from_friend_story_content_container .UIActionLinks_bottom,
+		.has_body .UIActionLinks_bottom,
+		.story_body .UIActionLinks_bottom{clear:both;display:block}
+		.log_mode .UIActionLinks_bottom{display:none}
+		.tab_status_updates .UIActionLinks_title{font-size:11px}
+		.friend_grid .friend_grid_row{margin:10px 0 5px}
+		.friend_grid .friend_grid_col{float:left;margin-left:10px;overflow:hidden;width:174px}
+		.friend_grid form.async_saving{opacity:.50;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";filter:alpha(opacity=50)}
+		.friend_grid .friend_grid_col .fg_name{font-size:11px;font-weight:bold;margin:0 0 1px 0;line-height:14px;width:90px;display:block;*display:inline;word-wrap:break-word}
+		.friend_grid .friend_grid_col .fg_explain{line-height:14px;padding:0;margin:2px 0 1px 0;color:#777}
+		.friend_grid .inactive{color:#666}
+		.pymk_participants_not_expanded .pymk_participants_long,
+		.pymk_participants_expanded .pymk_participants_short{display:none}
+		.ego_x{float:right}
+		.ego_image .img{-ms-interpolation-mode:bicubic;vertical-align:bottom}
+		.ego_image_small .img{height:50px;width:50px}
+		.ego_image_medium .img{width:80px}
+		a.ego_fb_photo{border:1px solid #ccc;padding:2px}
+		a.ego_fb_photo .img{width:74px;vertical-align:bottom}
+		.ego_title{display:block;font-weight:bold;line-height:13px;margin-bottom:2px;margin-right:20px;max-width:126px}
+		.UIWashFrame_MainContent{padding-left:0;width:980px}
+		.UIWashFrame_MainContent{padding-left:0;width:980px}
+		.UIWashFrame_Content{width:720px}
+		.UIWashFrame_SidebarAds{width:auto}
+		.footer .info{width:490px}
+		.UIStandardFrame_Container{padding-left:0;padding-top:15px;width:980px}
+		.UIStandardFrame_Content{width:760px}
+		.UIStandardFrame_SidebarAds{width:auto}
+		.photo_metadata .left_metadata{width:490px}
+		.ego_column{width:234px}
+		div.ego_header{margin:0 0 5px 0}
+		.ego_unit{margin-bottom:15px}
+		.ego_unit .UIImageBlock_Content{padding-top:0}
+		.ego_standard .ego_action{margin-top:1px}
+		.photo_tag_frame{position:absolute;top:10px;left:10px;border:solid 5px #d8dfea;cursor:crosshair;overflow:hidden}
+		.editphotos .photo_tag_frame{border:solid 4px #d8dfea}
+		.photo_tag_frame_inside{display:block;border:solid 2px #3b5998;background:url(/rsrc.php/z12E0/hash/8q2anwu7.gif) repeat}
+		.photo_tag_name_frame{top:0;left:0;text-align:center;position:absolute}
+		.photo_tag_name_frame{background-color:#282828;padding:3px 5px 4px 5px;white-space:nowrap;color:#fff;font-weight:bold;display:block}
+		.photo_box_name_frame{background:url(/rsrc.php/z9FL2/hash/3nblnwz6.png) center top no-repeat;position:absolute;white-space:nowrap;display:block;padding:4px 0 0 0}
+		.photo_box_name_link, .photo_box_name_link:hover{background-color:#282828;color:#fff;text-decoration:none;text-align:center;display:block;font-weight:bold;padding:5px;cursor:crosshair}
+		#photo_tag_selector{top:100px;left:300px;position:absolute;font-size:11px;display:none;width:200px;margin-bottom:20px;background:white;border:solid 1px #3b5998;border-bottom:solid 2px #3b5998}
+		#photo_tag_selector .i_name{width:180px;margin:2px 5px 0}
+		#photo_tag_selector label{display:block;margin:2px 5px 2px;font-weight:bold;color:#808080}
+		#photo_tag_selector .buttons{text-align:center}
+		#photo_tag_selector .buttons input{margin:5px 2px}
+		#photo_tag_selector .buttons .tag{width:50px}
+		#photo_tag_selector .buttons .cancel{width:60px}
+		#pts_userlist{line-height:20px;width:200px;height:200px;border-top:solid 1px #ccc;border-bottom:solid 1px #ccc;background:#eee;overflow:auto}
+		#pts_userlist label{display:inline;margin:0 0 0 0;font-weight:normal;color:#000;display:block}
+		#pts_userlist input{width:auto;margin:1px 4px 4px 4px;vertical-align:middle}
+		#pts_userlist hr{padding:0;margin:2px 0}
+		#pts_invite_msg{background-color:#ffb;border:1px solid gray;margin:5px;padding:3px}
+		#pts_invite_section{margin:6px;border:1px solid #c0c0c0;background:#f1f1f1;padding:4px;font-size:11px}
+		#pts_invite_section #pts_invite_name{font-weight:bold}
+		#pts_invite_section .inputtext{width:125px;font-size:11px}
+		#pts_invite_section .inputcheckbox{width:auto;float:left}
+		#pts_invite_section label{width:40px;margin:0;float:left;padding-top:3px}
+		#pts_choose_text{color:#808080;display:block;font-weight:bold;margin:2px 5px}
+		.newalbum .formbuttons{padding:0 0 0 215px;text-align:left}
+		.newalbum .formbuttons input{margin:0}
+		#publish_formbuttons{margin:0 10px 25px}
+		#upload_status_area{overflow:hidden}
+		#changessaved .status{margin-top:10px;margin-bottom:0;text-align:left}
+		.photo_list{border:solid 1px #ccc;background:#fff;overflow:hidden}
+		.photo_list .go_back{padding:10px}
+		.photo_list .loading{text-align:center;padding:1em}
+		.photo_list .album td{width:150px;text-align:center;vertical-align:middle}
+		.photo_list .album img{background:white;padding:4px;border:solid 1px #ccc}
+		.photo_list .album img:hover{border:solid 1px #3b5998}
+		#createalbum{float:left;width:200px;padding:10px 10px;text-align:left}
+		.sharelink{text-align:center;background:white;border:solid 1px #d8dfea;padding:5px;margin:5px 0}
+		.photo .pageScan{border-top:none;padding:0}
+		.single_photo_header{margin:8px 0 9px;padding:0}
+		.single_photo_header h2{color:#192b46;font-size:16px;padding-bottom:1px}
+		.single_photo_header h4{float:left;font-weight:normal;padding:3px 0 4px}
+		#photoborder{background:#f2f2f2;margin:8px 0 17px 0;position:relative;text-align:center}
+		#photoborder #myphoto{background-color:#fff;float:left;*float:none}
+		#photoborder a #myphoto{cursor:pointer;cursor:hand}
+		#photoborder #myphotolink{-moz-outline:none;display:table;margin:auto}
+		.photo_container{display:inline-block;*display:inline;margin:0 auto;position:relative;vertical-align:bottom;zoom:1}
+		#photoinfo{margin:14px 10px 25px 10px}
+		#photodate{margin:0;padding:4px 8px 8px 10px;float:left;color:#777}
+		#photoinalbum{color:#808080;line-height:15px;width:181px}
+		#phototags{line-height:15px;padding-bottom:1px}
+		#phototags em{color:#808080;font-style:normal}
+		#photocomment{padding-top:10px}
+		#photocomment .actions a small{color:#3b5998}
+		#photocomment .actions a:hover{text-decoration:underline}
+		#photoaddcomment{float:left;clear:left;margin:10px 0}
+		#photoaddcomment h4{border:none;white-space:nowrap}
+		#comment_error{color:#966;display:none;padding-left:8px}
+		#rightcolumn{width:184px;padding-bottom:7px}
+		#rightcolumn .share_and_hide{padding-left:2px;padding-bottom:10px}
+		#photoactions{padding-top:10px}
+		.footer #photoactions{clear:right;padding-top:2px;margin-bottom:20px }
+		#photoactions a{border-bottom:1px solid #d8dfea}
+		#photoactions a, #photoactions .action_link{display:block;clear:both;padding:2px 3px}
+		#photoactions a:hover, #photoactions .action_link:hover{text-decoration:none;background:#3b5998;color:#fff}
+		#rotateleft, #rotateright{cursor:pointer;width:30px;float:left;position:relative}
+		#rotateright{text-align:right}
+		#rotateleft a{background:white url(/rsrc.php/z1W00/hash/77xbrdqq.gif) no-repeat 2px 2px;height:26px;border-bottom:1px solid #fff}
+		#rotateleft a:hover{background:#3B5998 url(/rsrc.php/zA5O3/hash/30mqq6w4.gif) no-repeat 2px 2px}
+		#rotateright a{height:26px;background:white url(/rsrc.php/zDBQC/hash/b9tx15nc.gif) no-repeat 3px 2px;border-bottom:1px solid #fff}
+		#rotateright a:hover{background:#3B5998 url(/rsrc.php/z4S98/hash/32tkbaza.gif) no-repeat 3px 2px}
+		#rotateleft a:hover, #rotateright a:hover{text-decoration:none;color:#fff}
+		#convertmobile{padding:10px 10px 0;text-align:center;width:300px}
+		#convertmobile h4{text-align:center}
+		#convertmobile p{font-size:11px;text-align:center}
+		.movephoto select{width:117px}
+		.editalbum.newalbum #newalbum{padding:20px 0 20px 0}
+		.editalbum .tab_bar{margin:0 0 10px}
+		#newalbum .inputtext, #newalbum textarea{width:250px}
+		#newalbum .inputsubmit, #newalbum .inputbutton{width:auto;margin-top:15px}
+		#files div{margin:5px 0 8px 0}
+		#uploading{margin:20px auto;width:400px}
+		#noactive{margin:15px 0 0 0;text-align:center}
+		#iphoto_suggestion{margin:12px 0 0 0;text-align:center}
+		#mobile_suggestion{margin:4px 0 0 0;text-align:center}
+		#beforeupload{margin-bottom:20px}
+		#photodisclaimer{margin:5px 0 15px 0;text-align:center}
+		#photoagree{text-align:left;margin:10px 0 15px 0;width:300px}
+		#photoagree input{width:auto}
+		.formbuttons small{color:#666}
+		#frame{width:62px;height:62px;position:absolute;cursor:crosshair;background:url(/rsrc.php/z5P2G/hash/95xhalsq.gif) left top}
+		.photosearch .photo_table{margin-bottom:20px;border:1px solid #bbb;background:#f7f7f7;overflow:hidden;position:relative}
+		.photosearch .photo_table.photo_table_last{margin-bottom:0}
+		#ieinstallation, #canceledactivex{margin:0 20px}
+		.status_holder{padding:10px 0 0;margin:0 0 10px}
+		.status_holder_album, .status_holder_photo{padding:10px 0 0;margin:0}
+		.status_holder .status,
+		.status_holder #error{margin-bottom:0}
+		#tagging_instructions{margin:0 0 10px 0;padding:10px;border:solid 1px #ffe222;background:#fffbe2}
+		.footer_bar{background-color:#fff;border:0;padding-bottom:1px}
+		#public_link_photo{clear:both;color:#000;font-size:9px;padding:5px 5px;text-align:center}
+		#public_link_photo span{color:#000;display:block;font-size:11px}
+		.context_label{color:#808080}
+		#photo_badge .img{background-color:transparent;border:none;margin:0 6px -2px 0;padding:0}
+		#photoborder #load_indicator{background:url(/rsrc.php/z5R48/hash/ejut8v2y.gif) center center no-repeat;height:100px;width:760px;position:relative;margin-bottom:-100px;top:0;left:0;z-index:5;display:none}
+		#photoborder #load_indicator.loading{display:block}
+		#photoborder #transition_indicator{position:absolute;background:#000;color:#fff;font-weight:bold;font-size:13px;padding:26px 25px;height:20px;border-radius:3px;-webkit-border-radius:3px;-moz-border-radius:3px;top:0;left:0;z-index:5;opacity:0;filter:alpha(opacity=0)}
+		#transition_indicator img{padding-right:5px}
+		#transition_indicator .warning{opacity:1;filter:alpha(opacity=0)}
+		.photo_metadata{padding-bottom:20px;text-align:left}
+		.photo_metadata .left_metadata{width:530px}
+		.photocaption_text{line-height:15px;margin-bottom:14px}
+		.photocaption_text:empty{margin-bottom:0}
+		.tag_outer{border:solid 7px #d8dfea;position:absolute}
+		.tag_outer, .tag_inner{display:block}
+		.tag_inner{border:solid 2px #3b5998}
+		.tag_box_unplaced{visibility:hidden}
+		.tag_box{left:0;top:0}
+		.autoexpand_mode .feedback_toggle_link,
+		.collapsed_comments .feedback_hide_link,
+		.feedback_toggle_link .feedback_show_link{display:none}
+		.collapsed_comments .feedback_show_link{display:inline}
+		.action_links_title .comment_link,
+		.action_links_bottom .comment_link,
+		.feedback_toggle_link .feedback_show_link,
+		.feedback_toggle_link .feedback_hide_link,
+		.UIActionLinks .comment_link{color:#3b5998;font-weight:normal;vertical-align:text-bottom}
+		.action_links_title .comment_link:hover,
+		.action_links_bottom .comment_link:hover,
+		.feedback_show_link:hover,
+		.feedback_hide_link:hover,
+		.UIActionLinks .comment_link:hover{text-decoration:underline}
+		.collapsed_comments .uiUfi{display:none}
+		.uiUfi{padding-top:2px;width:528px;font-size:11px}
+		.uiUfi .ufiItem{background-color:#edeff4;border-bottom:1px solid #e5eaf1;margin-top:2px;padding:5px 5px 4px}
+		.uiUfi .ufiNub{*font-size:0;*line-height:5px;margin-bottom:-2px;margin-top:0}
+		.uiUfi .ufiNub i{background:url(http://s3.amazonaws.com/tradeya_web/images/dp99yhnp.png) no-repeat;display:block;height:5px;margin-left:17px;width:9px}
+		.uiUfiAddComment .actorPic{float:left;margin-right:6px}
+		.uiUfiAddComment textarea{float:right;height:29px;margin:0;resize:none;width:349px}
+		.uiUfiAddCommentCollapsed .DOMControl_placeholder{height:14px;_height:29px;min-height:14px;width:387px;_width:349px}
+		.uiUfiAddComment .commentBtn{float:right}
+		.hidden_add_comment .uiUfiAddComment,
+		.uiUfiAddCommentCollapsed .DOMControl_placeholder + .actorPic,
+		.uiUfiAddComment .DOMControl_placeholder ~ .commentBtn{display:none}
+		.uiUfiComment .commentContent{padding-top:1px}
+		.uiUfiComment .actorName{font-weight:bold}
+		.uiUfiComment .commentActions{padding-top:2px}
+
+		#bootloader_css_7obs4itj8944g04o_pkg_css { height: 42px; }
+
+
+
+
+
+
+
+
+
+
+
+		body {font-family:lucida grande,tahoma,verdana,arial,sans-serif;font-size:12px}
+
+		a {text-decoration:none;color:#1d4581}
+		a:hover{text-decoration:underline}
+
+		#bluebar {background:#3B5998;height:41px;width:100%;}
+
+		:focus {outline:medium none;}
+
+		.center{margin:0 auto}
+
+		.clearfix {display:block;clear:both}
+
+		.tdy-header {background:#eceff5;width:740px;padding:7px 10px;margin-bottom:10px}
+		.logo-box {background:url(http://s3.amazonaws.com/tradeya_web/images/logo.png) no-repeat left top;width:121px;height:40px;float:left}
+
+		.header-text {font-size:13px;color:#595959;padding:12px 0 0;width:600px;float:right;line-height:27px}
+		.header-links {float:right}
+		.header-links li {float:left;margin-left:30px}
+		.header-links a {color:#595959}
+		.header-links a:hover {text-decoration:underline}
+		.header-links li.post-listing a {background:url(http://s3.amazonaws.com/tradeya_web/images/post-listing.png) no-repeat right top;padding-right:32px;display:block}
+		.header-links li.my-account a {background:url(http://s3.amazonaws.com/tradeya_web/images/my-account.png) no-repeat right top;padding-right:32px;display:block}
+		.header-links li.my-home a {background:url(http://s3.amazonaws.com/tradeya_web/images/home.png) no-repeat right top;padding-right:25px;display:block}
+
+		.middle {float:left;width:552px}
+		.middle-header {float:left;width:100%}
+		.middle-header img {float:left;padding-right:45px}
+		.middle-content{float:left}
+
+		ul.icon-list {float:left;font-size:11px;width:95px;padding-right:17px}
+		ul.icon-list li {color:#404040;padding:1px 0}
+		ul.icon-list li.items-icon {background:url(http://s3.amazonaws.com/tradeya_web/images/items-icon.jpg) no-repeat top left;width:46px}
+		ul.icon-list li.offers-icon {background:url(http://s3.amazonaws.com/tradeya_web/images/offers-icon.jpg) no-repeat top left;width:69px}
+		ul.icon-list li.progress-icon {background:url(http://s3.amazonaws.com/tradeya_web/images/progress-icon.jpg) no-repeat top left;width:59px}
+		ul.icon-list li.icons-title {font-weight:bold;color:#000000;font-size:13px;padding:0 0 5px}
+		ul.icon-list li.value {height:36px;padding:18px 0 0;text-align:center;color:#FFFFFF;font-size:16px}
+
+		ul.progress {width:111px}
+
+		.offers-value {float:left;width:50px}
+
+
+		.sepbar {width:542px;height:14px;background:#5b7cae;border-top:1px solid #1c477d;color:#FFFFFF;font-size:11px;padding:5px;margin:10px 0 6px 0}
+
+		.filters {float:right;}
+		.filters a {padding-right:15px;background:url(http://s3.amazonaws.com/tradeya_web/images/mag-glass.png) no-repeat right top}
+
+		.activity {border-bottom:1px solid #e5e5e5;margin-bottom:15px;}
+		.activity_last {border-bottom:1px solid #91a4c5;margin-bottom:10px;padding-bottom:5px}
+
+		.photo-block {width:86px;height:65px;padding:10px 0 20px 10px;float:left}
+		.profile-thumb {height:36px;width:36px;float:left}
+		.item-thumb {height:65px;width:86px;z-index:-1;float:right; no-repeat right bottom}
+		.imgus {height:40px;width:40px;}
+		.it {position: absolute; z-index: 1; float: right;}
+		.pt {position: absolute; z-index:2; float:left;}
+
+		.green-arrow {background:url(http://s3.amazonaws.com/tradeya_web/images/green-arrow.png) no-repeat center center;height:96px;float:left;width:40px;margin:0 5px;text-indent:-9999px}
+		.accepted-arrow {background:url(http://s3.amazonaws.com/tradeya_web/images/accepted-arrow.jpg) no-repeat center center;height:96px;float:left;width:40px;margin:0 5px;text-indent:-9999px}
+		.offered-arrow {background:url(http://s3.amazonaws.com/tradeya_web/images/offered-arrow.png) no-repeat center center;height:96px;float:left;width:40px;margin:0 5px;text-indent:-9999px}
+		.rejected {background:url(http://s3.amazonaws.com/tradeya_web/images/rejected-icon.png) no-repeat center center;height:96px;float:left;width:40px;margin:0 5px;text-indent:-9999px}
+
+		.user-action {float:left;font-size:13px;padding:5px 0 15px 10px;min-height:42px}
+		.user-action-container {float:left;width:300px}
+
+		.potential-trades {width:300px}
+		.potential-trades li {font-size:11px;color:#404040}
+		.potential-trades li.potential-title {font-size:13px;font-weight:bold;padding-bottom:5px}
+		.user-options {float:left;font-size:11px;padding-bottom:10px}
+		.user-options ul li {background:url(http://s3.amazonaws.com/tradeya_web/images/list-dot.png) no-repeat left center;}
+		.user-options ul li.first {background:none}
+		.user-options li {float:left;padding:0 10px 0 12px}
+		.user-options a {font-weight:bold}
+		li a.make-offer {background:url(http://s3.amazonaws.com/tradeya_web/images/tradeya-sprite.png) no-repeat left;padding-left:24px}
+
+		.action-btns {padding:15px 0}
+		.action-btns a {float:left;padding-right:5px;height:18px}
+		.action-btns a.do-it {background:url(http://s3.amazonaws.com/tradeya_web/images/do-it-btn.png) no-repeat;width:76px;text-indent:-9999px;display:block}
+		.action-btns a.dont-do-it {background:url(http://s3.amazonaws.com/tradeya_web/images/dont-btn.png) no-repeat;width:103px;text-indent:-9999px;display:block}
+		.action-btns a.accept {background:url(http://s3.amazonaws.com/tradeya_web/images/accept-btn.png) no-repeat;width:86px;text-indent:-9999px;display:block}
+		.action-btns a.reject {background:url(http://s3.amazonaws.com/tradeya_web/images/reject-btn.png) no-repeat;width:79px;text-indent:-9999px;display:block}
+		.action-btns a.revoke {background:url(http://s3.amazonaws.com/tradeya_web/images/revoke-btn.png) no-repeat;width:86px;text-indent:-9999px;display:block}
+
+		.item-link, .bold {font-weight:bold}
+		.eleven {font-size:11px}
+
+
+		.user-comments {width:532px;margin-bottom:10px}
+		ul.uiUfi {float:left;margin:0 0 15px 24px}
+
+		a.thumbs-up {padding-left:24px;background:url(http://s3.amazonaws.com/tradeya_web/images/fb-sprites.png) no-repeat left -257px}
+		a.thumbs-down {padding-left:24px;background:url(http://s3.amazonaws.com/tradeya_web/images/thumbs-down.png) no-repeat left top}
+		a.blank-sprite {padding-left:24px}
+
+		.ufiItem a.comment-bubble {padding-left:24px;background:url(http://s3.amazonaws.com/tradeya_web/images/fb-sprites.png) no-repeat left -72px}
+
+
+
+		.actorPic {display:block}
+		.actorName {font-weight:bold}
+		.uiProfilePhotoMedium {width:36px;height:36px}
+		.imageBlock {margin-right:8px;width:36px;float:left}
+
+		.commentContent {padding-top:1px;display:table-cell;vertical-align:top;float:left}
+
+		.uiTextSubtitle {color:#808080;padding-top:5px}
+
+		.trades {margin-top:0px}
+
+		.older-posts {float:left;display:block;padding-left:10px}
+		.older-posts a {padding-right:25px;background:url(http://s3.amazonaws.com/tradeya_web/images/fb-sprites.png) no-repeat right -292px}
+
+
+
+
+		.right {float:right;width:195px}
+
+		.left {float:left;width:195px;padding-right:13px}
+		.left .side-listings {border-right:1px solid #D7DFEA;border-left:none;margin-bottom:0;padding-bottom:20px}
+		.left ul li a.make-offer {padding-left:25px}
+
+
+		.side-listings {border-left:1px solid #CCCCCC;margin-bottom:20px;float:right;width:194px;font-size:11px;color:#595959}
+		.side-listings-inner {border-left:4px solid #E5E5E5;padding:10px 5px;border-bottom:1px solid #E5E5E5}
+		.side-listings-inner img {float:left;padding-right:15px}
+		.side-listings-inner ul {float:left}
+		a.see-all {float:right;font-weight:bold}
+		.side-listings strong {font-weight:bold;font-size:11px;color:#000000}
+
+
+		img.lrg-profile {padding:5px 0}
+
+
+		.friends-using ul li {padding:1px 0}
+
+		.search {margin:74px 0 11px;float:left}
+		.search-box {padding:7px;font-size:11px;width:193;border:1px solid #B5B5B5;background:#F2F3F3}
+		.search-box .search-items-field {border:none;height:21px;width:110px;margin:1px 1px 0;padding:0 3px}
+		.search-box .search-items-btn {background:none;border:none;height:23px;width:55px;cursor:pointer}
+		.search-form {background:url(http://s3.amazonaws.com/tradeya_web/images/search-form.png) no-repeat;height:24px;width:179px;margin:0 auto}
+
+		.featured-header {background:#ecf0f6;border-top:1px solid #91a4c5;width:179px;padding:5px 8px;float:left;font-weight:bold;font-size:11px;color:#000000}
+
+		.footer-container {float:left;margin:60px 0;border-bottom:1px solid #bfbfbf}
+		.footer {background:#ecf0f6;border-top:1px solid #91a4c5;width:940px;padding:5px;font-size:11px}
+		.footer ul li {float:left;border-right:1px solid #cdcdcd;padding:0 5px}
+		.footer ul li.last {border:none}
+		.footer p {padding:10px 0 20px;float:left;color:#404040;line-height:18px}
+		.footer p a {font-weight:bold}
+
+		.write-comment {width:521px;height:19px;border:1px solid #BBC8D9;color:#777777;padding-left:3px}
+
+		ul.activity-list {float:left;padding:5px}
+		ul.activity-list a {font-weight:bold}
+
+		ul.wishlist {margin-top:5px;font-weight:bold;float:left}
+		ul.wishlist li {border-bottom:1px solid #E5E5E5;padding:5px 8px;width:180px}
+		ul.wishlist li.seeall {border-bottom:1px solid #E5E5E5;padding:5px 8px;width:230px}
+		ul.wishlist li.first {border-top:1px solid #E5E5E5}
+		ul.wishlist li a.xsprite {background:url(http://s3.amazonaws.com/tradeya_web/images/xsprite.png) no-repeat right center;text-indent:-9999px;display:block;float:right;width:7px}
+		ul.wishlist li.indent {padding-left:15px;font-weight:normal;width:172px}
+		ul.wishlist li .checkbox {float:right}
+		ul.wishlist li.first-items {padding-top:0;font-weight:normal}
+		ul.wishlist li.last-items {border:none}
+		ul.photo_album li a.xsprite {background:url(http://s3.amazonaws.com/tradeya_web/images/xsprite.png) no-repeat right center;text-indent:-9999px;display:block;float:right;width:7px}
+
+		.wishlist-block {width:256px;padding:0 0 0 10px;border-bottom:1px solid #e5e5e5;margin:0 10px 10px 0;float:left;color:#404040;font-size:11px}
+		.wishlist-block ul {margin-bottom:15px}
+		.wishlist-block ul li .user-options {float:right}
+		.wishlist-block ul li.item-link {font-size:13px;padding:3px 0}
+		.wishlist-block ul li.first {padding-left:0}
+
+		.my-items {padding:0 5px 5px}
+		.my-items a {font-size:11px}
+
+		ul.profile-actions {padding-bottom:20px}
+		ul.profile-actions li {border-bottom:1px solid #E5E5E5;padding:5px 0 5px 10px;font-size:11px;font-weight:bold}
+		ul.profile-actions li.first {border:none;padding:0}
+
+		ul.pagination {float:right}
+		ul.pagination li {float:left;padding:0 3px 2px}
+		ul.pagination li.current {border-bottom:2px solid #305c99}
+
+		a.down-arrow {display:block;text-indent:-9999px;background:url(http://s3.amazonaws.com/tradeya_web/images/down-arrow.png) no-repeat left center;width:15px}
+
+		.product-declaration-header {margin-bottom:15px}
+		.product-declaration {float:left;padding-left:10px}
+		.product-declaration p {color:#595959;font-size:11px}
+		.product-declaration p.title {font-size:24px;color:#000000}
+
+		.promote {float:right}
+		.promote a.promote-btn {display:block;text-indent:-9999px;background:url(http://s3.amazonaws.com/tradeya_web/images/promote-btn.png) no-repeat left top;height:44px;width:131px}
+		.promote a.offer-btn {display:block;text-indent:-9999px;background:url(http://s3.amazonaws.com/tradeya_web/images/make-offer-lrg.jpg) no-repeat left top;height:44px;width:171px}
+
+		.product-description {padding-left:10px;font-size:13px;color:#404040}
+		.product-description p {padding:5px 0}
+
+
+		.product-details {background:#ecf0f6;border-top:1px solid #91a4c5;padding:5px 10px 5px 10px;float:left;font-size:12px;color:#404040;width:531px;margin-top:5px}
+		.product-details ul li {padding:3px 0 5px 2px}
+		.product-details ul.details {width:300px;float:left}
+		.product-details ul.upgrades {float:right;text-align:right}
+		.product-details ul li span {width:60px;float:left}
+
+		.photo-thumbs {float:left}
+		.photo-thumbs ul {padding:10px 0;float:left}
+		.photo-thumbs ul li {float:left;padding:5px 10px}
+
+		.comment-box {background:#EDEFF4;padding:5px}
+		.comment-box input.write-comment {width:540px}
+
+		.top-comment {padding:10px 0 5px 5px;border-top:1px solid #E5E5E5}
+
+		.completed-date {font-size:11px;color:#404040}
+
+		ul.mutual-friends {float:left;margin-top:5px}
+		ul.mutual-friends li {float:left;padding:0 5px 15px;width:54px}
+		ul.mutual-friends li.first-items {float:none;border-bottom:1px solid #E5E5E5;margin-bottom:15px;width:185px;padding-bottom:5px}
+
+		ul.ebay li {padding-top:5px}
+
+		ul.amazon li.buy-new {padding-top:5px}
+
+		ul.filter-results li {padding:0 0 2px 5px}
+
+
+		.generic-dialog {height:0;left:0;overflow:visible;position:absolute;top:0;width:100%;z-index:101}
+		.generic-dialog-popup {height:0;margin:auto;overflow:visible;position:relative}
+
+		.pop-container {-moz-border-radius:8px 8px 8px 8px;-webkit-border-radius:8px 8px 8px 8px;background:rgba(82,82,82,0.7);padding:10px}
+		.pop-content {direction:ltr}
+		.pop-content h2.dialog-title {background:#6D84B4;border: 1px solid #3B5998;color:#FFFFFF;font-size:14px;font-weight:bold;margin:0}
+		.pop-content h2 span {display:block;padding:5px 20px}
+		.pop-content .dialog-content {background:#FFFFFF;border-right:0px solid #555555;color:#404040;padding:10px 20px 10px 20px}
+		.pop-content .dialog-content p {font-size:11px}
+		.pop-content .offer-actor {padding-right:20px;min-height:65px}
+		.pop-content .offer-actor img {float:left;padding-right:10px}
+		.pop-content p {padding:5px 0 10px}
+
+		.item-picture {float:left;padding-left:25px}
+
+		.offer {width:220px;float:left;margin-top:20px3}
+
+		.diff-item {float:left;padding-top:30px}
+		.diff-item a.diff-item-btn {display:block;text-indent:-9999px;background:url(http://s3.amazonaws.com/tradeya_web/images/diff-item-btn.png) no-repeat left top;height:26px;width:179px}
+
+		.terms-of-use {float:left;margin-top:50px;padding-bottom:10px}
+		.terms-of-use p {float:left;font-size:11px}
+		.terms-of-use p.disclaimer {width:480px;padding-left:10px}
+
+		.confirm-cancel {float:right;padding-top:10px;margin-top:20px;width:100%;border-top:1px solid #91A4C5}
+		.confirm-container, .cancel-container {float:right;padding-right:0}
+
+		.send-cancel {float:right;padding:15px 15px 10px 0;width:100%}
+
+		a.confirm-btn {display:block;text-indent:-9999px;background:url(http://s3.amazonaws.com/tradeya_web/images/confirm-btn.png) no-repeat left top;height:26px;width:77px}
+		a.cancel-btn {display:block;text-indent:-9999px;background:url(http://s3.amazonaws.com/tradeya_web/images/cancel-btn.png) no-repeat left top;height:26px;width:59px}
+		a.send-btn {display:block;text-indent:-9999px;background:url(http://s3.amazonaws.com/tradeya_web/images/send-btn.png) no-repeat left top;height:26px;width:58px}
+		a.post-btn {display:block;text-indent:-9999px;background:url(http://s3.amazonaws.com/tradeya_web/images/post-btn.png) no-repeat left top;height:26px;width:58px}
+
+		.pop-bottom {border-right:0px solid #555555;background:#FFFFFF;float:left;width:545px}
+
+		.top-border {border-top:1px solid #91a4c5;float:right;padding:15px 0 10px;width:100%}
+
+		.my-stuff {height:27px;background:#eceff5;border-top:1px solid #91A4C5}
+		.my-stuff h2 {padding:5px 5px 5px 10px;float:left}
+		.my-stuff-search {float:right;padding-top:3px;background:#FFFFFF;border:1px solid #BDC7D8;font-size:11px;height:17px;margin:2px 10px 0 0;width:350px}
+		.my-stuff-input {display:inline-block;margin-left:5px;padding:1px 5px 2px 0;width:287px;border:none}
+		.my-stuff-btn {border:none;cursor:pointer;display:block;float:right;height:15px;padding:0;width:22px;background:url(http://s3.amazonaws.com/tradeya_web/images/search-btn.png) no-repeat left}
+
+		.my-stuff-list {overflow:auto;position:relative;white-space:nowrap}
+		.my-stuff-list ul.horizontal-list {padding:20px;width:2000px}
+		.my-stuff-list ul.horizontal-list li {text-align:center;min-height:130px;float:left;padding:10px 20px 0}
+		.my-stuff-list .list-container {overflow:auto}
+
+		.item-description {float:left;padding-left:20px;width:200px}
+		.item-description h2 {font-size:18px}
+		.item-description p {margin-bottom:10px}
+
+		.photo-selected {}
+		.photo-deselected {opacity: 0.4;filter: alpha(opacity=40);}
+		.img-selected {}
+		.img-deselected {opacity: 0.4;filter: alpha(opacity=40);}
+
+		.photo-block-offer {width:190px;padding:5px 0 20px;float:left}
+		.profile-thumb-50 {height:50px;width:50px;float:left;z-index:1000}
+		.product-thumb {min-height:200px;min-width:180px;float:left;}
+		.product-thumb-img{top:10;left:10;width:200%;height:180%;}
+
+		ul.post-listing-pop {}
+		ul.post-listing-pop li {text-align:right;padding:5px 0}
+		ul.post-listing-pop li input {background:none;border:1px solid #BBC8E4;width:376px;min-height:19px;padding-left:10px;color:#1D4581}
+		ul.post-listing-pop span {padding-right:15px;width:100px;font-size:11px;color:#1d4581;font-weight:bold}
+		ul.post-listing-pop li input.location {width:250px}
+		ul.post-listing-pop li select {border:1px solid #BBC8E4;background:none;width:376px;padding-left:10px}
+		ul.post-listing-pop li select.countries {width:121px;padding-left:0}
+		ul.post-listing-pop li textarea {border:1px solid #BBC8E4;background:none;width:376px;padding:5px 0 0 10px;font-family:lucida grande,tahoma, verdana, arial, sans-serif;color:#1D4581;font-size:11px}
+		ul.post-listing-pop li.terms {width:376px;float:right;padding:20px 0 0 0}
+		ul.post-listing-pop li.terms input.terms-checkbox {width:15px;float:left;min-height:0}
+		ul.post-listing-pop li.terms p {width:350px;float:left;text-align:left;padding:0 0 0 10px}
+		ul.post-listing-pop li.required {width:376px;float:right;padding-bottom:20px;font-weight:bold;font-size:11px}
+
+
+		.advanced-search ul {float:right;padding-top:5px;width:300px;color:#1D4581}
+		.advanced-search ul li {float:right;padding:3px 0}
+		.advanced-search ul li select {background:none;border:1px solid #BBC8E4}
+
+		.hide{display:none}
+
+		.diabutton {
+			border: 1px solid #006;
+			background: #ccf;
+		}
+		.diabutton:hover {
+			border: 1px solid #f00;
+			background: #eef;
+		}
+		a.uiButton, .uiButtonSuppressed:active, .uiButtonSuppressed:focus, .uiButtonSuppressed:hover {
+		-webkit-box-shadow: rgba(0, 0, 0, 0.0976562) 0px 1px 0px;
+		background: none;
+		border-bottom-color: #ffffff;
+		border: none;
+		color: #1D4581;
+		cursor: pointer;
+		display: inline-block;
+		font-size: 11px;
+		font-weight: bold;
+		line-height: normal !important;
+		padding: 0px;
+		text-align: center;
+		text-decoration: none;
+		vertical-align: top;
+		white-space: nowrap;
+		}
+		
+		span.uiButton, span.uiButtonText, span.uiButton input {
+		background: none;
+		border: none;
+		cursor: pointer;
+		display: block;
+		font-family: 'Lucida Grande', Tahoma, Verdana, Arial, sans-serif;
+		font-size: 11px;
+		font-weight: bold;
+		margin: 0px;
+		outline: none;
+		padding: 0px;
+		white-space: nowrap;
+		color: #1D4581;
+		}
+		
+		i.uiButtonMedium .img {
+		margin-top: 2px;
+		display:none;
+		}
+		i.uiButton .img {
+		vertical-align: top;
+		display:none;
+		}
+		i.sx_3e0626 {
+		background-position: -31px -147px;
+		height: 14px;
+		width: 8px;
+		display:none;
+		}
+		i.spritemap_aanaup {
+		background-image: none;
+		background-repeat: no-repeat;
+		display: inline-block;
+		height: 16px;
+		width: 16px;
+		display:none;
+		}
+		i.mrs {
+		margin-right: 5px;
+		display:none;
+		}
+		.inputbutton, .inputsubmit {
+		background-color: #3B5998;
+		border-color: #D9DFEA #0E1F5B #0E1F5B #D9DFEA;
+		border-style: solid;
+		border-width: 1px;
+		color: white;
+		padding: 2px 15px 3px;
+		text-align: center;
+		}

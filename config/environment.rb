@@ -25,7 +25,7 @@ Rails::Initializer.run do |config|
   # config.plugins = [ :exception_notification, :ssl_requirement, :all ]
   config.gem "authlogic"
   config.gem "bcrypt-ruby", :lib => "bcrypt"
-
+  config.gem "paperclip"
   # Skip frameworks you're not going to use. To use Rails without a database,
   # you must remove the Active Record framework.
   # config.frameworks -= [ :active_record, :active_resource, :action_mailer ]

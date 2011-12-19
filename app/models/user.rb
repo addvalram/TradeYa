@@ -8,4 +8,8 @@ has_many :recent_activities
   validates_presence_of :user_name, :email
 
   acts_as_authentic
+  
+  has_attached_file :photo,:styles => { :small => "150x150>" }
+                 
+
 end
