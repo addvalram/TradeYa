@@ -1,29 +1,26 @@
 class UsersController < ApplicationController
-  def index 
-    debugger  
+  before_filter :require_user, :except => [:new,:create]
+  def index    
     @users= User.find(:all)   
-    @items= Item.find(:all)   
-     
+    @items= Item.find(:all)
     @offerCount=Offer.find(:all, :conditions => ["public_user_id = ?",current_user.id]).count
     @itemsCount=Item.find(:all, :conditions => ["user_id = ?",current_user.id]).count
     @user=User.find(current_user.id)
     @offers=Offer.find(:all,:order =>'id DESC')
     respond_to do |f|
-      f.html      
+    f.html      
     end    
   end
-  
-  
+    
   def create
- 
   @user = User.new(params[:user])
-  if @user.save
-    flash[:notice] = "Registration successful."
-    redirect_to users_path
-  else
-    render :action => 'new'
+    if @user.save
+      flash[:notice] = "Registration successful."
+      redirect_to users_path
+    else
+      render :action => 'new'
+    end
   end
-end
 
 def edit
   @user = current_user
@@ -46,5 +43,4 @@ def show
       format.xml  { render :xml => @user }
     end
 end
-
 end

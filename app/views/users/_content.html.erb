@@ -19,7 +19,8 @@
 					</div>
 					<% form_for (:offer ,:url => user_offers_path(current_user.id)) do |f| %>
 					
-				  <%= f.error_messages %>				
+				  <%= f.error_messages %>	
+				  				
 					Community Item list					 
 					<%= select (:item, :item_id, Item.find(:all,:conditions =>["user_id <> ? ",current_user.id]).collect  {|item| [item.item_name ,item.id,]}) %>					
 					My Item List
