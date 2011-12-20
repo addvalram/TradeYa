@@ -2,7 +2,6 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.xml
   def index
-    debugger
     user =User.find(params[:user_id])
     @items = user.items.find(:all)    
     
@@ -16,7 +15,6 @@ class ItemsController < ApplicationController
   # GET /items/1.xml
   def show
     @item = Item.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @item }
@@ -26,8 +24,7 @@ class ItemsController < ApplicationController
   # GET /items/new
   # GET /items/new.xml
   def new
-    @item = Item.new
-    
+    @item = Item.new    
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @item }
@@ -79,7 +76,7 @@ class ItemsController < ApplicationController
     @item.destroy
 
     respond_to do |format|
-      format.html { redirect_to(items_url) }
+      format.html { redirect_to(user_items_url) }
       format.xml  { head :ok }
     end
   end

@@ -10,7 +10,7 @@
 				<div class="rfloat" style="color: #9999; background-color: #2222;">
 										
 						<% if current_user != nil   %> 
-				 		<%=current_user.user_name %> | <%= link_to "Edit Profile", edit_user_path(:current) %> <%= link_to "Logout", logout_path %> |<%= link_to "Home", users_path %>
+				 		<%=current_user.user_name %> | <%= link_to "Edit Profile", edit_user_path(:current) %> <%= link_to "Logout", logout_path %> |<%= link_to "Home", users_path %>|<%= link_to 'Destroy', @user, :confirm => 'Are you sure?', :method => :delete %>
 						<% else %>
 					
 					 <%= link_to "Register", new_user_path%> | 			

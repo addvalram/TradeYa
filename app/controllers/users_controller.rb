@@ -1,14 +1,19 @@
 class UsersController < ApplicationController
-  def index   
-    @users= User.find(:all)    
+  def index 
+    debugger  
+    @users= User.find(:all)   
+    @items= Item.find(:all)   
+     
     @offerCount=Offer.find(:all, :conditions => ["public_user_id = ?",current_user.id]).count
     @itemsCount=Item.find(:all, :conditions => ["user_id = ?",current_user.id]).count
     @user=User.find(current_user.id)
+    @offers=Offer.find(:all,:order =>'id DESC')
     respond_to do |f|
-      f.html
-      
-    end
+      f.html      
+    end    
   end
+  
+  
   def create
  
   @user = User.new(params[:user])
