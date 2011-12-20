@@ -1,5 +1,5 @@
 class Item < ActiveRecord::Base
-  belongs_to :user, :
+  belongs_to :user
   has_many :offers
   #has_attached_file :photo, :style =>{:small=>"80x80>" ,:original => '250x250>'}
   has_attached_file :photo, :style => { :small => "150x150>" }  

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :require_user, :except => [:new,:create]
+  before_filter :require_user, :except => [:new ,:create]
   def index    
     @users= User.find(:all)   
     @items= Item.find(:all)
