@@ -15,7 +15,6 @@ class ItemsController < ApplicationController
   # GET /items/1
   # GET /items/1.xml
   def show
-    debugger
     @item = current_user.items.find(params[:id])
     respond_to do |format|
       format.html # show.html.erb
@@ -75,7 +74,6 @@ class ItemsController < ApplicationController
   # DELETE /items/1.xml
   def destroy
     @item = Item.find(params[:id])    
-    debugger
     @item.destroy   
     @offer_my_item_id = Offer.find_by_sql(["select * from offers where my_item_id= ?",params[:id]])
     @offer_my_item_id.each do |my_item_id|

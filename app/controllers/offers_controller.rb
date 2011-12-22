@@ -1,10 +1,10 @@
 class OffersController < ApplicationController
   # GET /offers
   # GET /offers.xml   
-  def index            
-      @offers = Offer.find_by_sql(["select * from offers where user_id<>?",current_user.id])
+  def index       
+      @offers = Offer.find_by_sql(["select * from offers where user_id <> ?" ,current_user.id])
      #item = Item.find(params[:item_id])
-      user=User.find(current_user.id)
+      user=User.find_by_id(current_user.id)
 #     user = User.find(params[:current_user_id])
   #    @offers = item.offers.find(:all)
       @offers2 = user.offers.find(:all)
@@ -44,9 +44,10 @@ class OffersController < ApplicationController
   # POST /offers
   # POST /offers.xml
   def create     
-      @c = 0
+      debugger
+         @c = 0      
         @offer = Offer.new(params[:offer])  
-        @offer.item=Item.find(params[:item][:item_id])
+        @offer.item=Item.find(params[:item][:item_id])      
         @i = Offer.find_by_sql(["select * from offers where item_id = ?",params[:item][:item_id]])
           @i.each do |item|
             if item.my_item_id = params[:item][:my_item_id]
@@ -61,7 +62,7 @@ class OffersController < ApplicationController
               @offer.public_user_id=temp_public_user_id[0].user_id                           
               @offer.my_item_id= params[:item][:my_item_id]
               @offer.user_id= current_user.id                      
-                  @offer.offer_status=1
+                  @offer.offer_respond="offered"
                   respond_to do |format|
                   if @offer.save
                       flash[:notice] = 'Offer was successfully created.'
@@ -76,16 +77,22 @@ class OffersController < ApplicationController
             end         
  
   # PUT /offers/1
-  # PUT /offers/1.xml
+  # PUT /offers/1.xml  
   def update   
-    debugger
     @offer = Offer.find(params[:id])
-    @itemUpdate= Item.find_by_sql(["select * from items"])
+    
+    #@itemUpdate= Item.find_by_sql(["select * from items"])
    # @item=find_by_sql("select * from items where item_id=?",)     
     respond_to do |format|
       if @offer.update_attributes(:offer_respond => "accepted")
-       @itemUpdate=Item.update_all({:user_id => current_user.id},{:id=>params[:item_id]})
-       #UserProduct.update_all({:is_temporary => false}, {:user_id => 12345})
+        if Offer.update_all({:offer_respond => "traded"},
+        ['id <> ? and item_id =?',
+         params[:id],params[:item_id]])
+         flash[:notice] = 'Offer Traded was successfully updated.'
+        else
+                flash[:notice] = 'Offer Traded Not Updared.'
+        end         
+       # set offer_respond=>"traded" where item_id=params[:item][:item_id]       
         
         flash[:notice] = 'Offer was successfully updated.'
         format.html { redirect_to users_url }
