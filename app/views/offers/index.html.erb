@@ -1,25 +1,29 @@
 <h1>Listing offers</h1>
-<table>
+<table width="80%" border="1">
   <tr>
-    <th>Item ID</th>
-    <th>User ID (Current User)</th>
-    <th>Offer status</th>
+    <th>Item Offered  </th>
+    <th>Offered by</th>
+    <th>Offer Respond</th>
+    <th colspan="4">Actions</th>
   </tr>
-
 <% @offers.each do |offer| %>
-  <tr>
-    <td><%=h offer.item_id %></td>
-    <td><%=h offer.user_id %></td>
-    <td><%=h offer.offer_status %></td>
-    
-    <td><%= link_to 'Show', item_offer_path(offer.item,offer) %></td>
-    <td><%= link_to 'Edit', edit_item_offer_path(offer.item,offer) %></td>
-    <td><%= link_to 'Destroy', item_offer_path(offer.item,offer), :confirm => 'Are you sure?', :method => :delete %></td>
+  <tr style="text-align: center">
+    <td><%=h Item.find(offer.item_id).item_name %><%= image_tag Item.find(offer.item_id).photo.url %></td>   
+    <td><%=h User.find(offer.user_id).user_name %></td>
+    <td><%= h offer.offer_respond %></td>  
+    <% if offer.offer_respond != "accepted"%>    
+		   	<td><%= button_to "accept",user_item_offer_path(current_user.id, offer.item,offer), :method => :put %></td>
+		   	<%else%>   
+		    <td></td>
+		    <%end%>    
+    <td><%= link_to 'Show',  user_item_offer_path(current_user,offer.item,offer) %></td>
+    <td><%= link_to 'Edit', edit_user_item_offer_path(current_user,offer.item,offer) %></td>
+    <td><%= link_to 'Destroy', user_item_offer_path(current_user,offer.item,offer), :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
-
 <br />
 
-<%= link_to 'New offer', new_item_offer_path %>
+
+
 <%= link_to 'back', users_path %>

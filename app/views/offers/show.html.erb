@@ -47,5 +47,5 @@
 </p>
 
 
-<%= link_to 'Edit', edit_item_offer_path(@offer.item,@offer) %> |
-<%= link_to 'Back', item_offers_path %>
+<%= link_to 'Edit', edit_user_offer_path(current_user,@offer) %> |
+<%= link_to 'Back', user_item_offers_path(current_user) %>

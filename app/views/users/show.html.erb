@@ -9,12 +9,6 @@
 </p>
 
 
-<%= image_tag @user.photo.url(:small) %>
+<%= image_tag @user.photo.url() %>
 
-
-
-<%= link_to 'Edit', edit_user_path %>
-
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

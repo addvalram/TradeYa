@@ -7,4 +7,7 @@ class Item < ActiveRecord::Base
   validates_attachment_presence :photo
 #validates_attachment_size :photo, :less_than => 5.megabytes
 #validates_attachment_content_type :photo, :content_type => ['image/gif','image/jpeg', 'image/png']
+  def self.findpostItem(current_user)
+    return Item.find_by_sql(["select * from items where user_id <> ? ORDER BY  updated_at DESC", current_user])
+  end    
 end

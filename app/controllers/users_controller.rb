@@ -1,15 +1,19 @@
 class UsersController < ApplicationController
   before_filter :require_user, :except => [:new ,:create]
-  def index    
-    @users= User.find(:all)   
-    @items= Item.find(:all)
+
+  def index
+   
+    @users= User.find(:all)  
+    #@items= Item.find(:all)
     @offerCount=Offer.find(:all, :conditions => ["public_user_id = ?",current_user.id]).count
     @itemsCount=Item.find(:all, :conditions => ["user_id = ?",current_user.id]).count
     @user=User.find(current_user.id)
-    @offers=Offer.find(:all,:order =>'id DESC')
+    @offers=Offer.findrecent()
+    
+    @items=Item.findpostItem(current_user)
     respond_to do |f|
     f.html      
-    end    
+    end       
   end
     
   def create
@@ -43,4 +47,21 @@ def show
       format.xml  { render :xml => @user }
     end
 end
-end
+
+# def validate_offer_by_status
+# debugger
+  # temp_item_id=Offer.find_by_sql(["select item_id from offers where offer_status= ? and item_id=?",1,params[:item][:item_id]])  
+  # temp_my_item_id=Offer.find_by_sql(["select my_item_id from offers where offer_status= ? and my_item_id=?",1,params[:item][:my_item_id]])
+#  
+  # #Offer.find_by_sql(["select id from offers where offer_status= ? and my_item_id =? and item_id=?",1,params[:item][:my_item_id],params[:item][:item_id]])
+# 
+ # if  temp_item_id[0].item_id !=  temp_my_item_id[0].my_item_id
+   # flash[:notice]="offer already done"
+ # else
+   # flash[:notice]="offer already done"
+#    
+ # end
+#   
+#   
+# end 
+  end

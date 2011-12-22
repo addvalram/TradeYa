@@ -1,11 +1,10 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :items do |item|
-  item.resources :offers
-  end
 
   map.resources :users do |user|
   user.resources :recent_activities
-  user.resources :items
+  user.resources :items do |item|
+               item.resources :offers
+                end
   user.resources :offers
   end
   
@@ -22,7 +21,7 @@ ActionController::Routing::Routes.draw do |map|
 
 map.login "login", :controller => "user_sessions", :action => "new"
 map.logout "logout", :controller => "user_sessions", :action => "destroy"
-
+map.validate_offer_by_status "validate_offer_by_status" , :controller=> "users", :action=> "validate_offer_by_status"
 
  # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   map.resources :products

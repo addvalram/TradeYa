@@ -1,11 +1,11 @@
-
 class ItemsController < ApplicationController
+  before_filter :require_user
   # GET /items
   # GET /items.xml
   def index
-    user =User.find(params[:user_id])
+    user =User.find(current_user)
     @items = user.items.find(:all)    
-    
+
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @items }
@@ -15,7 +15,8 @@ class ItemsController < ApplicationController
   # GET /items/1
   # GET /items/1.xml
   def show
-    @item = Item.find(params[:id])
+    debugger
+    @item = current_user.items.find(params[:id])
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @item }
@@ -34,18 +35,18 @@ class ItemsController < ApplicationController
 
   # GET /items/1/edit
   def edit
-    @item = Item.find(params[:id])
+    @item = current_user.items.find(params[:id])
   end
 
   # POST /items
   # POST /items.xml
   def create
     @item = Item.new(params[:item])
-    @item.user=User.find (params[:user_id])
+    @item.user=User.find(params[:user_id])
     respond_to do |format|
       if @item.save
         flash[:notice] = 'Item was successfully created.'
-        format.html { redirect_to(@item) }
+        format.html { redirect_to user_items_url(current_user) }
         format.xml  { render :xml => @item, :status => :created, :location => @item }
       else
         format.html { render :action => "new" }
@@ -57,7 +58,7 @@ class ItemsController < ApplicationController
   # PUT /items/1
   # PUT /items/1.xml
   def update
-    @item = Item.find(params[:id])
+    @item = current_user.items.find(params[:id])
     respond_to do |format|
       if @item.update_attributes(params[:item])
         flash[:notice] = 'Item was successfully updated.'
@@ -73,10 +74,14 @@ class ItemsController < ApplicationController
   # DELETE /items/1
   # DELETE /items/1.xml
   def destroy
-    @item = Item.find(params[:id])
-    @item.destroy
-
-    respond_to do |format|
+    @item = Item.find(params[:id])    
+    debugger
+    @item.destroy   
+    @offer_my_item_id = Offer.find_by_sql(["select * from offers where my_item_id= ?",params[:id]])
+    @offer_my_item_id.each do |my_item_id|
+      my_item_id.destroy
+      end  
+      respond_to do |format|
       format.html { redirect_to(user_items_url) }
       format.xml  { head :ok }
     end

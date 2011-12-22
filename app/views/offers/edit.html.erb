@@ -1,6 +1,6 @@
 <h1>Editing offer</h1>
 
-<% form_for(@offer) do |f| %>
+<% form_for(:offer, :url=> user_item_offer_path(current_user.id,offer.item,offer)) do |f| %>
   <%= f.error_messages %>
 
   <p>
