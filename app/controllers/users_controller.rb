@@ -12,9 +12,10 @@ class UsersController < ApplicationController
     @offers=Offer.findrecent()
     
     @items=Item.findpostItem(current_user)
-    respond_to do |f|
-    f.html      
-    end       
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @users }
+    end     
   end
     
   def create

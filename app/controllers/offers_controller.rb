@@ -44,13 +44,13 @@ class OffersController < ApplicationController
   # POST /offers
   # POST /offers.xml
   def create     
-      debugger
+      
         @offer = Offer.new(params[:offer])  
         @offer.item=Item.find(params[:item][:item_id])      
         #@a=Offer.find_by_sql(["select * from offers  where item_id =? and my_item_id=?",params[:item][:item_id],params[:item][:my_item_id]])                  
-        @b=Offer.find_by_sql(["select * from offers  where my_item_id =? and offer_respond='offered'",params[:item][:my_item_id]])
+        @offer_list_validation=Offer.find_by_sql(["select * from offers  where my_item_id =? and offer_respond='offered'",params[:item][:my_item_id]])
         
-        if @b.count!=0 
+        if @offer_list_validation.count!=0 
           flash[:notice] = "Sorry !!!! item already offered"
             redirect_to users_path            
           else   
