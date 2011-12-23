@@ -2,12 +2,12 @@ class OffersController < ApplicationController
   # GET /offers
   # GET /offers.xml   
   def index       
-      @offers = Offer.find_by_sql(["select * from offers where user_id <> ?" ,current_user.id])
+     # @offers = Offer.find_by_sql(["select * from offers where user_id <> ?" ,current_user.id])
      #item = Item.find(params[:item_id])
       user=User.find_by_id(current_user.id)
-#     user = User.find(params[:current_user_id])
-  #    @offers = item.offers.find(:all)
-      @offers2 = user.offers.find(:all)
+    # user = User.find(params[:current_user_id])
+  #   @offers = item.offers.find(:all)
+      @offers = Offer.find_by_sql(["select * from offers where public_user_id = ?",current_user.id])
  #    @offers= Offer.find_all_by_user_id(params[:user_id])      
     respond_to do |format|
       format.html # index.html.erb
@@ -45,19 +45,25 @@ class OffersController < ApplicationController
   # POST /offers.xml
   def create     
       debugger
-         @c = 0      
         @offer = Offer.new(params[:offer])  
         @offer.item=Item.find(params[:item][:item_id])      
-        @i = Offer.find_by_sql(["select * from offers where item_id = ?",params[:item][:item_id]])
-          @i.each do |item|
-            if item.my_item_id = params[:item][:my_item_id]
-              @c = 1
-            end
-          end
-          if @c == 1
-            flash[:notice] = "This item already offered"
-            redirect_to users_path
-          else
+        #@a=Offer.find_by_sql(["select * from offers  where item_id =? and my_item_id=?",params[:item][:item_id],params[:item][:my_item_id]])                  
+        @b=Offer.find_by_sql(["select * from offers  where my_item_id =? and offer_respond='offered'",params[:item][:my_item_id]])
+        
+        if @b.count!=0 
+          flash[:notice] = "Sorry !!!! item already offered"
+            redirect_to users_path            
+          else   
+        #@i = Offer.find_by_sql(["select * from offers where item_id = ?",params[:item][:item_id]])
+        #  @i.each do |item|
+        #    if item.my_item_id = params[:item][:my_item_id]
+        #      @c = 1
+        #    end
+        #  end
+        #  if @c == 1
+        #    flash[:notice] = "This item already offered"
+        #    redirect_to users_path
+         # else
               temp_public_user_id=Item.find_by_sql(["select user_id from items where id= ? ",params[:item][:item_id]])             
               @offer.public_user_id=temp_public_user_id[0].user_id                           
               @offer.my_item_id= params[:item][:my_item_id]

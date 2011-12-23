@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_filter :require_user, :except => [:new ,:create]
 
   def index
-   debugger
+  
     @users= User.find(:all)  
     #@items= Item.find(:all)
     

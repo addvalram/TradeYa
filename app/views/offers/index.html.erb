@@ -6,12 +6,12 @@
     <th>Offered by</th>
     <th>Offer Respond</th>
     <th colspan="4">Actions</th>
-  </tr>
-<% @offers2.each do |offer| %>
+  </tr><%debugger%>
+<% @offers.each do |offer| %>
   <tr style="text-align: center">
   	<td><%= h offer.my_item_id %></td>  
-    <td><%=h Item.find(offer.item_id).item_name %><%= image_tag Item.find(offer.item_id).photo.url %></td>   
-    <td><%=h User.find_by_id(offer.public_user_id).user_name %></td>
+    <td><%=h Item.find_by_id(offer.my_item_id).item_name %><%= image_tag Item.find(offer.my_item_id).photo.url %></td>   
+    <td><%=h User.find_by_id(offer.user_id).user_name %></td>
     <td><%= h offer.offer_respond %></td>  
     <% if offer.offer_respond != "accepted"%>    
 		   	<td><%= button_to "accept",user_item_offer_path(current_user.id, offer.item,offer), :method => :put %></td>
