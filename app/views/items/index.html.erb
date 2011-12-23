@@ -12,12 +12,14 @@
   	
    <td> <%= image_tag item.photo.url() %></td>
      
-    <td><%=h item.item_name %></td>
-    
+    <td><%=h item.item_name %></td>    
     <td><%=h item.item_description %></td>
+    
+    <td><%= link_to "fmake final offer",user_offers_path(current_user.id),:method=>"post"%>
     <td><%= link_to 'Show', user_item_path(current_user,item) %></td>
     <td><%= link_to 'Edit', edit_user_item_path(current_user,item) %></td>
     <td><%= link_to 'Destroy', user_item_path(current_user.id,item), :confirm => 'Are you sure?', :method => :delete %></td>
+  	
   </tr>
   
 <% end %>

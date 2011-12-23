@@ -1,6 +1,13 @@
 <%= render :partial => "hedder" %>		
 <%= link_to 'Post a Listing', new_user_item_path(current_user) %>
 <hr>
+
+<a href="#" id="MyItemListLink" class="forgot">Forgot Password</a>
+
+
+.......................
+
+
 <div>
 	Photo<%= image_tag @user.photo.url() %><br />
 	Current offers : <%= @offerCount%> <br />
@@ -23,8 +30,11 @@ Recent Activity:
 			<% @items.each do |item|%>
 			<td><%=h User.find(item.user_id).user_name%></td>
 			<td>posted ......</td>
-			<td><%= h item.item_name%></td>		
-			<td><%= image_tag item.photo.url%></td>		
+			<td><%= h item.item_name%></td>			
+			<td><%= image_tag item.photo.url%></td>
+			<td><%= link_to 'make an offer',user_items_path(current_user.id)%></td>
+			
+				
 		</tr>
 		<%end%>					
 		<% @offers.each do |offer|%>
@@ -40,23 +50,62 @@ Recent Activity:
 		<%end%>	
 </table>		
 <hr><hr>
-<h1>Community Users</h1>
-<table>
-  <tr>
-  	<th>User Photo</th>
-    <th>User name</th>
-    <th>Email</th>
-  </tr>
-<% @users.each do |user| %>
-  <tr>  	
-   <td> <%= image_tag user.photo.url() %></td>
-    <td><%=h user.user_name %></td>
-    <td><%=h user.email %></td>    
-    <td><%= link_to 'items',user_items_path(user)%></td>
-    <td><%= link_to 'Show', user %></td>   
-  </tr>
-<% end %>
-</table>
+<div id="userList" id="">
+	<h1>Community Users</h1>
+	<table>
+		  <tr>
+		  	<th>User Photo</th>
+		    <th>User name</th>
+		    <th>Email</th>
+		  </tr>
+				<% @users.each do |user| %>
+		  <tr>  	
+			<td> <%= image_tag user.photo.url() %></td>
+		    <td><%=h user.user_name %></td>
+		    <td><%=h user.email %></td>    
+		    <td><%= link_to 'items',user_items_path(user)%></td>
+		    <td><%= link_to 'Show', user %></td>   
+		  </tr>
+	<% end %>
+	</table>
+</div>
 <br />
+
+<div id="forgotpassword">
+                <div class="form-item">
+                        <h2>Forgot Password</h2>
+                        <table width="550" border="0" style="margin-top:25px; margin-left:10px;">
+                                <tr>
+                                        <td width="200">Provide Your Email:</td>
+                                        <td><input size="40" type="text" style="float:right;margin-right:90px;" /></td>
+                                </tr>
+                                <tr>
+                                        <td>&nbsp;</td>
+                                        <td><a class="gray-button" style="float:right;margin-right:67px;" href="#">Send</a>
+                                        	<a class="gray-button close" style="float:right;" href="#">Cancel</a></td>
+                                </tr>
+                        </table>
+                </div>
+        </div>
+<script>
+        $("#MyItemListLink").click(function() {
+        $("#forgotpassword").overlay({
+                top: 150,
+                mask: {
+                        color: '#E0E0E0',
+                        loadSpeed: 1000,
+                        opacity: 0.9
+                },
+        closeOnClick: false,
+        api: true
+        })
+        var ol = $("#forgotpassword").overlay({api: true});
+        // wait 5 seconds, then load the overlay
+        setTimeout(function() {
+ol.load();
+        }, 1);
+        });
+</script>
+
 <%=link_to "logout", logout_path%>
 <%= link_to 'New user', new_user_path %>

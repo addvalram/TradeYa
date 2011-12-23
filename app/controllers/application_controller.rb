@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 private
 def require_user
    unless current_user     
-     # flash[:notice] = "You must be logged in to access this page"
+      flash[:notice] = "You must be logged in to access this page"
      # redirect_to new_user_session_url
      redirect_to login_url
      return false

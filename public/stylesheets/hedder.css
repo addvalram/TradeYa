@@ -213,3 +213,129 @@ height: 14px;
 }
 
 
+.vspib {
+background: transparent;
+bottom: 0;
+cursor: default;
+height: auto;
+margin: 0;
+min-height: 40px;
+padding-left: 9px;
+padding-right: 4px;
+position: absolute;
+right: -37px;
+top: -2px;
+width: 28px;
+z-index: 3;
+}
+
+.vspii {
+background-color: #F5F5F5;
+background-image: -webkit-gradient(linear,left top,left bottom,from(#f5f5f5),to(#f1f1f1));
+background-image: -webkit-linear-gradient(top,#f5f5f5,#f1f1f1);
+
+border: 1px solid #DCDCDC;
+-webkit-border-radius: 2px;
+border-radius: 2px;
+cursor: default;
+height: 100%;
+position: relative;
+visibility: hidden;
+-webkit-user-select: none;
+}
+
+.vspiic {
+background: url(/images/nav_logo99.png);
+background-position: -23px -260px;
+height: 13px;
+margin-left: 6px;
+margin-top: -7px;
+position: absolute;
+top: 50%;
+width: 15px;
+}
+.vspii {
+cursor: default;
+visibility: hidden;
+}
+
+.g {
+margin-top: 0;
+margin-bottom: 20px;
+}
+.vsc {
+display: inline-block;
+position: relative;
+width: 100%;
+}
+
+.r {
+font-size: medium;
+}
+.vspii {
+cursor: default;
+visibility: hidden;
+}
+.s {
+max-width: 42em;
+}
+.s {
+color: #222;
+}
+#nycp {
+background-color: #FAFAFA;
+border-left: 1px solid #EBEBEB;
+bottom: 0;
+left: 0;
+margin-left: 33px;
+min-width: 240px;
+padding: 22px 16px 10px 31px;
+position: absolute;
+right: 0;
+top: 0;
+visibility: hidden;
+}
+#ires h3, #res h3, #tads h3, #tadsb h3, #mbEnd h3 {
+font-size: medium;
+}
+#ires h3, #res h3, #tads h3, #tadsb h3, #mbEnd h3 {
+font-size: medium;
+}
+.ti, .bl, #res h3 {
+display: inline;
+}
+.tbpr {
+margin-top: .4em;
+margin-bottom: 1.2em;
+}
+#ires h3, #res h3, #tads h3, #tadsb h3, #mbEnd h3 {
+font-size: medium;
+}
+#ires h3, #res h3, #tads h3, #tadsb h3, #mbEnd h3 {
+font-size: medium;
+}
+.micon, .licon, .close_btn, .inline-close-btn {
+border: 0;
+}
+.csb, .ss, .play_icon, .mini_play_icon, .micon, .licon, .close_btn, #tbp, .mbi, .inline-close-btn {
+background: url(/images/nav_logo99.png) no-repeat;
+overflow: hidden;
+}
+ol, ul, li {
+border: 0;
+margin: 0;
+padding: 0;
+}
+
+
+.forgotpassword {
+position: absolute;
+top: 0px;
+left: 0px;
+z-index: 9998;
+background-color: #E0E0E0;
+display: block;
+opacity: 0.9;
+width: 1343px;
+height: 2150px;
+}  
