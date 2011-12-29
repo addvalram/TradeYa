@@ -7,8 +7,7 @@
   <b>User Name:</b>
  <%=h @user.user_name %>
 </p>
+<%= image_tag @product.photo.url(:small) %>
 
-
-<%= image_tag @user.photo.url() %>
 
 <%= link_to 'Back', users_path %>

@@ -1,10 +1,11 @@
+</table>
 <h1>Listing items</h1>
-
-<table>
+<table width="100%" border="6">
   <tr>	
 	<th>Photo</th>   
-    <th>Item name</th>
-    <th>Item description</th>    
+    <th>Item name</th>    
+   <th>Item description</th>
+   <th colspan="6">Actions</th>   	    
   </tr>
 
 <% @items.each do |item| %>
@@ -15,7 +16,7 @@
     <td><%=h item.item_name %></td>    
     <td><%=h item.item_description %></td>
     
-    <td><%= link_to "fmake final offer",user_offers_path(current_user.id),:method=>"post"%>
+    <td><%= link_to "make final offer",user_offers_path(current_user.id),:method=>"post"%>
     <td><%= link_to 'Show', user_item_path(current_user,item) %></td>
     <td><%= link_to 'Edit', edit_user_item_path(current_user,item) %></td>
     <td><%= link_to 'Destroy', user_item_path(current_user.id,item), :confirm => 'Are you sure?', :method => :delete %></td>

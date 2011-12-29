@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
   # GET /items.xml
   def index
     user =User.find(current_user)
-    @items = user.items.find(:all)    
+    @items = user.items.find(:all)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -25,7 +25,7 @@ class ItemsController < ApplicationController
   # GET /items/new
   # GET /items/new.xml
   def new
-    @item = Item.new    
+    @item = Item.new
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @item }
@@ -57,6 +57,7 @@ class ItemsController < ApplicationController
   # PUT /items/1
   # PUT /items/1.xml
   def update
+
     @item = current_user.items.find(params[:id])
     respond_to do |format|
       if @item.update_attributes(params[:item])
@@ -73,13 +74,13 @@ class ItemsController < ApplicationController
   # DELETE /items/1
   # DELETE /items/1.xml
   def destroy
-    @item = Item.find(params[:id])    
-    @item.destroy   
+    @item = Item.find(params[:id])
+    @item.destroy
     @offer_my_item_id = Offer.find_by_sql(["select * from offers where my_item_id= ?",params[:id]])
     @offer_my_item_id.each do |my_item_id|
       my_item_id.destroy
-      end  
-      respond_to do |format|
+    end
+    respond_to do |format|
       format.html { redirect_to(user_items_url) }
       format.xml  { head :ok }
     end

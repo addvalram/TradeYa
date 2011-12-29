@@ -1,22 +1,19 @@
 <h1>Listing offers</h1>
 <table width="80%" border="1">
   <tr>
-  	<th>My item id  </th>
-  	
+  	<th>My item id  </th>  	
     <th>Item Offered  </th>
     <th>Offered by</th>
     <th>Offer Respond</th>
     <th colspan="4">Actions</th>
-  </tr><%debugger%>
+  </tr>
 <% @offers.each do |offer| %>
   <tr style="text-align: center">
-  	<td><%= h Item.find_by_id(offer.item_id).item_name %> <%= image_tag Item.find(offer.item_id).photo.url %></td>  
-  	  
-  	
+  	<td><%= h Item.find_by_id(offer.item_id).item_name %> <%= image_tag Item.find(offer.item_id).photo.url %></td>  	
     <td><%=h Item.find_by_id(offer.my_item_id).item_name %><%= image_tag Item.find(offer.my_item_id).photo.url %></td>   
     <td><%=h User.find_by_id(offer.user_id).user_name %></td>
     <td><%= h offer.offer_respond %></td>  
-    <% if offer.offer_respond != "accepted"%>    
+    <% if offer.offer_respond == "offered"%>    
 		   	<td><%= button_to "accept",user_item_offer_path(current_user.id, offer.item,offer), :method => :put %></td>
 		   	<%else%>   
 		    <td></td>
@@ -28,7 +25,4 @@
 <% end %>
 </table>
 <br />
-
-
-
 <%= link_to 'back', users_path %>

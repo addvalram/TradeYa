@@ -1,111 +1,167 @@
-<%= render :partial => "hedder" %>		
-<%= link_to 'Post a Listing', new_user_item_path(current_user) %>
-<hr>
-
-<a href="#" id="MyItemListLink" class="forgot">Forgot Password</a>
-
-
-.......................
-
-
 <div>
-	Photo<%= image_tag @user.photo.url() %><br />
-	Current offers : <%= @offerCount%> <br />
-	view offers....<%= link_to 'My Offers',user_offers_path(current_user.id)%>	
-	<hr>
-	Current My Items:<%= @itemsCount%><br /> 
-	view items..<%= link_to 'items',user_items_path(current_user.id)%>	
-	</div>
-	<p>
-	</p>
-	<hr>
-<p style="color: green; border: 2"><%= flash[:notice] %></p>
- <%= render :partial => "content" %>
- <p>
- 	</p>
-Recent Activity:
-<hr><hr>
-<table width=auto border=".5">
-		<tr style="text-align: center;background-color: #EEE">
-			<% @items.each do |item|%>
-			<td><%=h User.find(item.user_id).user_name%></td>
-			<td>posted ......</td>
-			<td><%= h item.item_name%></td>			
-			<td><%= image_tag item.photo.url%></td>
-			<td><%= link_to 'make an offer',user_items_path(current_user.id)%></td>
-			
+<table width="100%" border="">
+	<%= render :partial => "hedder" %>
+	<tr>
+		<td colspan="5" style="background-color:#eee;width:70%;text-align:top;">
+		<div id "logo"style="background-color: #EEE" align="left">
+			<%= link_to '<img src="/images/logo.png" alt="Klematis"/>' %>
+		</div></td>
+		<td colspan="5" style="background-color:#eee;width:30%;text-align:top;">
+		<div id "logo"style="background-color: #EEE" align="right">
+			<%= link_to 'Post a Listing<img src="/images/post-listing.png" alt="Klematis"/>', new_user_item_path(current_user) %>
+		</div></td>
+	</tr>
+	<tr style="text-align: center">
+		<td colspan="0" style="background-color:#fff;width:20%;text-align:top;">
+		<div id "logo"style="background-color: #EEE" align="left">
+			<%= image_tag @user.photo.url() %>
+		</div></td>
+		<td colspan="0" style="background-color:#fff;width:20%;text-align:top;">
+		<div id="myitems" align="left">
+			<img src="/images/items-icon.jpg" alt="myitems" />
+			<h1>My Items</h1>
+			you have&nbsp;<b><%= @itemsCount%></b>
+			<br />
+			listed items
+			<br />
+			<%= link_to 'see them',user_items_path(current_user.id)%>
+		</div></td>
+		<td colspan="0" style="background-color:#fff;width:20%;text-align:top;">
+		<div id="offer" align="left">
+			<img src="/images/offers-icon.jpg" alt="offers" />
+			<h1>My offers</h1>
+			you have&nbsp;<b><%= @offerCount%></b>
+			<br />
+			pending offer
+			<br />
+			<%= link_to 'respond to them',user_offers_path(current_user.id)%>
+		</div></td>
+		<td colspan="0" style="background-color:#fff;width:20%;text-align:top;">
+		<div id="progress" align="left">
+			<img src="/images/progress-icon.jpg" alt="progress" />
+			<h1>Progress</h1>
+			Trades :
+			<br />
+			Thumbs Up:
+			<br />
+			Thumbs Down:
+			<br />
+		</div></td>
+		<td colspan="6" style="background-color:#fff;width:5%;text-align:top;"></td>
+	</tr>
+	<tr>
+		<td colspan="6" style="background-color:#3B5998;text-align:left; color: #fff"><b>Recent Activity in Your Social Circle</b></td>
+	</tr>
+</table>
+
+<div id="rightCol" align="left"style="width:80%;height: 100%">	
+		<p style="color: green; border: 2"><%= flash[:notice] %></p>				
+		<%= render :partial => "content" %><p></p>
+		<table width="100%" border="2" >			
+			<tr style="text-align: center;background-color: #EEE;width:5%;height:10px ">
+				<% @items.each do |item|%> <td width="60px"><%= image_tag User.find(item.user_id).photo.url%>
+				<br />
+				</td>
+				<td ><%= image_tag item.photo.url()%>
+				<br />
+				</td>
+				<td align="left"><b><%= h User.find(item.user_id).user_name%></b> posted <b><%= h item.item_name%></b></td>
+			</tr>
+			<tr align="center">		
+				<td><a href="#" id="myitem"><b>comment</b></a></td>
+				<td><a href="#" id="myitem"><b>share</b></a></td>
+				<td><a href="#?<%= item.id %>" id="MyItem_<%= item.id%>"  onclick="showoverlay(<%= item.id %>);"><b><img src="/images/tradeya-sprite.png" alt="Klematis" />'make an offer</b></a></td>
+			</tr>
+		<%end%>
+		</table>
+		<div id="ItemList" style= "display: none">	
+				<h1>My items list</h1>
+				<table width="100%" border="">
+					<tr>
+						<th>Photo</th>				
+						<th>Item name</th>
+						<th>Item description</th>
+						<th colspan="6"> Actions</th>
+					</tr>
+					<% @user_items.each do |offer| %>
+					<tr>
+						<td><%= image_tag offer.photo.url() %></td>				
+						<td><%= h offer.item_name %></td>						
+						<td><%= h offer.item_description %></td>				
+						<td><a href="#" onclick='document.getElementById("offer_form").action =  "<%= user_item_offers_path(current_user.id, offer.id) %>"; alert(document.getElementById("offer_form").action);document.getElementById("offer_form").submit(); return false;'>make final offer</a>
+					    <td><%= link_to 'Show', user_item_path(current_user,offer) %></td>
+					    <td><%= link_to 'Edit', edit_user_item_path(current_user,offer) %></td>
+					    <td><%= link_to 'Destroy', user_item_path(current_user.id,offer), :confirm => 'Are you sure?', :method => :delete %></td>
+					</tr>
+					<% end %>					
+				</table>
+			<hr>
+		</div>
 				
-		</tr>
-		<%end%>					
-		<% @offers.each do |offer|%>
-		<tr style="text-align: center;background-color: #EEB">				
-			<td><%=h User.find(offer.user_id).user_name%>&nbsp;&nbsp;offered</td>
-			<td> <%= image_tag Item.find(offer.my_item_id).photo.url() %></td>			
-			<td><%=h Item.find(offer.my_item_id).item_name%>&nbsp;&nbsp;on &nbsp;&nbsp;</td>					
-			<td><%=h Item.find(offer.item_id).item_name%></td>	
-			<td> <%= image_tag Item.find(offer.item_id).photo.url() %></td>
-			<td>&nbsp;&nbsp;of&nbsp;&nbsp;<%=h User.find(offer.public_user_id).user_name%></td>	
-			<td><div style= "background-color: black;color: green"><%=h offer.offer_respond%></div></td>			
-		</tr><td><hr></td>		
-		<%end%>	
-</table>		
-<hr><hr>
-<div id="userList" id="">
-	<h1>Community Users</h1>
-	<table>
-		  <tr>
-		  	<th>User Photo</th>
-		    <th>User name</th>
-		    <th>Email</th>
-		  </tr>
+		<form id="offer_form" name="offer_from" method="post">
+			<input type="hidden" name="user_item_id" id="user_item_id"/>	
+			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+		</form>
+						
+		<table border="" width="100%">
+			<% @offers.each do |offer|%>
+			<tr style="text-align: center;background-color: #EEE">
+				<td><%= image_tag User.find(offer.user_id).photo.url() %></td>
+				<td><%= image_tag Item.find(offer.my_item_id).photo.url() %></td>
+				<td><b><%= h User.find(offer.user_id).user_name%></b>&nbsp;&nbsp;offered&nbsp;&nbsp;<b><%= h Item.find(offer.my_item_id).item_name%></b>&nbsp;&nbsp;for &nbsp;&nbsp;<b><%= h User.find(offer.public_user_id).user_name%>'s&nbsp;&nbsp;<%= h Item.find(offer.item_id).item_name%>&nbsp;&nbsp;</b></td>
+				<td><%= image_tag Item.find(offer.item_id).photo.url() %></td>
+				<td><%= image_tag User.find(offer.public_user_id).photo.url() %><br /></td>
+				<td><div style= "background-color: black;color: green"><%= h offer.offer_respond%></div></td>
+			</tr>
+			<%end%>
+		</table>
+		<div id="userList">
+			<h1>Community Users</h1>
+			<table>
+				<tr>
+					<th>User Photo</th>
+					<th>User name</th>
+					<th>Email</th>
+				</tr>
 				<% @users.each do |user| %>
-		  <tr>  	
-			<td> <%= image_tag user.photo.url() %></td>
-		    <td><%=h user.user_name %></td>
-		    <td><%=h user.email %></td>    
-		    <td><%= link_to 'items',user_items_path(user)%></td>
-		    <td><%= link_to 'Show', user %></td>   
-		  </tr>
-	<% end %>
-	</table>
+				<tr>
+					<td><%= image_tag user.photo.url() %></td>
+					<td><%= h user.user_name %></td>
+					<td><%= h user.email %></td>
+					<td><%= link_to 'items',user_items_path(user)%></td>
+					<td><%= link_to 'Show', user %></td>
+				</tr>
+				<% end %>
+			</table>
+		</div>
+		<br />
+		<%= link_to "logout", logout_path%>
+		<%= link_to 'New user', new_user_path %>
+		
+		<!-- make offer jquery -->
+		<script type="text/javascript">
+		function showoverlay(id){
+			document.getElementById("user_item_id").value = id;
+				jQuery("#ItemList").overlay({
+					top : 10,
+					mask : {
+						color : '#E0E0E0',
+						loadSpeed : 1000,
+						opacity : 0.9,
+						height:'toggle',
+						position: 'absolute'
+					},
+					closeOnClick : true,
+					api : true
+				})
+				var ol = jQuery("#ItemList").overlay({
+					api : true
+				});
+				// wait 5 seconds, then load the overlay
+				setTimeout(function() {
+					ol.load();
+				}, 1);
+		}
+		</script>				
+	</div>
 </div>
-<br />
-
-<div id="forgotpassword">
-                <div class="form-item">
-                        <h2>Forgot Password</h2>
-                        <table width="550" border="0" style="margin-top:25px; margin-left:10px;">
-                                <tr>
-                                        <td width="200">Provide Your Email:</td>
-                                        <td><input size="40" type="text" style="float:right;margin-right:90px;" /></td>
-                                </tr>
-                                <tr>
-                                        <td>&nbsp;</td>
-                                        <td><a class="gray-button" style="float:right;margin-right:67px;" href="#">Send</a>
-                                        	<a class="gray-button close" style="float:right;" href="#">Cancel</a></td>
-                                </tr>
-                        </table>
-                </div>
-        </div>
-<script>
-        $("#MyItemListLink").click(function() {
-        $("#forgotpassword").overlay({
-                top: 150,
-                mask: {
-                        color: '#E0E0E0',
-                        loadSpeed: 1000,
-                        opacity: 0.9
-                },
-        closeOnClick: false,
-        api: true
-        })
-        var ol = $("#forgotpassword").overlay({api: true});
-        // wait 5 seconds, then load the overlay
-        setTimeout(function() {
-ol.load();
-        }, 1);
-        });
-</script>
-
-<%=link_to "logout", logout_path%>
-<%= link_to 'New user', new_user_path %>

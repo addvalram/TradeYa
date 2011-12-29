@@ -1,16 +1,15 @@
 class UsersController < ApplicationController
   before_filter :require_user, :except => [:new ,:create]
-
-  def index
-  
+  def index  
     @users= User.find(:all)  
-    #@items= Item.find(:all)
-    
-    @offerCount=Offer.find_by_sql(["select * from offers where user_id <>? and offer_respond <>?",current_user.id,"accepted"]).count
-    @itemsCount=Item.find(:all, :conditions => ["user_id = ?",current_user.id]).count
+    #@items= Item.find(:all)    
+   # @offerCount=Offer.find_by_sql(["select * from offers where user_id <>? and offer_respond <>?",current_user.id,"accepted"]).count
+    @offerCount=Offer.find_by_sql(["select * from offers where public_user_id=?",current_user.id]).count    
+    @itemsCount=Item.findItemCount(current_user)   
     @user=User.find(current_user.id)
     @offers=Offer.findrecent()
-    
+    debugger
+    @user_items=Item.find_by_sql(["select * from items where user_id=?",current_user.id])
     @items=Item.findpostItem(current_user)
     respond_to do |format|
       format.html # index.html.erb
@@ -61,9 +60,6 @@ end
    # flash[:notice]="offer already done"
  # else
    # flash[:notice]="offer already done"
-#    
  # end
-#   
-#   
 # end 
-  end
+end
