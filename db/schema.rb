@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111221103831) do
+ActiveRecord::Schema.define(:version => 20111229122304) do
 
   create_table "items", :force => true do |t|
     t.integer  "user_id"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20111221103831) do
     t.integer  "my_item_id"
     t.integer  "public_user_id"
     t.string   "offer_respond"
+    t.integer  "trade_item_id"
   end
 
   create_table "recent_activities", :force => true do |t|

@@ -9,20 +9,20 @@
   </tr>
 
 <% @items.each do |item| %>
-  <tr>
+  <tr align="center">
   	
    <td> <%= image_tag item.photo.url() %></td>
      
-    <td><%=h item.item_name %></td>    
+    <td><b><%=h item.item_name %></b></td>    
     <td><%=h item.item_description %></td>
     
-    <td><%= link_to "make final offer",user_offers_path(current_user.id),:method=>"post"%>
+   
     <td><%= link_to 'Show', user_item_path(current_user,item) %></td>
     <td><%= link_to 'Edit', edit_user_item_path(current_user,item) %></td>
     <td><%= link_to 'Destroy', user_item_path(current_user.id,item), :confirm => 'Are you sure?', :method => :delete %></td>
   	
   </tr>
-  
+
 <% end %>
 </table>
 <%= link_to 'New item', new_user_item_path(current_user) %>

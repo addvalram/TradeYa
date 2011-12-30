@@ -1,20 +1,22 @@
-<div>  
-  <%= render :partial => "users/hedder" %>
-</div>
+<div align="right" style="background-color: #eee;height: 30px" ><%= render :partial => "users/hedder" %></div><br />
 
-
-
-<h1> Login</h1>
-
+<b>
+<div id="login" style="background-color: #eee;height: 500px">
+	<hr>
+	<h1> Enter your email id and password</h1><br /><br />
+<%= flash[:notice] %>
 <% form_for (@user_session, :url => user_session_path) do |f| %>
   <%= f.error_messages %>
   <p>
     <%= f.label :email %><br />
     <%= f.text_field :email %>
-  </p>
+  </p><br /><br />
   <p>
     <%= f.label :password %><br />
     <%= f.password_field :password %>
   </p>
   <p><%= f.submit "Submit" %></p>
 <% end %>
+
+</b>
+</div>

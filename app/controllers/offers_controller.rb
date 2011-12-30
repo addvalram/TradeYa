@@ -3,17 +3,16 @@ class OffersController < ApplicationController
   # GET /offers.xml
   def index
     user=User.find_by_id(current_user.id)
-    
+
     # @offers = item.offers.find(:all)
-    @offers = Offer.find_by_sql(["select * from offers where public_user_id = ?",current_user.id])
-    @sendOffers=Offer.find_by_sql(["select * from offers where user_id=?",current_user.id])
+    @offers = Offer.find_by_sql(["select * from offers where public_user_id = ? and offer_respond=?",current_user.id,"offered"])
+    @sendOffers=Offer.find_by_sql(["select * from offers where user_id=? and offer_respond=?",current_user.id,"offered"])
     # @offers= Offer.find_all_by_user_id(params[:user_id])
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @offers }
     end
   end
-
 
   # GET /offers/1
   # GET /offers/1.xml
@@ -45,41 +44,66 @@ class OffersController < ApplicationController
   # POST /offers.xml
   def create
     @offer = Offer.new(params[:offer])
-    @offer.item=Item.find(params[:user_item_id])    
+    @offer.item=Item.find(params[:user_item_id])
     @offer_list_validation=Offer.find_by_sql(["select * from offers  where my_item_id =? and offer_respond='offered'",params[:item_id]])
-   if @offer_list_validation.count!=0
-        flash[:notice] = "Sorry !!!! item already offered"
-        redirect_to users_path
-   else      
-        temp_public_user_id=Item.find_by_sql(["select user_id from items where id= ? ",params[:user_item_id]])
-        @offer.public_user_id=temp_public_user_id[0].user_id
-        @offer.my_item_id= params[:item_id]
-        @offer.user_id= current_user.id
-        @offer.offer_respond="offered"
-        respond_to do |format|
-          if @offer.save
-            flash[:notice] = 'Offer was successfully created.'
-            format.html { redirect_to users_path }
-            format.xml  { render :xml => @offer, :status => :created, :location => @offer }
-          else
-            format.html { render :action => "new" }
-            format.xml  { render :xml => @offer.errors, :status => :unprocessable_entity }
-          end
+    @offer_list=Offer.find_by_sql(["select * from offers  where item_id =? and offer_respond='accepted' or my_item_id=?",params[:user_item_id],params[:user_item_id]])
+    if @offer_list_validation.count!=0
+      flash[:notice] = "Sorry !!!! item already offered"
+      redirect_to users_path
+    elsif
+    @offer_list.count!=0
+      flash[:notice]="Sorry item is already traded"
+      redirect_to users_path
+
+    else
+      temp_public_user_id=Item.find_by_sql(["select user_id from items where id= ? ",params[:user_item_id]])
+      @offer.public_user_id=temp_public_user_id[0].user_id
+      @offer.my_item_id= params[:item_id]
+      @offer.user_id= current_user.id
+      @offer.offer_respond="offered"
+      respond_to do |format|
+        if @offer.save
+          flash[:notice] = 'Offer was successfully created.'
+          format.html { redirect_to users_path }
+          format.xml  { render :xml => @offer, :status => :created, :location => @offer }
+        else
+          format.html { render :action => "new" }
+          format.xml  { render :xml => @offer.errors, :status => :unprocessable_entity }
         end
-   end
+      end
+    end
   end
 
+  
+
+  def cancelOffer
+    @offer = Offer.find(params[:id])
+    if @offer.update_attributes(:offer_respond => "cancel")
+      flash[:notice] = 'Offer was sucessfully cancel .'
+      redirect_to users_path
+    else
+      flash[:notice]='offer was not canceled.'
+
+      respond_to do |format|
+        format.html { render :action => "edit" }
+        format.xml  { render :xml => @offer.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
+  
   # PUT /offers/1
   # PUT /offers/1.xml
   def update
+
     @offer = Offer.find(params[:id])
     #@itemUpdate= Item.find_by_sql(["select * from items"])
     #@item=find_by_sql("select * from items where item_id=?",)
+
     respond_to do |format|
+
       if @offer.update_attributes(:offer_respond => "accepted")
-        if Offer.update_all({:offer_respond => "traded"},
-        ['id <> ? and item_id =?',
-        params[:id],params[:item_id]])
+        if Offer.update_all({:offer_respond => "rejected"},
+        ['id <> ? and item_id =?',params[:id],params[:item_id]])
           flash[:notice] = 'Offer Traded was successfully updated.'
         else
           flash[:notice] = 'Updation Invalid'
@@ -106,6 +130,5 @@ class OffersController < ApplicationController
       format.xml  { head :ok }
     end
   end
-
 end
 

@@ -16,9 +16,7 @@ class UserSessionsController < ApplicationController
   
   if @user_session.save
     if current_user.id !=nil
-      redirect_to users_url
-   
-    flash[:notice] = "Successfully logged in."    
+      redirect_to users_url  
     end
   else
     flash[:notice] = "Invalid email or password."
@@ -29,7 +27,7 @@ end
 def destroy
   @user_session = UserSession.find
   @user_session.destroy
-  flash[:notice] = "Successfully logged out."
+  #flash[:notice] = "Successfully logged out."
   redirect_to root_url
 end
 

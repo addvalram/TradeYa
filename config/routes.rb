@@ -19,6 +19,7 @@ ActionController::Routing::Routes.draw do |map|
   #   map.purchase 'products/:id/purchase', :controller => 'catalog', :action => 'purchase'
   
   # This route can be invoked with purchase_url(:id => product.id)
+map.cancel_offer 'offer/:id', :controller => "offers", :action => "cancelOffer"
 map.item_id 'items/:id/myItemList', :controller => 'items', :action => 'item_id'
 map.login "login", :controller => "user_sessions", :action => "new"
 map.logout "logout", :controller => "user_sessions", :action => "destroy"
