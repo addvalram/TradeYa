@@ -1,9 +1,10 @@
 <tr>
-	<td colspan="6" style="background-color:#3B5998; color: white"><img src="/images/fbimage.jpg" alt="myitems" height="30px" width="80px" align="left" />
+	<td colspan="10" style="background-color:#3B5998; color: white"><img src="/images/fbimage.jpg" alt="myitems" height="30px" width="80px" align="left" />
 	<div class="rfloat" style="color: #fff; background-color: #2222;">
-		<% if current_user != nil   %> <b> <%= current_user.user_name %>  <%= link_to "Profile", edit_user_path(:current),:style=>"color:#fff; u:#null" %>  <%= link_to "Logout", logout_path ,:style=>"color:#fff" %> <%= link_to "Home", users_path,:style=>"color:#fff" %></b><%#= link_to 'Destroy', @user, :confirm => 'Are you sure?', :method => :delete %>
+		<% if current_user != nil   %> <b> <%= current_user.user_name %> <a href="#" id="ProfileLink" class="MyItems" style="color: #fff">Profile</a>   <%= link_to "Logout", logout_path ,:style=>"color:#fff" %> <%= link_to "Home", users_path,:style=>"color:#fff" %></b><%#= link_to 'Destroy', @user, :confirm => 'Are you sure?', :method => :delete %>
 		<% else %> <b><%= link_to "Register", new_user_path%> |
 		<%= link_to "Login", login_path %></b>
 		<% end %>
 	</div></td>
 </tr>
+

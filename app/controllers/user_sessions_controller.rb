@@ -19,7 +19,7 @@ class UserSessionsController < ApplicationController
       redirect_to users_url  
     end
   else
-    flash[:notice] = "Invalid email or password."
+    
     render :action => 'new'
   end
 end

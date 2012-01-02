@@ -1,0 +1,18 @@
+<div id="offer" style="height:500px;overflow-y: auto;width: 800px">
+
+<table width="10%" border="2">
+  <tr>	
+	<th>Photo</th>   
+    <th>Item name</th>    
+   <th>Item description</th>
+   <th colspan="6">Actions</th>   	    
+  </tr>
+<% @items_list.each do |item| %>
+  <tr align="center">  	
+   <td> <%= (image_tag item.photo.url(),:size=>"100x100") %></td>     
+    <td><b><%=h item.item_name %></b></td>     
+    <td><%= link_to 'Show', user_item_path(current_user,item) %></td>
+      </tr>
+<% end %>
+</table>
+</div>

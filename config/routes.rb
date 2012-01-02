@@ -5,7 +5,10 @@ ActionController::Routing::Routes.draw do |map|
   user.resources :items do |item|
                item.resources :offers
                 end
-  user.resources :offers
+  user.resources :offers do|offer|
+    offer.resources :progresses
+  end
+  
   end
   
   map.resource :user_session
@@ -19,7 +22,8 @@ ActionController::Routing::Routes.draw do |map|
   #   map.purchase 'products/:id/purchase', :controller => 'catalog', :action => 'purchase'
   
   # This route can be invoked with purchase_url(:id => product.id)
-map.cancel_offer 'offer/:id', :controller => "offers", :action => "cancelOffer"
+map.reject_offer 'offer/:id', :controller=> "offers", :action => "reject_offer "
+map.revoke_offer 'offer/:id', :controller => "offers", :action => "revoke_offer"
 map.item_id 'items/:id/myItemList', :controller => 'items', :action => 'item_id'
 map.login "login", :controller => "user_sessions", :action => "new"
 map.logout "logout", :controller => "user_sessions", :action => "destroy"

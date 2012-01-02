@@ -5,7 +5,7 @@ class OffersController < ApplicationController
     user=User.find_by_id(current_user.id)
 
     # @offers = item.offers.find(:all)
-    @offers = Offer.find_by_sql(["select * from offers where public_user_id = ? and offer_respond=?",current_user.id,"offered"])
+    @my_current_offers = Offer.find_by_sql(["select * from offers where public_user_id = ? and offer_respond=?",current_user.id,"offered"])
     @sendOffers=Offer.find_by_sql(["select * from offers where user_id=? and offer_respond=?",current_user.id,"offered"])
     # @offers= Offer.find_all_by_user_id(params[:user_id])
     respond_to do |format|
@@ -74,12 +74,24 @@ class OffersController < ApplicationController
     end
   end
 
-  
+  def reject_offer
+    @offer=Offer.find(params[:id])
+    if @offer.update_attributes(:offer_respond=>"reject")
+      flash[:notice]='Offer rejected sucessfully .'
+      redirect_to user_path
+     else
+       flash[:notice]='offer was not rejected'
+       resopnd_to do |fromat|
+         format.html {render :action=>edit}
+         format.xml {render :xml=>@offer.errors,:status=>:unprocessable_entitys}
+       end
+    end
+  end
 
-  def cancelOffer
+  def revoke_offer
     @offer = Offer.find(params[:id])
-    if @offer.update_attributes(:offer_respond => "cancel")
-      flash[:notice] = 'Offer was sucessfully cancel .'
+    if @offer.update_attributes(:offer_respond => "revoke")
+      flash[:notice] = 'Offer revoked sucessfully  .'
       redirect_to users_path
     else
       flash[:notice]='offer was not canceled.'

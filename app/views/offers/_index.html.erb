@@ -1,0 +1,53 @@
+<div id="offer" style="height:441px;overflow-y: auto">
+
+
+<table width="100%" border="2">
+	<tr>
+		<th>My item id </th>
+		<th>Item Offered </th>
+		<th>Offered by</th>
+		<th>Offer Respond</th>
+		<th colspan="4">Actions</th>
+	</tr>
+	<% @my_current_offers.each do |offer| %>
+	<tr style="text-align: center">
+		<td><%= h Item.find_by_id(offer.item_id).item_name %> <%= (image_tag Item.find(offer.item_id).photo.url(),:size =>"80x80") %></td>
+		<td><%= h Item.find_by_id(offer.my_item_id).item_name %><%= (image_tag Item.find(offer.my_item_id).photo.url(),:size =>"80x80") %></td>
+		<td><%= h User.find_by_id(offer.user_id).user_name %></td>
+		<td><%= h offer.offer_respond %></td>
+		<% if offer.offer_respond == "offered"%> <td><%= button_to "accept",user_item_offer_path(current_user.id, offer.item,offer), :method => :put %></td>
+		<%else%> <td></td>
+		<%end%> <td><%= link_to 'Show',  user_item_offer_path(current_user,offer.item,offer) %></td>
+		<td><%= link_to 'Edit', edit_user_item_offer_path(current_user,offer.item,offer) %></td>
+		<td><%= link_to 'Destroy', user_item_offer_path(current_user,offer.item,offer), :confirm => 'Are you sure?', :method => :delete %></td>
+	</tr>
+	<% end %>
+</table>
+<br />
+
+<br />
+<h1>Offer made by me</h1>
+<table width="100%" border="2">
+	<tr>
+		<th>My item id </th>
+		<th>Item Offered </th>
+		<th>Offered by</th>
+		<th>Offer Respond</th>
+		<th colspan="4">Actions</th>
+	</tr>
+	<%  @sendOffers.each do |offer| %>                          
+	<tr style="text-align: center">
+		<td><%= h Item.find_by_id(offer.my_item_id).item_name %> <%= (image_tag Item.find(offer.my_item_id).photo.url(),:size =>"80x80") %></td>
+		<td><%= h Item.find_by_id(offer.item_id).item_name %><%= (image_tag Item.find(offer.item_id).photo.url(),:size =>"80x80") %></td>
+		<td><%= h User.find_by_id(offer.user_id).user_name %></td>
+		<td><%= h offer.offer_respond %></td>
+		<% if offer.offer_respond != "accepted"%> <td><%= button_to "Revoke offer",revoke_offer_path(offer), :method => :put %></td>
+		<%else%> <td></td>
+		<%end%> <td><%= link_to 'Show',  user_item_offer_path(current_user,offer.item,offer) %></td>
+		<td><%= link_to 'Edit', edit_user_item_offer_path(current_user,offer.item,offer) %></td>
+		<td><%= link_to 'Destroy', user_item_offer_path(current_user,offer.item,offer), :confirm => 'Are you sure?', :method => :delete %></td>
+	</tr>
+	<% end %>
+</table>
+
+</div>

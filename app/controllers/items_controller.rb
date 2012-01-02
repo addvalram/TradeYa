@@ -81,7 +81,7 @@ class ItemsController < ApplicationController
       my_item_id.destroy
     end
     respond_to do |format|
-      format.html { redirect_to(user_items_url) }
+      format.html { redirect_to users_path() }
       format.xml  { head :ok }
     end
   end
