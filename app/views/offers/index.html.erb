@@ -13,7 +13,9 @@
 		<td><%= h Item.find_by_id(offer.my_item_id).item_name %><%= image_tag Item.find(offer.my_item_id).photo.url %></td>
 		<td><%= h User.find_by_id(offer.user_id).user_name %></td>
 		<td><%= h offer.offer_respond %></td>
-		<% if offer.offer_respond == "offered"%> <td><%= button_to "accept",user_item_offer_path(current_user.id, offer.item,offer), :method => :put %></td>
+		<% if offer.offer_respond == "offered"%> 
+		<td><%= button_to "accept",user_item_offer_path(current_user.id, offer.item,offer), :method => :put %>
+		<%= button_to "reject",reject_offer_path(offer), :method => :put %></td>
 		<%else%> 
 		<td>
 			

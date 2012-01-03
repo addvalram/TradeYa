@@ -115,7 +115,12 @@
 			<tr style="text-align: center;background-color:#EEE;height:10px;width: ">
 				<td><a href="#" id="myitem"><b>comment</b></a></td>
 				<td><a href="#" id="myitem"><b>share</b></a></td>
+				  <%if item.status=="close"%>
+    	        <td>close</td>
+    	        <%else%>  
+				
 				<td align="left"><a href="#?<%= item.id %>" id="MyItem_<%= item.id%>"  onclick="showoverlay(<%= item.id %>);"><b><img src="/images/tradeya-sprite.png" alt="Klematis" />'make an offer</b></a></td>
+             <%end%>
 			</tr></tr>
 			<%end%>
 		</table>
@@ -396,4 +401,5 @@
 	});
 
 </script>
+<br/>
 <!--End Current User profile overley -->
