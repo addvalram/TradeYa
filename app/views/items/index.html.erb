@@ -11,7 +11,7 @@
 <% @items.each do |item| %>
   <tr align="center">
   	
-   <td> <%= image_tag item.photo.url() %></td>     
+   <td> <%= (image_tag item.photo.url(),:size =>"90x90") %></td>     
     <td><b><%=h item.item_name %></b></td>    
     <td><%=h item.item_description %></td>  
     <td><%= link_to 'Show', user_item_path(current_user,item) %></td>
