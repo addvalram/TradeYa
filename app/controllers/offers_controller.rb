@@ -106,14 +106,20 @@ class OffersController < ApplicationController
   # PUT /offers/1
   # PUT /offers/1.xml
   def update
-
+    debugger  
+ 
     @offer = Offer.find(params[:id])
+    item1 = Item.find(params[:item_id])
+    item2 = Item.find(params[:item])
     #@itemUpdate= Item.find_by_sql(["select * from items"])
     #@item=find_by_sql("select * from items where item_id=?",)
 
     respond_to do |format|
 
       if @offer.update_attributes(:offer_respond => "accepted")
+        item1.update_attributes(:sale_status => "close")
+        item2.update_attributes(:sale_status => "close")
+   
         if Offer.update_all({:offer_respond => "reject"},
         ['id <> ? and item_id =?',params[:id],params[:item_id]])
           flash[:notice] = 'Offer Traded was successfully updated.'
