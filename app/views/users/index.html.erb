@@ -28,25 +28,32 @@
 			</div></td>
 			<td colspan="0" style="background-color:#fff;width:20%;text-align:top;">
 			<div id="offer" align="left">
-				<img src="/images/offers-icon.jpg" alt="offers" />
+				<div><img src="/images/offers-icon.jpg" alt="offers" /></div>
+								
 				<h1>My offers</h1>
 				you have&nbsp;<b><%= @offerCount%></b>
 				<br />
 				pending offer
 				<br />
-				<%if @offerCount!=0%> <a href="#" id="MyOfferListLink" class="MyOffer">respond to them</a>
+				<%if @offerCount!=0%>
+				 
 				<%end%>
+				<a href="#" id="MyOfferListLink" class="MyOffer">respond to them</a>
 			</div></td>
 			<td colspan="0" style="background-color:#fff;width:20%;text-align:top;">
 			<div id="progress" align="left">
+				
 				<img src="/images/progress-icon.jpg" alt="progress" />
 				<h1>Progress</h1>
-				Trades :
-				<br />
-				Thumbs Up:
-				<br />
-				Thumbs Down:
-				<br />
+				 <img src="images/tradeya-sprite.png" alt="progress"/>
+                                Trades :
+                                <br />
+               <img src="images/thumbs-up.png" alt="progress" />
+                                Thumbs Up:<b><%=@thumbsUpCount%></b>
+                                <br />
+                                <img src="images/thumbs-down.png" alt="progress" />
+                                Thumbs Down:
+                                <br />
 			</div></td>
 			<td colspan="6" style="background-color:#fff;width:5%;text-align:top;"></td>
 		</tr>
@@ -208,6 +215,17 @@
 				<td><%= (image_tag Item.find(offer.item_id).photo.url(),:size=>"80x80") %></td>
 				<td><%= (image_tag User.find(offer.public_user_id).photo.url(),:size =>"40x40") %> </td>
 			</tr>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 			<% elsif offer.offer_respond=="accepted" %>
 			<tr style="text-align: center;background-color: #EEE">
 				<td><%= (image_tag User.find(offer.public_user_id).photo.url(),:size =>"40x40") %> <td><%= (image_tag Item.find(offer.item_id).photo.url(),:size=>"80x80") %></td>
@@ -215,13 +233,31 @@
 				<div style= "">
 					<img src="/images/accepted-arrow.jpg" alt="Klematis" style="height:30px;width: 30px"/>
 				</div></td>
-				<td id="offerStatus" style="width: 50%"><b><%= h User.find(offer.public_user_id).user_name%></b>&nbsp;&nbsp;accepted&nbsp;&nbsp;<b><%= h User.find(offer.user_id).user_name%>'s&nbsp;&nbsp;
-				<%= h Item.find(offer.my_item_id).item_name%></b>&nbsp;&nbsp;for &nbsp;&nbsp;<b>&nbsp;&nbsp;<%= h Item.find(offer.item_id).item_name%>&nbsp;&nbsp;</b></td>
+				<td id="offerStatus" style="width: 50%"><br /><b><%= h User.find(offer.public_user_id).user_name%></b>&nbsp;&nbsp;accepted&nbsp;&nbsp;<b><%= h User.find(offer.user_id).user_name%>'s&nbsp;&nbsp;
+					<%= h Item.find(offer.my_item_id).item_name%></b>&nbsp;&nbsp;
+					for &nbsp;&nbsp;<b>&nbsp;&nbsp;<%= h Item.find(offer.item_id).item_name%>
+					&nbsp;&nbsp;</b><br />
+					<div id="thumbStatus" align="right"><hr>
+					
+					<%= link_to "thumbs Up",new_user_offer_thumbsup_path(current_user.id,offer.id)%>
+
+<a href="#" style="color: red"><img src="images/thumbs-down.png" alt="progress" />thumbs down</a>
+						
+					
+					</div>
+					<hr>			
+					
+				</td>				
 				<td><%= (image_tag Item.find(offer.my_item_id).photo.url(),:size =>"80x80") %></td>
 				<td><%= (image_tag User.find(offer.user_id).photo.url(),:size =>"40x40") %></td>
-				</td>
+				</td>				
 			</tr>
-			<% elsif offer.offer_respond=="rejected" %>
+			
+			
+			
+			
+			
+			<% elsif offer.offer_respond=="reject" %>
 			<tr style="text-align: center;background-color: #EEE">
 				<td><%= (image_tag User.find(offer.public_user_id).photo.url(),:size =>"40x40") %> <td><%= (image_tag Item.find(offer.item_id).photo.url(),:size=>"80x80") %></td>
 				<td id="statusImages" style="width:10%">
@@ -280,8 +316,9 @@
 </div>
 <!--Begin Current User Offers overley -->
 <div id="MyOffer" style="background-color: #eee;display: none">
+	<%= link_to "Close ", users_path%>
 	<p align="center">
-		<%= link_to "Close ", users_path%>
+		
 		<h1> Listing Offers</h1>
 	</p>
 	<%= render :partial=>"offers/index"%>
@@ -372,3 +409,7 @@
 
 </script>
 <!--End Current User profile overley -->
+
+
+
+

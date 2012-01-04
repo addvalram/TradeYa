@@ -81,7 +81,7 @@ class OffersController < ApplicationController
       redirect_to user_path
      else
        flash[:notice]='offer was not rejected'
-       resopnd_to do |fromat|
+       respond_to do |format|
          format.html {render :action=>edit}
          format.xml {render :xml=>@offer.errors,:status=>:unprocessable_entitys}
        end
@@ -114,15 +114,15 @@ class OffersController < ApplicationController
     respond_to do |format|
 
       if @offer.update_attributes(:offer_respond => "accepted")
-        if Offer.update_all({:offer_respond => "rejected"},
+        if Offer.update_all({:offer_respond => "reject"},
         ['id <> ? and item_id =?',params[:id],params[:item_id]])
           flash[:notice] = 'Offer Traded was successfully updated.'
         else
           flash[:notice] = 'Updation Invalid'
         end
         # set offer_respond=>"traded" where item_id=params[:item][:item_id]
-        flash[:notice] = 'Offer was successfully updated.'
-        format.html { redirect_to users_url }
+        flash[:notice] = 'Offer was successfully accepted.'
+        format.html { redirect_to users_path }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

@@ -1,0 +1,18 @@
+<p>
+  <b>Offer:</b>
+  <%=h @thumbsup.offer_id %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%=h @thumbsup.user_id %>
+</p>
+
+<p>
+  <b>Message:</b>
+  <%=h @thumbsup.message %>
+</p>
+
+
+<%= link_to 'Edit', edit_thumbsup_path(@thumbsup) %> |
+<%= link_to 'Back', thumbsups_path %>

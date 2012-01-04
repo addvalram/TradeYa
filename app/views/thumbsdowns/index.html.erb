@@ -1,0 +1,24 @@
+<h1>Listing thumbsdowns</h1>
+
+<table>
+  <tr>
+    <th>Offer</th>
+    <th>User</th>
+    <th>Message</th>
+  </tr>
+
+<% @thumbsdowns.each do |thumbsdown| %>
+  <tr>
+    <td><%=h thumbsdown.offer_id %></td>
+    <td><%=h thumbsdown.user_id %></td>
+    <td><%=h thumbsdown.message %></td>
+    <td><%= link_to 'Show', thumbsdown %></td>
+    <td><%= link_to 'Edit', edit_thumbsdown_path(thumbsdown) %></td>
+    <td><%= link_to 'Destroy', thumbsdown, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New thumbsdown', new_thumbsdown_path %>

@@ -12,7 +12,8 @@ class UsersController < ApplicationController
     @offers=Offer.findrecent()    
      user =User.find(current_user)
     @items_list = user.items.find(:all)
-        
+ 
+    @thumbsUpCount=Thumbsup.find_by_sql(["select * from thumbsups where offer_id in (select id from offers where user_id=?)",current_user.id]).count    
     @user_items=Item.find_by_sql(["select * from items where user_id=?",current_user.id])
     @items=Item.findpostItem(current_user)
     respond_to do |format|
