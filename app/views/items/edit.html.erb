@@ -19,18 +19,10 @@
     <%= f.text_area :item_description %>
   </p>
   <p>
-    <%= f.label :sale_status %><br />
-    <%= f.text_field :sale_status %>
+    <%= f.label :status %><br />
+    <%= f.text_field :status %>
   </p>
-  <p>
-    <%= f.label :item_list %><br />
-    <%= f.text_field :item_list %>
-  </p>
-  <p>
-    <%= f.label :item_choice %><br />
-    <%= f.check_box :item_choice %>
-  </p>
-  <p>
+  
     <%= f.submit 'Update' %>
   </p>
 <% end %>

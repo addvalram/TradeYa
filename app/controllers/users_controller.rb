@@ -2,6 +2,12 @@ class UsersController < ApplicationController
   before_filter :require_user, :except => [:new ,:create]
   
   def index
+     #item = Item.find(params[:id])
+    #@comments = item.comments.find(:all)
+    #@comment=Item.find(params[:item_id])
+   
+    @comments=Comment.find(:all)
+    @shares=Share.find(:all)
     @users= User.find(:all)
     @user_list=User.find_by_sql(["select * from users where id<>?",current_user])
     @offerCount=Offer.find_by_sql(["select * from offers where public_user_id=? and offer_respond=?",current_user.id,"offered"]).count
@@ -9,12 +15,15 @@ class UsersController < ApplicationController
     @my_current_offers = Offer.find_by_sql(["select * from offers where public_user_id = ? and offer_respond=?",current_user.id,"offered"])
     @sendOffers=Offer.find_by_sql(["select * from offers where user_id=? and offer_respond=?",current_user.id,"offered"])
     @user=User.find(current_user.id)
-    @offers=Offer.findrecent()    
-     user =User.find(current_user)
+    @offers=Offer.findrecent().paginate(:per_page=>3,:page=>params[:page])
+    user =User.find(current_user)
     @items_list = user.items.find(:all)
-        
+    #@user_offer = Offer.find(:all).paginate(:per_page=>2,:page=>params[:page])
+    #@items=Item.itempage(params[:page])
+    #@user_item = Item.itempage(params[:page])
+    @user_item = Item.find(:all).paginate(:per_page=>3,:page=>params[:page])
     @user_items=Item.find_by_sql(["select * from items where user_id=?",current_user.id])
-    @items=Item.findpostItem(current_user)
+    @items=Item.findpostItem(current_user).paginate(:per_page=>3,:page=>params[:page])
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @users }
@@ -22,6 +31,7 @@ class UsersController < ApplicationController
   end
 
   def create
+    #@comment.item=Item.find(params[:item_id])
     @user = User.new(params[:user])
     if @user.save
       flash[:notice] = "Registration successful."
@@ -46,9 +56,11 @@ class UsersController < ApplicationController
   end
   
   def show
+    
     @user=User.find(params[:id])
+     
     respond_to do |format|
-      format.html # show.html.erb
+      format.html #show.html.erb
       format.xml  { render :xml => @user }
     end
   end

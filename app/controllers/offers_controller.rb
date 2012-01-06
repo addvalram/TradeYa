@@ -2,8 +2,9 @@ class OffersController < ApplicationController
   # GET /offers
   # GET /offers.xml
   def index
+     #@offer= Offer.find(:all).paginate(:per_page=>3,:page=>params[:page])
     user=User.find_by_id(current_user.id)
-
+    #@user_item = Item.paginate(:per_page=>2,:page=>params[:page]) 
     # @offers = item.offers.find(:all)
     @my_current_offers = Offer.find_by_sql(["select * from offers where public_user_id = ? and offer_respond=?",current_user.id,"offered"])
     @sendOffers=Offer.find_by_sql(["select * from offers where user_id=? and offer_respond=?",current_user.id,"offered"])
@@ -48,12 +49,12 @@ class OffersController < ApplicationController
     @offer_list_validation=Offer.find_by_sql(["select * from offers  where my_item_id =? and offer_respond='offered'",params[:item_id]])
     @offer_list=Offer.find_by_sql(["select * from offers  where item_id =? and offer_respond='accepted' or my_item_id=?",params[:user_item_id],params[:user_item_id]])
     if @offer_list_validation.count!=0
-      flash[:notice] = "Sorry !!!! item already offered"
-      redirect_to users_path
+    flash[:notice] = "Sorry !!!! item already offered"
+    redirect_to users_path
     elsif
     @offer_list.count!=0
-      flash[:notice]="Sorry item is already traded"
-      redirect_to users_path
+    flash[:notice]="Sorry item is already traded"
+    redirect_to users_path
 
     else
       temp_public_user_id=Item.find_by_sql(["select user_id from items where id= ? ",params[:user_item_id]])
@@ -76,43 +77,40 @@ class OffersController < ApplicationController
 
   def reject_offer
     @offer=Offer.find(params[:id])
-    if @offer.update_attributes(:offer_respond=>"reject")
-      flash[:notice]='Offer rejected sucessfully .'
-      redirect_to user_path
-     else
-       flash[:notice]='offer was not rejected'
-       resopnd_to do |fromat|
-         format.html {render :action=>edit}
-         format.xml {render :xml=>@offer.errors,:status=>:unprocessable_entitys}
-       end
+    #id=User.find_by_id(current_user.id)
+     if @offer.update_attributes(:offer_respond=>"reject")
+    flash[:notice]='Offer rejected sucessfully .'
+    redirect_to users_path
+    else
+      flash[:notice]='offer was not rejected'
+      resopnd_to do |fromat|
+        format.html {render :action=>edit}
+        format.xml {render :xml=>@offer.errors,:status=>:unprocessable_entitys}
+      end
     end
   end
 
   def revoke_offer
     @offer = Offer.find(params[:id])
     if @offer.update_attributes(:offer_respond => "revoke")
-      flash[:notice] = 'Offer revoked sucessfully  .'
-      redirect_to users_path
+    flash[:notice] = 'Offer revoked sucessfully  .'
+    redirect_to users_path
     else
       flash[:notice]='offer was not canceled.'
-
       respond_to do |format|
         format.html { render :action => "edit" }
         format.xml  { render :xml => @offer.errors, :status => :unprocessable_entity }
       end
     end
   end
-  
+
   # PUT /offers/1
   # PUT /offers/1.xml
   def update
 
-    
     #@itemUpdate= Item.find_by_sql(["select * from items"])
     #@item=find_by_sql("select * from items where item_id=?",)
 
-   
-              
     @offer = Offer.find(params[:id])
     item1 = Item.find(params[:item_id])
     item2 = Item.find(params[:item])
@@ -122,13 +120,13 @@ class OffersController < ApplicationController
     respond_to do |format|
 
       if @offer.update_attributes(:offer_respond => "accepted")
-         item1.update_attributes(:status => "close") 
-          item2.update_attributes(:status => "close")
+        item1.update_attributes(:status => "close")
+        item2.update_attributes(:status => "close")
         if Offer.update_all({:offer_respond => "rejected"},
         ['id <> ? and item_id =?',params[:id],params[:item_id]])
-          flash[:notice] = 'Offer Traded was successfully updated.'
+        flash[:notice] = 'Offer Traded was successfully updated.'
         else
-          flash[:notice] = 'Updation Invalid'
+        flash[:notice] = 'Updation Invalid'
         end
         # set offer_respond=>"traded" where item_id=params[:item][:item_id]
         flash[:notice] = 'Offer was successfully updated.'

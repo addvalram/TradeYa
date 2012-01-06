@@ -18,13 +18,10 @@
 
 <p>
   <b>Sale status:</b>
-  <%=h @item.sale_status %>
+  <%=h @item.status %>
 </p>
 
-<p>
-  <b>Item choice:</b>
-  <%=h @item.item_choice %>
-</p>
+
 
 <%= link_to 'Edit', edit_user_item_path(current_user,@item) %> |
 <%= link_to 'Back', user_items_path(current_user.id) %>

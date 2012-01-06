@@ -1,0 +1,20 @@
+<h1>Listing sahres</h1>
+
+<table>
+  <tr>
+    <th>Item</th>
+    <th>offer</th>
+   
+  </tr>
+
+<% @shares.each do |share| %>
+  <tr>
+    <td><%=h share.item_id %></td>
+    <td><%=h share.offer_id %></td>
+     </tr>
+<% end %>
+</table>
+
+
+<br />
+

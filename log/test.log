@@ -1,0 +1,1 @@
+[paperclip] Duplicate URL for photo with /system/:attachment/:id/:style/:filename. This will clash with attachment defined in Item class

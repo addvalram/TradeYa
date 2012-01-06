@@ -17,42 +17,49 @@
 				<%= image_tag(@user.photo.url(),:size => "100x100") %>
 			</div></td>
 			<td colspan="0" style="background-color:#fff;width:20%;text-align:top;">
-			<div id="myitems" align="left">
-				<img src="/images/items-icon.jpg" alt="myitems" />
+				<div id="myitems" align="left" >
+			<div style="background:url('/images/items-icon.jpg ') no-repeat; width:60%;height:50px;" align="left" >
+				<div  align="left" style="position: relative;top: 20px;left: 20px"><b><%= @itemsCount%></b></div>
+				</div>
+				
 				<h1>My Items</h1>
 				you have&nbsp;<b><%= @itemsCount%></b>
 				<br />
 				listed items
-				<br />	
-						
 				<a href="#" id="MyItemListLink" class="MyItems">see them</a>
+				<br />
 				
-			</div></td>
+			</div></td></td>
 			<td colspan="0" style="background-color:#fff;width:20%;text-align:top;">
 			<div id="offer" align="left">
-				<img src="/images/offers-icon.jpg" alt="offers" />
+				<div style="background:url('/images/offers-icon.jpg ') no-repeat; width:60%;height:50px;" align="left" >
+				<div  align="left" style="position: relative;top: 20px;left: 20px"><b><%= @offerCount%></b></div>
+				</div>
+				
 				<h1>My offers</h1>
 				you have&nbsp;<b><%= @offerCount%></b>
 				<br />
 				pending offer
-				<br />	
-				<%if @offerCount!=0%>
-						
+				
 					<a href="#" id="MyOfferListLink" class="MyOffer">respond to them</a>
-				<%end%>
+				
 			</div></td>
 				
 			<td colspan="0" style="background-color:#fff;width:20%;text-align:top;">
 			<div id="progress" align="left">
 				<img src="/images/progress-icon.jpg" alt="progress" />
 				<h1>Progress</h1>
+				<img src="images/tradeya-sprite.png" alt="progress"/>
 				Trades :
 				<br />
+               <img src="images/thumbs-up.png" alt="progress" />
 				Thumbs Up:
 				<br />
+				<img src="images/hello.png" alt="progress" />
 				Thumbs Down:
 				<br />
 			</div></td>
+			
 			<td colspan="6" style="background-color:#fff;width:5%;text-align:top;"></td>
 		</tr>
 		<tr>
@@ -65,16 +72,23 @@
 		<div id="rightContainer"style="float: right;background-color: #eee;width:20%;height: 400px">
 			
 			<div id="featureListing" style="width:100%;height:300px;overflow: auto ">
+				
 					<h1>Feature Listing</h1>
 					<table >
 						<% @items.each do |item|%>
+						
 							<tr style="text-align: center;background-color:#EEE;height:10px">							
-								<td align="left"><%= (image_tag item.photo.url(),:size=>"80x80")%>
+								<td align="left"><%= (image_tag item.photo.url(),:size=>"60x60")%>
 								<br />
 								</td>
 								<td colspan="2" align="left"><b><%= h item.item_name%></b><br />Listed by	 <b><%= h User.find(item.user_id).user_name%></b></td>
-								<tr>							
-									<td colspan="2" align="left"><a href="#?<%= item.id %>" id="MyItem_<%= item.id%>"  onclick="showoverlay(<%= item.id %>);"><b><img src="/images/tradeya-sprite.png" alt="Klematis" />'make an offer</b></a></td>
+								<tr>	
+									<%if item.status=="close"%>
+						    	        <td>close</td>
+						    	        <%else%>  
+									<td align="left"><a href="#?<%= item.id %>" id="MyItem_<%= item.id%>"  onclick="showoverlay(<%= item.id %>);"><b><img src="/images/tradeya-sprite.png" alt="Klematis" />'make an offer</b></a></td>
+							             <%end%>						
+																
 								</tr>
 								<tr><td colspan="2"><hr></td></tr>
 								</tr>						
@@ -88,7 +102,7 @@
 					<table cellpadding="">						
 						<tr>
 							<th></th>
-						</tr>
+						</tr> 
 						<% @user_list.each do |user| %>
 						<tr>
 							<td><%= (image_tag user.photo.url(),:size =>"60x60")%></td>
@@ -98,32 +112,52 @@
 					</table>
 				</div>				
 		</div>	
-		
-				
-		
 		<p></p>
-		<table width="70%" >
+		<table width="80%" >
+			
 			<% @items.each do |item|%>
-			<tr style="text-align: center;background-color:#EEE;height:10px">
-				<td width="60px"><%= (image_tag User.find(item.user_id).photo.url(),:size=> "40x40")%>
+
+				<td width="70px"><%= (image_tag User.find(item.user_id).photo.url(),:size=> "40x40")%>
 				<br />
 				</td>
 				<td align="left"><%= (image_tag item.photo.url(),:size=>"80x80")%>
 				<br />
 				</td>
 				<td align="left"><b><%= h User.find(item.user_id).user_name%></b> posted <b><%= h item.item_name%></b></td>
-			<tr style="text-align: center;background-color:#EEE;height:10px;width: ">
-				<td><a href="#" id="myitem"><b>comment</b></a></td>
-				<td><a href="#" id="myitem"><b>share</b></a></td>
-				  <%if item.status=="close"%>
-    	        <td>close</td>
-    	        <%else%>  
+			<tr style="text-align: center;background-color:#EEE;height:10px;width:"30% ">
+				<td><a href="#" id="myitem_<%= item.id%>" onclick="$('#commentt' ).show();">new comment</a>
+			   
+			  	<td><a href="#" id="comment_<%= item.id%>"  onclick="commentoverlay(<%= item.id %>);">view comment</a></td>
+			  	  		
+			  	
+			  	
+			  	
+			 <td> <%= link_to "share", user_item_shares_path(current_user.id,item),:method=>:post %></td>
+						  				  	
+				 <%if item.status=="close"%>
+    	          <td>close</td>
+    	          <%else%>  
 				
-				<td align="left"><a href="#?<%= item.id %>" id="MyItem_<%= item.id%>"  onclick="showoverlay(<%= item.id %>);"><b><img src="/images/tradeya-sprite.png" alt="Klematis" />'make an offer</b></a></td>
-             <%end%>
-			</tr></tr>
+				  <td align="left"><a href="#?<%= item.id %>" id="MyItem_<%= item.id%>"  onclick="showoverlay(<%= item.id %>);"><b><img src="/images/tradeya-sprite.png" alt="Klematis" />'make an offer</b></a></td>
+                  <%end%>
+            		</tr>
+                  <div id="commentt" style="display:none" >
+			
+			<%form_for(:comment ,:url => user_item_comments_path(current_user.id,item),:method=>:post) do |f| %></td>											
+                <%= f.error_messages %>
+            	<td><%= f.text_field :comment %></td>
+                                
+			 <td><%= f.submit "post comment" %></td>
+			  	<%end%>	
+			  </div>
+			  	
+			  </tr></tr>
 			<%end%>
+			</td>
+			
 		</table>
+		  </div>
+            <%= will_paginate @user_item %>
 		<div id="PostListing" style="display: none; background-color: #eee; height: 200px">
 			<div class="form-item">
 				<table width="550" border="5" style="margin-top:25px; margin-left:10px;">
@@ -157,7 +191,7 @@
 				<h1>you have no items</h1>
 				<a href="#" id="PostListingLink" class="PostListing"><img src="/images/post-listing.png" alt="Klematis"/>Post a Listing</a>
 			<%else%>			
-			<table width="100%" border="">
+			<table width="100%" >
 				<tr>
 					<th>Photo</th>
 					<th>Item name</th>
@@ -175,28 +209,27 @@
 				</tr>
 				<% end %>
 			</table><%end%>
-			
 		</div>
 		<script>
-	jQuery("#PostListingLink").click(function() {
-		jQuery("#PostListing").overlay({
-			top : 5,
-			mask : {
-				color : '#E0E0E0',
-				loadSpeed : 1000,
-				opacity : 0.9
-			},
-			closeOnClick : false,
-			api : true
-		})
-		var ol = jQuery("#PostListing").overlay({
-			api : true
-		});
-		// wait 5 seconds, then load the overlay
-		setTimeout(function() {
-			ol.load();
-		}, 1);
-	});
+			jQuery("#PostListingLink").click(function() {
+				jQuery("#PostListing").overlay({
+					top : 5,
+					mask : {
+						color : '#E0E0E0',
+						loadSpeed : 1000,
+						opacity : 0.9
+					},
+					closeOnClick : false,
+					api : true
+				})
+				var ol = jQuery("#PostListing").overlay({
+					api : true
+				});
+				// wait 5 seconds, then load the overlay
+				setTimeout(function() {
+					ol.load();
+				}, 1);
+			});
 
 </script>
 <!--End Current User Items List overley -->
@@ -205,7 +238,7 @@
 			<input type="hidden" name="user_item_id" id="user_item_id"/>
 			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
 		</form>		
-		<table border="0" width="70%">
+		<table border="0" width="80%">
 			<% @offers.each do |offer|%>				
 			<% if offer.offer_respond=="offered" %>			
 					<tr style="text-align: center;background-color: #EEE">
@@ -237,7 +270,7 @@
 							<td><%= (image_tag User.find(offer.user_id).photo.url(),:size =>"40x40") %></td>		
 							</td>
 					</tr>					
-			<% elsif offer.offer_respond=="rejected" %>			
+			<% elsif offer.offer_respond=="reject" %>			
 					<tr style="text-align: center;background-color: #EEE">							
 							<td><%= (image_tag User.find(offer.public_user_id).photo.url(),:size =>"40x40") %>
 							<td><%= (image_tag Item.find(offer.item_id).photo.url(),:size=>"80x80") %></td>
@@ -271,7 +304,7 @@
 					</tr>
 				<%end%>
 			<%end%>
-		</table>		
+		</table>	<%= will_paginate @user_item%>	
 		<br />
 		<!-- make offer jquery -->
 		<script type="text/javascript">
@@ -318,7 +351,7 @@
 				loadSpeed : 1000,
 				opacity : .9
 			},
-			closeOnClick : false,
+			closeOnClick : true,
 			api : true
 		})
 		var ol = jQuery("#MyOffer").overlay({
@@ -350,7 +383,7 @@
 				loadSpeed : 1000,
 				opacity : .9
 			},
-			closeOnClick : false,
+			closeOnClick : true,
 			api : true
 		})
 		var ol = jQuery("#MyItems").overlay({
@@ -388,7 +421,7 @@
 				loadSpeed : 1000,
 				opacity : .9
 			},
-			closeOnClick : false,
+			closeOnClick : true,
 			api : true
 		})
 		var ol = jQuery("#profile").overlay({
@@ -399,7 +432,56 @@
 			ol.load();
 		}, 1);
 	});
-
+	}
 </script>
 <br/>
 <!--End Current User profile overley -->
+<script type="text/javascript">
+	function commentoverlay(id) {
+		jQuery("#comment").overlay({
+			top : 5,
+			mask : {
+				color : '#E0E0E0',
+				loadSpeed : 1000,
+				opacity : .9
+			},
+			closeOnClick : true,
+			api : true
+		})
+		var ol = jQuery("#comment").overlay({
+			api : true
+		});
+		// wait 5 seconds, then load the overlay
+		setTimeout(function() {
+			ol.load();
+		}, 1);
+	}
+</script>
+<br/>
+<div id="comment" style="display: none">
+				
+<h1>Listing comments</h1>
+
+<table border="2">
+  <tr>
+    <th>Item</th>
+    
+    <th>Comment</th>
+  
+  </tr>
+
+<% @comments.each do |comment| %>
+  <tr>
+    <td><%= h comment.item_id %></td>
+    <td><%= h comment.comment %></td>
+    
+    
+    
+  </tr>
+<% end %>
+</table>
+</div>
+<a name="fb_share"></a> 
+<script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" 
+        type="text/javascript">
+</script>

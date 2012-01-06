@@ -3,9 +3,11 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.xml
   def index
+ #@user_item = Item.paginate(:per_page=>3,:page=>params[:page])
+# @comments=Comment.find_by_sql(["select * from comments where item_id=?",params[:item_id]])  
     user =User.find(current_user)
-    @items = user.items.find(:all)
-
+    @items = user.items.find(:all).paginate(:per_page=>3,:page=>params[:page])
+  
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @items }

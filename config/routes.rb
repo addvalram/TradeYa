@@ -1,16 +1,22 @@
 ActionController::Routing::Routes.draw do |map|
+ # map.resources :comments
+  #map.resources :shares
 
-  map.resources :users do |user|
-  user.resources :recent_activities
-  user.resources :items do |item|
-               item.resources :offers
-                end
-  user.resources :offers do|offer|
-    offer.resources :progresses
-  end
-  
-  end
-  
+    map.resources :users do |user|
+    
+    user.resources :items do |item|
+      item.resources :offers
+      item.resources :comments
+      item.resources :shares
+    end
+     end
+  # user.resources :items do |item|
+ #     item.resources :offers
+  #    item.resources :shares
+  #    end  
+
+ 
+
   map.resource :user_session
   # The priority is based upon order of creation: first created -> highest priority.
 
@@ -22,14 +28,14 @@ ActionController::Routing::Routes.draw do |map|
   #   map.purchase 'products/:id/purchase', :controller => 'catalog', :action => 'purchase'
   
   # This route can be invoked with purchase_url(:id => product.id)
-map.reject_offer 'reject_offer/:id', :controller=> "offers", :action => "reject_offer"
-map.revoke_offer 'revoke_offer/:id', :controller => "offers", :action => "revoke_offer"
-map.item_id 'items/:id/myItemList', :controller => 'items', :action => 'item_id'
-map.login "login", :controller => "user_sessions", :action => "new"
-map.logout "logout", :controller => "user_sessions", :action => "destroy"
-map.validate_offer_by_status "validate_offer_by_status" , :controller=> "users", :action=> "validate_offer_by_status"
+ map.reject_offer 'reject_offer/:id', :controller=> "offers", :action => "reject_offer"
+    map.revoke_offer 'revoke_offer/:id', :controller => "offers", :action => "revoke_offer"
+    map.item_id 'items/:id/myItemList', :controller => 'items', :action => 'item_id'
+    map.login "login", :controller => "user_sessions", :action => "new"
+    map.logout "logout", :controller => "user_sessions", :action => "destroy"
+    map.validate_offer_by_status "validate_offer_by_status" , :controller=> "users", :action=> "validate_offer_by_status"
 
- # Sample resource route (maps HTTP verbs to controller actions automatically):
+    # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   map.resources :products
 
   # Sample resource route with options:
