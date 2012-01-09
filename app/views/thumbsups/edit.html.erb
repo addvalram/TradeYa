@@ -1,0 +1,24 @@
+<h1>Editing thumbsup</h1>
+
+<% form_for(@thumbsup, :url =>user_offer_thumbsup_path(current_user.id,offer.thumbsup,thumbsup),:method=> :put) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :offer_id %><br />
+    <%= f.text_field :offer_id %>
+  </p>
+  <p>
+    <%= f.label :user_id %><br />
+    <%= f.text_field :user_id %>
+  </p>
+  <p>
+    <%= f.label :message %><br />
+    <%= f.text_area :message %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @thumbsup %> |
+<%= link_to 'Back', thumbsups_path %>

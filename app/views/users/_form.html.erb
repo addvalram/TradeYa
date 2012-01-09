@@ -8,17 +8,22 @@
   <p>Upload Photo:<br/><%= f.file_field :photo%></p>
   <p>
     <%= f.label :email %><br />
-    <%= f.text_field :email %>
+    <%= f.text_field :email, :autocomplete=>"off" %>
   </p>
   <p>
     <%= f.label :password %><br />
-    <%= f.password_field :password %>
+    <%= f.password_field :password, :autocomplete=>"off"  %>
   </p>
   <p>
     <%= f.label :password_confirmation %><br />
+<<<<<<< HEAD
     <%= f.password_field :password_confirmation %>
   </p> 
   
+=======
+    <%= f.password_field :password_confirmation,:autocomplete=>"off" %>
+  </p>  
+>>>>>>> 4a05d63c85b9f97105a852b07f9b3e83bd51c156
   <p><%= f.submit "Submit" %></p>
 <% end %>
 </div>

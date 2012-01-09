@@ -77,6 +77,7 @@ class OffersController < ApplicationController
 
   def reject_offer
     @offer=Offer.find(params[:id])
+<<<<<<< HEAD
     #id=User.find_by_id(current_user.id)
      if @offer.update_attributes(:offer_respond=>"reject")
     flash[:notice]='Offer rejected sucessfully .'
@@ -87,6 +88,17 @@ class OffersController < ApplicationController
         format.html {render :action=>edit}
         format.xml {render :xml=>@offer.errors,:status=>:unprocessable_entitys}
       end
+=======
+    if @offer.update_attributes(:offer_respond=>"reject")
+      flash[:notice]='Offer rejected sucessfully .'
+      redirect_to user_path
+     else
+       flash[:notice]='offer was not rejected'
+       respond_to do |format|
+         format.html {render :action=>edit}
+         format.xml {render :xml=>@offer.errors,:status=>:unprocessable_entitys}
+       end
+>>>>>>> 4a05d63c85b9f97105a852b07f9b3e83bd51c156
     end
   end
 
@@ -107,10 +119,15 @@ class OffersController < ApplicationController
   # PUT /offers/1
   # PUT /offers/1.xml
   def update
+<<<<<<< HEAD
 
     #@itemUpdate= Item.find_by_sql(["select * from items"])
     #@item=find_by_sql("select * from items where item_id=?",)
 
+=======
+    debugger  
+ 
+>>>>>>> 4a05d63c85b9f97105a852b07f9b3e83bd51c156
     @offer = Offer.find(params[:id])
     item1 = Item.find(params[:item_id])
     item2 = Item.find(params[:item])
@@ -120,17 +137,24 @@ class OffersController < ApplicationController
     respond_to do |format|
 
       if @offer.update_attributes(:offer_respond => "accepted")
+<<<<<<< HEAD
         item1.update_attributes(:status => "close")
         item2.update_attributes(:status => "close")
         if Offer.update_all({:offer_respond => "rejected"},
+=======
+        item1.update_attributes(:sale_status => "close")
+        item2.update_attributes(:sale_status => "close")
+   
+        if Offer.update_all({:offer_respond => "reject"},
+>>>>>>> 4a05d63c85b9f97105a852b07f9b3e83bd51c156
         ['id <> ? and item_id =?',params[:id],params[:item_id]])
         flash[:notice] = 'Offer Traded was successfully updated.'
         else
         flash[:notice] = 'Updation Invalid'
         end
         # set offer_respond=>"traded" where item_id=params[:item][:item_id]
-        flash[:notice] = 'Offer was successfully updated.'
-        format.html { redirect_to users_url }
+        flash[:notice] = 'Offer was successfully accepted.'
+        format.html { redirect_to users_path }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

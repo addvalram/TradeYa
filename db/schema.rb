@@ -9,6 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20120106081804) do
 
   create_table "comments", :force => true do |t|
@@ -17,6 +18,9 @@ ActiveRecord::Schema.define(:version => 20120106081804) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+=======
+ActiveRecord::Schema.define(:version => 20120103044100) do
+>>>>>>> 4a05d63c85b9f97105a852b07f9b3e83bd51c156
 
   create_table "items", :force => true do |t|
     t.integer  "user_id"
@@ -54,10 +58,25 @@ ActiveRecord::Schema.define(:version => 20120106081804) do
     t.datetime "updated_at"
   end
 
+<<<<<<< HEAD
   create_table "shares", :force => true do |t|
     t.integer  "user_id"
     t.integer  "item_id"
     t.integer  "offer_id"
+=======
+  create_table "thumbsdowns", :force => true do |t|
+    t.integer  "offer_id"
+    t.integer  "user_id"
+    t.text     "message"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "thumbsups", :force => true do |t|
+    t.integer  "offer_id"
+    t.integer  "user_id"
+    t.text     "message"
+>>>>>>> 4a05d63c85b9f97105a852b07f9b3e83bd51c156
     t.datetime "created_at"
     t.datetime "updated_at"
   end

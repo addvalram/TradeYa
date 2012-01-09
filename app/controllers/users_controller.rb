@@ -18,10 +18,15 @@ class UsersController < ApplicationController
     @offers=Offer.findrecent().paginate(:per_page=>3,:page=>params[:page])
     user =User.find(current_user)
     @items_list = user.items.find(:all)
+<<<<<<< HEAD
     #@user_offer = Offer.find(:all).paginate(:per_page=>2,:page=>params[:page])
     #@items=Item.itempage(params[:page])
     #@user_item = Item.itempage(params[:page])
     @user_item = Item.find(:all).paginate(:per_page=>3,:page=>params[:page])
+=======
+ 
+    @thumbsUpCount=Thumbsup.find_by_sql(["select * from thumbsups where offer_id in (select id from offers where user_id=?)",current_user.id]).count    
+>>>>>>> 4a05d63c85b9f97105a852b07f9b3e83bd51c156
     @user_items=Item.find_by_sql(["select * from items where user_id=?",current_user.id])
     @items=Item.findpostItem(current_user).paginate(:per_page=>3,:page=>params[:page])
     respond_to do |format|

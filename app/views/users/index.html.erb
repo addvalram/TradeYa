@@ -17,6 +17,7 @@
 				<%= image_tag(@user.photo.url(),:size => "100x100") %>
 			</div></td>
 			<td colspan="0" style="background-color:#fff;width:20%;text-align:top;">
+<<<<<<< HEAD
 				<div id="myitems" align="left" >
 			<div style="background:url('/images/items-icon.jpg ') no-repeat; width:60%;height:50px;" align="left" >
 				<div  align="left" style="position: relative;top: 20px;left: 20px"><b><%= @itemsCount%></b></div>
@@ -29,10 +30,24 @@
 				<a href="#" id="MyItemListLink" class="MyItems">see them</a>
 				<br />
 				
+=======
+			<div id="myitems" align="left" >
+				<div style="background:url('/images/items-icon.jpg ') no-repeat; width:60%;height:50px;" align="left" >
+					<div  align="left" style="position: relative;top: 20px;left: 20px;color:#FFF;font-size: 20px">
+						<b><%= @itemsCount%></b>
+					</div>
+				</div>
+				<h1>My Items</h1>
+				you have&nbsp;<b><%= @itemsCount%></b>
+				<br />
+				listed items <a href="#" id="MyItemListLink" class="MyItems">see them</a>
+				<br />
+>>>>>>> 4a05d63c85b9f97105a852b07f9b3e83bd51c156
 			</div></td></td>
 			<td colspan="0" style="background-color:#fff;width:20%;text-align:top;">
 			<div id="offer" align="left">
 				<div style="background:url('/images/offers-icon.jpg ') no-repeat; width:60%;height:50px;" align="left" >
+<<<<<<< HEAD
 				<div  align="left" style="position: relative;top: 20px;left: 20px"><b><%= @offerCount%></b></div>
 				</div>
 				
@@ -43,6 +58,16 @@
 				
 					<a href="#" id="MyOfferListLink" class="MyOffer">respond to them</a>
 				
+=======
+					<div  align="left" style="position: relative;top: 20px;left: 20px;color:#FFF;font-size: 20px">
+						<b><%= @offerCount%></b>
+					</div>
+				</div>
+				<h1>My offers</h1>
+				you have&nbsp;<b><%= @offerCount%></b>
+				<br />
+				pending offer <a href="#" id="MyOfferListLink" class="MyOffer">respond to them</a>
+>>>>>>> 4a05d63c85b9f97105a852b07f9b3e83bd51c156
 			</div></td>
 				
 			<td colspan="0" style="background-color:#fff;width:20%;text-align:top;">
@@ -52,10 +77,17 @@
 				<img src="images/tradeya-sprite.png" alt="progress"/>
 				Trades :
 				<br />
+<<<<<<< HEAD
                <img src="images/thumbs-up.png" alt="progress" />
 				Thumbs Up:
 				<br />
 				<img src="images/hello.png" alt="progress" />
+=======
+				<img src="images/thumbs-up.png" alt="progress" />
+				Thumbs Up:<b><%= @thumbsUpCount%></b>
+				<br />
+				<img src="images/thumbs-down.png" alt="progress" />
+>>>>>>> 4a05d63c85b9f97105a852b07f9b3e83bd51c156
 				Thumbs Down:
 				<br />
 			</div></td>
@@ -72,6 +104,7 @@
 		<div id="rightContainer"style="float: right;background-color: #eee;width:20%;height: 400px">
 			
 			<div id="featureListing" style="width:100%;height:300px;overflow: auto ">
+<<<<<<< HEAD
 				
 					<h1>Feature Listing</h1>
 					<table >
@@ -115,6 +148,46 @@
 		<p></p>
 		<table width="80%" >
 			
+=======
+				<table >
+					<% @items.each do |item|%>
+					<tr style="text-align: center;background-color:#EEE;height:10px">
+						<td align="left"><%= (image_tag item.photo.url(),:size=>"80x80")%>
+						<br />
+						</td>
+						<td colspan="2" align="left"><b><%= h item.item_name%></b>
+						<br />
+						Listed by <b><%= h User.find(item.user_id).user_name%></b></td>
+					<tr>
+						<td colspan="2" align="left"><a href="#?<%= item.id %>" id="MyItem_<%= item.id%>"  onclick="showoverlay(<%= item.id %>);"><b><img src="/images/tradeya-sprite.png" alt="Klematis" />'make an offer</b></a></td>
+					</tr>
+					<tr>
+						<td colspan="2">
+						<hr>
+						</td>
+					</tr>
+					</tr>
+					<%end%>
+				</table>
+			</div>
+			<hr>
+			<h1>Friends Using TradeYa</h1>
+			<div id="userList" style="background-color: #eee;width:100%;float: right;overflow-y: auto;height: 300px">
+				<table cellpadding="">
+					<tr>
+						<th></th>
+					</tr>
+					<% @user_list.each do |user| %>
+					<tr>
+						<td><%= (image_tag user.photo.url(),:size =>"60x60")%></td>
+						<td><%= h user.user_name %></td>
+					</tr>
+					<% end %>
+				</table>
+			</div>
+		</div>
+		<table width="70%" >
+>>>>>>> 4a05d63c85b9f97105a852b07f9b3e83bd51c156
 			<% @items.each do |item|%>
 
 				<td width="70px"><%= (image_tag User.find(item.user_id).photo.url(),:size=> "40x40")%>
@@ -124,6 +197,7 @@
 				<br />
 				</td>
 				<td align="left"><b><%= h User.find(item.user_id).user_name%></b> posted <b><%= h item.item_name%></b></td>
+<<<<<<< HEAD
 			<tr style="text-align: center;background-color:#EEE;height:10px;width:"30% ">
 				<td><a href="#" id="myitem_<%= item.id%>" onclick="$('#commentt' ).show();">new comment</a>
 			   
@@ -152,6 +226,15 @@
 			  </div>
 			  	
 			  </tr></tr>
+=======
+			<tr style="text-align: center;background-color:#EEE;height:10px;width: ">
+				<td><a href="#" id="myitem"><b>comment</b></a></td>
+				<td><a href="#" id="myitem"><b>share</b></a></td>
+				<%if item.sale_status=="close"%> <td align="left" style="color:green"><img src="/images/accepted-arrow.jpg" alt="Klematis" style="height:20px;width: 30px"/>Item traded</td>
+				<%else%> <td align="left"><a href="#?<%= item.id %>" id="MyItem_<%= item.id%>"  onclick="showoverlay(<%= item.id %>);"><b><img src="/images/tradeya-sprite.png" alt="Klematis" />'make an offer</b></a></td>
+				<%end%>
+			</tr></tr>
+>>>>>>> 4a05d63c85b9f97105a852b07f9b3e83bd51c156
 			<%end%>
 			</td>
 			
@@ -186,12 +269,19 @@
 <!--Begin Current User Items List overley -->
 		
 		<div id="ItemList" style= "display: none;height: 440px;overflow-y: auto;background-color: #eee">
+<<<<<<< HEAD
 			<h1>My items list</h1>
 			<%if @user_items.count == 0%>	
 				<h1>you have no items</h1>
 				<a href="#" id="PostListingLink" class="PostListing"><img src="/images/post-listing.png" alt="Klematis"/>Post a Listing</a>
 			<%else%>			
 			<table width="100%" >
+=======
+			<%= link_to "Close ", users_path%> <h1>My items list</h1>
+			<%if @user_items.count == 0%> <h1>you have no items for Trade</h1>
+			<%else%>
+			<table width="100%" border="">
+>>>>>>> 4a05d63c85b9f97105a852b07f9b3e83bd51c156
 				<tr>
 					<th>Photo</th>
 					<th>Item name</th>
@@ -237,6 +327,7 @@
 		<form id="offer_form" name="offer_from" method="post">
 			<input type="hidden" name="user_item_id" id="user_item_id"/>
 			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+<<<<<<< HEAD
 		</form>		
 		<table border="0" width="80%">
 			<% @offers.each do |offer|%>				
@@ -303,6 +394,68 @@
 							</td>
 					</tr>
 				<%end%>
+=======
+		</form>
+		<table border="0" width="70%">
+			<% @offers.each do |offer|%>
+			<% if offer.offer_respond=="offered" %>
+			<tr style="text-align: center;background-color: #EEE">
+				<td><%= (image_tag User.find(offer.user_id).photo.url(),:size =>"40x40") %></td>
+				<td><%= (image_tag Item.find(offer.my_item_id).photo.url(),:size =>"80x80") %></td>
+				<td id="statusImages" style="width:10%"><img src="/images/offered-arrow.png" alt="Klematis" style="height:30px;width: 30px"/></td>
+				<td id="offerStatus" style="width: 50%"><b><%= h User.find(offer.user_id).user_name%></b>&nbsp;&nbsp;<%= h offer.offer_respond%>&nbsp;&nbsp;<b><%= h Item.find(offer.my_item_id).item_name%></b>&nbsp;&nbsp;for &nbsp;&nbsp;<b><%= h User.find(offer.public_user_id).user_name%>'s&nbsp;&nbsp;<%= h Item.find(offer.item_id).item_name%>&nbsp;&nbsp;</b></td>
+				<td><%= (image_tag Item.find(offer.item_id).photo.url(),:size=>"80x80") %></td>
+				<td><%= (image_tag User.find(offer.public_user_id).photo.url(),:size =>"40x40") %> </td>
+			</tr>
+			<% elsif offer.offer_respond=="accepted" %>
+			<tr style="text-align: center;background-color: #EEE">
+				<td><%= (image_tag User.find(offer.public_user_id).photo.url(),:size =>"40x40") %> <td><%= (image_tag Item.find(offer.item_id).photo.url(),:size=>"80x80") %></td>
+				<td id="statusImages" style="width:10%">
+				<div style= "">
+					<img src="/images/accepted-arrow.jpg" alt="Klematis" style="height:30px;width: 30px"/>
+				</div></td>
+				<td id="offerStatus" style="width: 50%">
+				<br />
+				<b><%= h User.find(offer.public_user_id).user_name%></b>&nbsp;&nbsp;accepted&nbsp;&nbsp;<b><%= h User.find(offer.user_id).user_name%>'s&nbsp;&nbsp;
+				<%= h Item.find(offer.my_item_id).item_name%></b>&nbsp;&nbsp;
+				for &nbsp;&nbsp;<b>&nbsp;&nbsp;<%= h Item.find(offer.item_id).item_name%>
+				&nbsp;&nbsp;</b>
+				<br />
+				
+				<hr>
+				</td>
+				<td><%= (image_tag Item.find(offer.my_item_id).photo.url(),:size =>"80x80") %></td>
+				<td><%= (image_tag User.find(offer.user_id).photo.url(),:size =>"40x40") %></td>
+				</td>
+			</tr>
+			<% elsif offer.offer_respond=="reject" %>
+			<tr style="text-align: center;background-color: #EEE">
+				<td><%= (image_tag User.find(offer.public_user_id).photo.url(),:size =>"40x40") %> <td><%= (image_tag Item.find(offer.item_id).photo.url(),:size=>"80x80") %></td>
+				<td id="statusImages" style="width:10%">
+				<div style= "">
+					<img src="/images/rejected-icon.png" alt="Klematis" style="height:25px;width: 25px"/>
+				</div></td>
+				<td id="offerStatus" style="width: 50%"><b><%= h User.find(offer.public_user_id).user_name%></b>&nbsp;&nbsp;rejected&nbsp;&nbsp;<b><%= h User.find(offer.user_id).user_name%>'s&nbsp;&nbsp;
+				<%= h Item.find(offer.my_item_id).item_name%></b>&nbsp;&nbsp;for &nbsp;&nbsp;<b>&nbsp;&nbsp;<%= h Item.find(offer.item_id).item_name%>&nbsp;&nbsp;</b></td>
+				<td><%= (image_tag Item.find(offer.my_item_id).photo.url(),:size =>"80x80") %></td>
+				<td><%= (image_tag User.find(offer.user_id).photo.url(),:size =>"40x40") %></td>
+				</td>
+			</tr>
+			<% elsif offer.offer_respond=="revoke" %>
+			<tr style="text-align: center;background-color: #EEE">
+				<td><%= (image_tag User.find(offer.user_id).photo.url(),:size =>"40x40") %> <td><%= (image_tag Item.find(offer.my_item_id).photo.url(),:size=>"80x80") %></td>
+				<td id="statusImages" style="width:10%">
+				<div style= "">
+					<img src="/images/xsprite.png" alt="Klematis" style="height:25px;width: 25px"/>
+				</div></td>
+				<td id="offerStatus" style="width: 50%"><b><%= h User.find(offer.user_id).user_name%></b>&nbsp;&nbsp;revoke&nbsp;&nbsp;<b><%= h User.find(offer.public_user_id).user_name%>'s&nbsp;&nbsp;
+				<%= h Item.find(offer.item_id).item_name%></b>&nbsp;&nbsp;for &nbsp;&nbsp;<b>&nbsp;&nbsp;<%= h Item.find(offer.my_item_id).item_name%>&nbsp;&nbsp;</b></td>
+				<td><%= (image_tag Item.find(offer.item_id).photo.url(),:size =>"80x80") %></td>
+				<td><%= (image_tag User.find(offer.public_user_id).photo.url(),:size =>"40x40") %></td>
+				</td>
+			</tr>
+			<%end%>
+>>>>>>> 4a05d63c85b9f97105a852b07f9b3e83bd51c156
 			<%end%>
 		</table>	<%= will_paginate @user_item%>	
 		<br />
@@ -338,7 +491,14 @@
 <!--Begin Current User Offers overley -->
 
 <div id="MyOffer" style="background-color: #eee;display: none">
+<<<<<<< HEAD
 	<p align="center"><h1> Listing Offers</h1></p>
+=======
+	<%= link_to "Close ", users_path%>
+	<p align="center">
+		
+	</p>
+>>>>>>> 4a05d63c85b9f97105a852b07f9b3e83bd51c156
 	<%= render :partial=>"offers/index"%>
 	
 </div>

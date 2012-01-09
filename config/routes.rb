@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ActionController::Routing::Routes.draw do |map|
  # map.resources :comments
   #map.resources :shares
@@ -17,6 +18,23 @@ ActionController::Routing::Routes.draw do |map|
 
  
 
+=======
+ActionController::Routing::Routes.draw do |map|  
+
+  map.resources :users do |user|
+  user.resources :recent_activities
+  user.resources :items do |item|
+               item.resources :offers
+                end
+  user.resources :offers do|offer|
+    offer.resources :thumbsups
+    offer.resources :thumbsdowns
+    
+  end
+  
+  end
+  
+>>>>>>> 4a05d63c85b9f97105a852b07f9b3e83bd51c156
   map.resource :user_session
   # The priority is based upon order of creation: first created -> highest priority.
 
@@ -28,12 +46,21 @@ ActionController::Routing::Routes.draw do |map|
   #   map.purchase 'products/:id/purchase', :controller => 'catalog', :action => 'purchase'
   
   # This route can be invoked with purchase_url(:id => product.id)
+<<<<<<< HEAD
  map.reject_offer 'reject_offer/:id', :controller=> "offers", :action => "reject_offer"
     map.revoke_offer 'revoke_offer/:id', :controller => "offers", :action => "revoke_offer"
     map.item_id 'items/:id/myItemList', :controller => 'items', :action => 'item_id'
     map.login "login", :controller => "user_sessions", :action => "new"
     map.logout "logout", :controller => "user_sessions", :action => "destroy"
     map.validate_offer_by_status "validate_offer_by_status" , :controller=> "users", :action=> "validate_offer_by_status"
+=======
+map.reject_offer 'rejectoffer/:id', :controller=> "offers", :action => "reject_offer"
+map.revoke_offer 'offer/:id', :controller => "offers", :action => "revoke_offer"
+map.item_id 'items/:id/myItemList', :controller => 'items', :action => 'item_id'
+map.login "login", :controller => "user_sessions", :action => "new"
+map.logout "logout", :controller => "user_sessions", :action => "destroy"
+map.validate_offer_by_status "validate_offer_by_status" , :controller=> "users", :action=> "validate_offer_by_status"
+>>>>>>> 4a05d63c85b9f97105a852b07f9b3e83bd51c156
 
     # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   map.resources :products
